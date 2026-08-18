@@ -1,0 +1,22 @@
+# Secrets & lokale Konfiguration
+.env
+*.pem
+*.pfx
+*.key
+secrets/
+
+# Betriebssystem / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python (Auftrag 13)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Grosse/temporäre Dateien
+*.tmp
+*.log
