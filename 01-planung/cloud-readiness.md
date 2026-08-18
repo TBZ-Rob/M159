@@ -2,7 +2,7 @@
 
 # 📁 Cloud-Bereitschaft: Nachweis
 
-![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=for-the-badge)
+![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=flat)
 
 </div>
 
@@ -25,4 +25,12 @@ Falls die Aktivierung scheitert:
 
 1. Screenshot der Fehlermeldung/Ablehnung hier ablegen.
 2. Lehrperson sofort informieren.
-3. Wechsel auf Variante B der betroffenen Aufträge (10B, 12B, 13B) beantragen.
+3. Wechsel auf Variante B der betroffenen Aufträge ([10B](../10-entra-connect/), 12B, [13B](../13-sso-python-app/)) beantragen.
+
+<br>
+
+<div align="center">
+
+⬅️ [Zurück zu Auftrag 01](./README.md)
+
+</div>

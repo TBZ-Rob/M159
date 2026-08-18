@@ -6,10 +6,10 @@
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
 -->
 
-![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=for-the-badge)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-0%25-lightgrey?style=for-the-badge)
-![Block](https://img.shields.io/badge/Block-2%20Cloud--Integration-1f6feb?style=for-the-badge)
-![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=for-the-badge)
+![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-0%25-lightgrey?style=flat)
+![Block](https://img.shields.io/badge/Block-2%20Cloud%20Integration-1f6feb?style=flat)
+![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Offen-lightgrey?style=flat)
 
 </div>
 
@@ -17,28 +17,31 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ## 🎯 Ziel
 
-> _{{ZIEL_KURZ_EIN_SATZ}}_
+> _Noch zu ergaenzen, sobald der Auftrag gestartet wird._
 
 <br>
 
 ## ✅ Checkliste
 
-- [ ] _{{TEILAUFGABE_1}}_
-- [ ] _{{TEILAUFGABE_2}}_
-- [ ] Screenshots / Nachweise abgelegt
-- [ ] `ki-log.md` ausgefüllt (falls KI eingesetzt)
+- [ ] Auftrag gestartet
+- [ ] Umsetzung abgeschlossen
+- [ ] Screenshots/Nachweise abgelegt
+- [ ] `ki-log.md` ausgefuellt
 
 <br>
 
 ## 🔗 Verweise
 
-- [ki-log.md](./ki-log.md)
-- [Auftragsstellung (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-entra-connect/)
+| Datei | Inhalt |
+|---|---|
+| [ki-log.md](./ki-log.md) | KI-Nutzung in diesem Auftrag |
+| [entscheidungsprotokoll.md](./entscheidungsprotokoll.md) | Begruendung des Entscheids in diesem Auftrag |
+| [Auftragsstellung (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-ms-entra-id-ms-entra-connect/) | Offizielle Aufgabenstellung |
 
 <br>
 
 <div align="center">
 
-⬅️ [Zurück zur Übersicht](../README.md)
+⬅️ [Auftrag 09: Identity Management & PowerShell Debugging](../09-identity-mgmt-powershell/) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 11: Servergespeicherte Benutzerprofile](../11-benutzerprofil/)
 
 </div>

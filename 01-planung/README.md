@@ -6,10 +6,12 @@
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
 -->
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=for-the-badge)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-25%25-orange?style=for-the-badge)
-![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=for-the-badge)
-![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=for-the-badge)
+![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-25%25-orange?style=flat)
+![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
+![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
+
+**[Ziel](#-ziel) · [Checkliste](#-checkliste) · [Namensschema](#2-namensschema-festlegen) · [Architektur](#️-architektur) · [Nachweise](#️-nachweise)**
 
 </div>
 
@@ -25,10 +27,10 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 - [x] Repo-Grundstruktur angelegt
 - [x] Domain-Namensschema festgelegt (Contoso)
-- [ ] Setup-Sheet vollständig ausgefüllt
+- [ ] Setup-Sheet vollständig ausgefüllt (Platzhalter wie Klasse, Repo-Link, EIPs folgen in Auftrag 02)
 - [ ] Azure for Students aktiviert (Screenshot)
 - [ ] Entra-ID-Tenant geprüft (Screenshot)
-- [ ] Architektur-Skizze erstellt
+- [x] Architektur-Skizze erstellt (siehe unten)
 - [x] `ki-log.md` angelegt
 
 <br>
@@ -38,41 +40,66 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 <details open>
 <summary><strong>1. Repo & Struktur</strong></summary>
 
-Repo-Grundgerüst mit einheitlichem Schema pro Auftrag (README, ki-log, ggf. Entscheidungsprotokoll, Screenshots) angelegt. Vorlagen (Header, Badges) wiederverwendbar für alle Aufträge.
+Repo-Grundgerüst mit einheitlichem Schema pro Auftrag (README, ki-log, ggf. Entscheidungsprotokoll, Screenshots) angelegt. Vorlagen (Header, Badges) wiederverwendbar für alle Aufträge. Details zur Wahl siehe [ki-log.md](./ki-log.md).
 
 </details>
 
-<details>
+<details open>
 <summary><strong>2. Namensschema festlegen</strong></summary>
 
-Als Domain-Basis wurde **Contoso** gewählt, nämlich die von Microsoft in praktisch jeder AD-/Azure-/Entra-Dokumentation verwendete fiktive Beispielfirma. Vorteil: sofort erkennbares, branchenübliches Namensschema statt modul-spezifischem Namen.
+Als Domain-Basis wurde **Contoso** gewählt, nämlich die von Microsoft in praktisch jeder AD-/Azure-/Entra-Dokumentation verwendete fiktive Beispielfirma. Vorteil: sofort erkennbares, branchenübliches Namensschema statt modul-spezifischem Namen. Abwägung siehe [entscheidungsprotokoll.md](./entscheidungsprotokoll.md).
 
 - Second-Level-Domäne (fiktive Firma): `contoso.com`
-- On-Prem AD (EC2, Third-Level): `ad.contoso.com`
-- AWS Managed AD (Third-Level): `aws.contoso.com`
-- Öffentlicher UPN (später, via dynv6.com): `contoso-robin.dynv6.net`
+- On-Prem AD (EC2, Third-Level): `ad.contoso.com` → [Auftrag 03](../03-gesamtstruktur-dc-client/)
+- AWS Managed AD (Third-Level): `aws.contoso.com` → [Auftrag 05](../05-aws-managed-ad/)
+- Öffentlicher UPN (später, via dynv6.com): `contoso-robin.dynv6.net` → [Auftrag 13](../13-sso-python-app/)
 
 </details>
 
 <details>
 <summary><strong>3. Cloud-Bereitschaft prüfen</strong></summary>
 
-Noch ausstehend, Azure for Students und Entra-ID-Tenant müssen heute noch geprüft werden, siehe [cloud-readiness.md](./cloud-readiness.md). Wichtig laut Modulvorgabe: **jetzt prüfen, nicht erst später**, da ein Scheitern des Tenants Zeit kostet, die sich später nicht mehr aufholen lässt.
+Noch ausstehend, Azure for Students und Entra-ID-Tenant müssen noch geprüft werden, siehe [cloud-readiness.md](./cloud-readiness.md). Wichtig laut Modulvorgabe: **jetzt prüfen, nicht erst später**, da ein Scheitern des Tenants Zeit kostet, die sich später nicht mehr aufholen lässt.
 
 </details>
 
 <br>
 
-## 🖥️ Geplante Umgebung (Kurzüberblick)
+## 🖥️ Architektur
 
-| Feld | Wert |
-|---|---|
-| On-Prem AD Domäne | `ad.contoso.com` |
-| AWS Managed AD Domäne | `aws.contoso.com` |
-| Trust-Typ | Tree-Root Trust |
-| Öffentlicher UPN (geplant) | `contoso-robin.dynv6.net` |
+Erster Entwurf der Zielumgebung. Details (genaue CIDRs/IPs) folgen in [Auftrag 02](../02-initial-setup/) und stehen im [Setup-Sheet](./setup-sheet.md).
 
-Details siehe [setup-sheet.md](./setup-sheet.md).
+```mermaid
+flowchart TB
+    subgraph AWS["AWS VPC 10.0.0.0/16"]
+        DC["🖥️ DC EC2<br/>dc.ad.contoso.com<br/>ad.contoso.com"]
+        CLIENT["💻 Client EC2<br/>client.ad.contoso.com"]
+        ADMIN["🛠️ Admin Center EC2<br/>admin.ad.contoso.com"]
+        MAD["☁️ AWS Managed AD<br/>aws.contoso.com"]
+        DC --- CLIENT
+        DC --- ADMIN
+    end
+
+    ENTRA["🔷 Microsoft Entra ID<br/>contoso.com Tenant"]
+    UPN["🌐 Öffentlicher UPN<br/>contoso-robin.dynv6.net"]
+
+    DC -- "Tree-Root Trust" --> MAD
+    DC -- "Entra Connect (Sync)" --> ENTRA
+    ENTRA --- UPN
+
+    click DC "../03-gesamtstruktur-dc-client/" "Auftrag 03: Gesamtstruktur & Client"
+    click MAD "../05-aws-managed-ad/" "Auftrag 05: AWS Managed AD"
+    click ENTRA "../10-entra-connect/" "Auftrag 10: Entra Connect"
+    click UPN "../13-sso-python-app/" "Auftrag 13: SSO Python App"
+```
+
+| Feld | Wert | Details |
+|---|---|---|
+| On-Prem AD Domäne | `ad.contoso.com` | [Auftrag 03](../03-gesamtstruktur-dc-client/) |
+| AWS Managed AD Domäne | `aws.contoso.com` | [Auftrag 05](../05-aws-managed-ad/) |
+| Trust-Typ | Tree-Root Trust | [Setup-Sheet](./setup-sheet.md#6-active-directory-umgebung) |
+| Entra ID Sync | Entra Connect | [Auftrag 10](../10-entra-connect/) |
+| Öffentlicher UPN (geplant) | `contoso-robin.dynv6.net` | [Auftrag 13](../13-sso-python-app/) |
 
 <br>
 
@@ -88,20 +115,26 @@ Details siehe [setup-sheet.md](./setup-sheet.md).
 | _ausstehend_ | Azure for Students: Aktivierung/Ablehnung |
 | _ausstehend_ | Entra-ID-Tenant-Übersicht mit Tenant-ID |
 
+Details und Vorgehen bei Fehlschlag: [cloud-readiness.md](./cloud-readiness.md)
+
 </details>
 
 <br>
 
 ## 🔗 Verweise
 
-- [ki-log.md](./ki-log.md)
-- [setup-sheet.md](./setup-sheet.md)
-- [Auftragsstellung (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/01-planung/)
+| Datei | Inhalt |
+|---|---|
+| [setup-sheet.md](./setup-sheet.md) | Vollständige Ressourcen-, Netzwerk- und Zugangsdaten-Übersicht |
+| [cloud-readiness.md](./cloud-readiness.md) | Cloud-Bereitschaft-Check (Azure/Entra) |
+| [entscheidungsprotokoll.md](./entscheidungsprotokoll.md) | Begründung Domain-Namensschema |
+| [ki-log.md](./ki-log.md) | KI-Nutzung in diesem Auftrag |
+| [Auftragsstellung (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/01-planung/) | Offizielle Aufgabenstellung |
 
 <br>
 
 <div align="center">
 
-⬅️ [Zurück zur Übersicht](../README.md)
+🏠 [Übersicht](../README.md) · ➡️ [Weiter zu Auftrag 02](../02-initial-setup/)
 
 </div>

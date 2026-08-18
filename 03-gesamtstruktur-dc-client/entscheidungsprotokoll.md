@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Entscheidungsprotokoll: Auftrag 10
+# 📁 Entscheidungsprotokoll: Auftrag 03
 
 ![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=flat)
 
@@ -8,7 +8,7 @@
 
 ---
 
-### Entscheid: Entra Connect vs. Variante B (Zweiter DC & Replikation)
+### Entscheid: RDP-Konzept
 
 **Welche Optionen standen zur Wahl?**
 _{{OPTIONEN}}_
@@ -19,12 +19,10 @@ _{{ENTSCHEID}}_
 **Warum, und was sprach dagegen?**
 _{{BEGRUENDUNG}}_
 
-> Bei Variante B zusätzlich: FSMO-Verteilung dokumentieren.
-
 <br>
 
 <div align="center">
 
-⬅️ [Zurück zu Auftrag 10](./README.md)
+⬅️ [Zurück zu Auftrag 03](./README.md)
 
 </div>

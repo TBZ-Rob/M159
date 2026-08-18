@@ -2,8 +2,8 @@
 
 # 📁 M159: Projekt-Setup-Sheet
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=for-the-badge)
-![Domain](https://img.shields.io/badge/Domain-contoso.com-1f6feb?style=for-the-badge)
+![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
+![Domain](https://img.shields.io/badge/Domain-contoso.com-1f6feb?style=flat)
 
 </div>
 
@@ -149,3 +149,11 @@
 - Lokale Domain-Umgebung zuerst, öffentlicher UPN-Suffix folgt später.
 - Sicherheitsgruppen-Regeln vor Inbetriebnahme jeder Instanz prüfen.
 - Alle IPs/Hostnamen/Usernamen hier konsequent dokumentieren. **Keine Klartext-Passwörter.**
+
+<br>
+
+<div align="center">
+
+⬅️ [Zurück zu Auftrag 01](./README.md) · 🌐 [Architektur-Diagramm](./README.md#️-architektur)
+
+</div>

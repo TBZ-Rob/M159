@@ -2,8 +2,8 @@
 
 # 📁 Auftrag 01: KI-Einsatz
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=for-the-badge)
-![Einträge](https://img.shields.io/badge/Einträge-2-1f6feb?style=for-the-badge)
+![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
+![Einträge](https://img.shields.io/badge/Einträge-2-1f6feb?style=flat)
 
 </div>
 
@@ -16,6 +16,13 @@
 
 ### Reflexion
 
-1. **Wo hat die KI geholfen?** Beim schnellen Strukturieren des Repos und beim Formulieren einer sauberen, wiederverwendbaren README/ki-log-Vorlage, da hätte ich manuell länger gebraucht.
+1. **Wo hat die KI geholfen?** Beim schnellen Strukturieren des Repos und beim Formulieren einer sauberen, wiederverwendbaren README/ki-log-Vorlage, das hätte ich manuell länger gebraucht.
+2. **Wo lag sie falsch, und wie habe ich es gemerkt?** {{REFLEXION_FRAGE_2}}
 
-2. **Wo lag sie falsch, und wie habe ich es gemerkt?** Heute habe ich nur die Planung gemacht, daher konnte die KI nicht viel falsch machen. Ausführlichere Antwort ab nächster Woche.
+<br>
+
+<div align="center">
+
+⬅️ [Zurück zu Auftrag 01](./README.md)
+
+</div>
