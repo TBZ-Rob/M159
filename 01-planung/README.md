@@ -87,10 +87,10 @@ flowchart TB
     DC -- "Entra Connect (Sync)" --> ENTRA
     ENTRA --- UPN
 
-    click DC "../03-gesamtstruktur-dc-client/" "Auftrag 03: Gesamtstruktur & Client"
-    click MAD "../05-aws-managed-ad/" "Auftrag 05: AWS Managed AD"
-    click ENTRA "../10-entra-connect/" "Auftrag 10: Entra Connect"
-    click UPN "../13-sso-python-app/" "Auftrag 13: SSO Python App"
+    click DC "../03-gesamtstruktur-dc-client/" "Auftrag 03 Gesamtstruktur und Client"
+    click MAD "../05-aws-managed-ad/" "Auftrag 05 AWS Managed AD"
+    click ENTRA "../10-entra-connect/" "Auftrag 10 Entra Connect"
+    click UPN "../13-sso-python-app/" "Auftrag 13 SSO Python App"
 ```
 
 | Feld | Wert | Details |

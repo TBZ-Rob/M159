@@ -33,20 +33,19 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 gantt
     dateFormat  YYYY-MM-DD
     title       M159 Zeitplan (dienstags, 3 Netto-Lektionen)
-    todayMarker on
 
     section Block 1
     01 Planung                         :active, t1, 2026-08-18, 1d
     02 Initial Setup                   :t2, 2026-08-25, 1d
-    03 Gesamtstruktur & Client         :t3, 2026-09-01, 1d
-    04 Freigaben/Berechtigungen        :t4, 2026-09-08, 1d
-    Checkpoint: Zeitstand pruefen      :milestone, cp, 2026-09-08, 0d
+    03 Gesamtstruktur und Client       :t3, 2026-09-01, 1d
+    04 Freigaben und Berechtigungen    :t4, 2026-09-08, 1d
+    Checkpoint Zeitstand pruefen       :milestone, cp, 2026-09-08, 0d
 
     section Block 2
-    05 AWS Managed AD + 06 RSAT        :t5, 2026-09-15, 1d
-    07 DIT/GPOs + 08 Suche             :t6, 2026-09-22, 1d
-    09 PowerShell + 10 Entra Connect   :t7, 2026-09-29, 1d
-    10 fertig + 11 + 12 + 13           :t8, 2026-10-20, 1d
+    05 AWS Managed AD und 06 RSAT      :t5, 2026-09-15, 1d
+    07 DIT GPOs und 08 Suche           :t6, 2026-09-22, 1d
+    09 PowerShell und 10 Entra Connect :t7, 2026-09-29, 1d
+    10 fertig und 11 12 13             :t8, 2026-10-20, 1d
 ```
 
 <details>
