@@ -26,8 +26,8 @@
 |---|---|
 | Vorname | Robin |
 | Nachname | Nydegger |
-| Klasse | _{{KLASSE}}_ |
-| Dokumentation (Git-Repo-Link) | _{{REPO_LINK}}_ |
+| Klasse | PE24c |
+| Dokumentation (Git-Repo-Link) | [github.com/TBZ-Rob/M159](https://github.com/TBZ-Rob/M159) |
 
 ## 3. Ressourcen
 

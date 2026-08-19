@@ -15,18 +15,36 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
+> ⚠️ **Direkt im Anschluss an [Auftrag 05](../05-aws-managed-ad/) durchfuehren** (gleicher kompakter Zeitraum kurz vor der Schlussbesprechung, siehe [Zeitplan](../README.md#️-zeitplan)), danach die AWS-Managed-AD-Domaene wieder loeschen um Kosten zu stoppen.
+
 ## 🎯 Ziel
 
-> _Noch zu ergaenzen, sobald der Auftrag gestartet wird._
+> RSAT-Tools zur Verwaltung installieren, Windows Admin Center V2 auf einer neuen EC2-Client-Instanz einrichten, den EC2-AD-DC hinzufuegen und von aussen sicher erreichbar machen.
+
+<br>
+
+## 🧭 Kernschritte
+
+- Neue EC2-Client-Instanz innerhalb AWS Managed AD.
+- RSAT installieren: `Install-WindowsFeature -Name RSAT -IncludeAllSubFeature -IncludeManagementTools`.
+- Windows Admin Center V2 installieren, dabei die Setup-EXE bei Bedarf suchen: `Get-ChildItem -Recurse -Path C:\ -Filter *AdminCenter*.exe -ErrorAction SilentlyContinue`.
+- Nur den EC2-AD-DC zum Admin Center hinzufuegen (Managed-AD-DCs koennen laut AWS nicht direkt hinzugefuegt werden).
+- WinRM-Ports 5985/5986 nur fuer die Admin-Center-IP/Subnetz oeffnen, **nicht** auf 0.0.0.0/0.
+- Admin Center via HTTPS/RDP von aussen erreichbar machen, Sicherheitsmassnahmen dokumentieren.
 
 <br>
 
 ## ✅ Checkliste
 
-- [ ] Auftrag gestartet
+- [ ] Auftrag gestartet (direkt nach Auftrag 05)
+- [ ] RSAT installiert
+- [ ] Admin Center V2 eingerichtet
+- [ ] EC2-AD-DC hinzugefuegt
+- [ ] Von aussen erreichbar, WinRM-Regeln eingeschraenkt
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
 - [ ] `ki-log.md` ausgefuellt
+- [ ] AWS Managed AD danach wieder geloescht (Kosten stoppen)
 
 <br>
 

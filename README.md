@@ -29,6 +29,8 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 ## 🗓️ Zeitplan
 
+> ⚠️ AWS Managed AD (Auftrag 05) kostet ca. 18 Dollar pro Woche. Deshalb liegen 05 und 06 bewusst nicht in der Mitte, sondern kompakt am Ende, direkt hintereinander, Managed AD wird erst kurz davor erstellt und sofort danach wieder geloescht. 05/06 sind laut Modul die einzigen Auftraege, die verschoben werden duerfen.
+
 ```mermaid
 gantt
     dateFormat  YYYY-MM-DD
@@ -42,10 +44,13 @@ gantt
     Checkpoint Zeitstand pruefen       :milestone, cp, 2026-09-08, 0d
 
     section Block 2
-    05 AWS Managed AD und 06 RSAT      :t5, 2026-09-15, 1d
-    07 DIT GPOs und 08 Suche           :t6, 2026-09-22, 1d
+    07 DIT und GPOs                    :t5, 2026-09-15, 1d
+    08 Suche im Directory              :t6, 2026-09-22, 1d
     09 PowerShell und 10 Entra Connect :t7, 2026-09-29, 1d
-    10 fertig und 11 12 13             :t8, 2026-10-20, 1d
+    10 fertig und 11 und 12 und 13     :t8, 2026-10-20, 1d
+
+    section Zum Schluss kurz vor Abgabe
+    05 AWS Managed AD und 06 RSAT      :crit, t9, 2026-10-21, 3d
 ```
 
 <details>
@@ -60,10 +65,11 @@ gantt
 | 3 | Di, 01.09.2026 | [03: Gesamtstruktur (1. DC) & Client](./03-gesamtstruktur-dc-client/) | ⬜ offen |
 | 4 | Di, 08.09.2026 | [04: Freigaben/Berechtigungen](./04-freigaben-berechtigungen/) | ⬜ offen |
 | n/a | n/a | **Checkpoint: Zeitstand prüfen** | n/a |
-| 5 | Di, 15.09.2026 | [05: AWS Managed AD](./05-aws-managed-ad/) + [06: RSAT & Admin Center](./06-rsat-admin-center/) | ⬜ offen |
-| 6 | Di, 22.09.2026 | [07: DIT & GPOs](./07-dit-gpos/) + [08: Suche im Directory](./08-suche-im-directory/) | ⬜ offen |
+| 5 | Di, 15.09.2026 | [07: DIT & GPOs](./07-dit-gpos/) | ⬜ offen |
+| 6 | Di, 22.09.2026 | [08: Suche im Directory](./08-suche-im-directory/) | ⬜ offen |
 | 7 | Di, 29.09.2026 | [09: PowerShell-Debugging](./09-identity-mgmt-powershell/) + [10: Entra Connect (Start)](./10-entra-connect/) | ⬜ offen |
 | 8 | Di, 20.10.2026 | 10 fertig + [11](./11-benutzerprofil/)/[12](./12-netzlaufwerk-azure/)/[13](./13-sso-python-app/) (Rest ggf. Selbstarbeit) | ⬜ offen |
+| n/a | kurz vor Schlussbesprechung | [05: AWS Managed AD](./05-aws-managed-ad/) + [06: RSAT & Admin Center](./06-rsat-admin-center/), kompakt an 1 bis 2 Tagen, danach Managed AD sofort loeschen | ⬜ offen |
 
 </details>
 
@@ -79,8 +85,8 @@ gantt
 | [02](./02-initial-setup/) | Initial Setup | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/02-initial-setup/) |
 | [03](./03-gesamtstruktur-dc-client/) | Gesamtstruktur (1. DC) & Client | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/03-neue-gesamtstruktur-und-client/) |
 | [04](./04-freigaben-berechtigungen/) | Freigaben, Laufwerke, Berechtigungen | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/04-freigaben-laufwerke-berechtigungen/) |
-| [05](./05-aws-managed-ad/) | AWS Managed Microsoft AD | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/) |
-| [06](./06-rsat-admin-center/) | RSAT & Admin Center V2 | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/06-rsat-admin-center-v2/) |
+| [05](./05-aws-managed-ad/) | AWS Managed Microsoft AD | ⬜ ans Ende verschoben (Kosten) | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/) |
+| [06](./06-rsat-admin-center/) | RSAT & Admin Center V2 | ⬜ ans Ende verschoben (Kosten) | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/06-rsat-admin-center-v2/) |
 | [07](./07-dit-gpos/) | DIT & GPOs | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/07-dit-gpos/) |
 | [08](./08-suche-im-directory/) | Suche im Directory (LDAP) | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/08-suche-im-directory/) |
 | [09](./09-identity-mgmt-powershell/) | Identity Management & PowerShell Debugging | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/09-automation-und-debugging/) |

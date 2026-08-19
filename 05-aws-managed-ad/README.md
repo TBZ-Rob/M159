@@ -15,18 +15,34 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
+> ⚠️ **Zeitlich bewusst ans Ende verschoben.** AWS Managed AD kostet ca. 18 Dollar pro Woche, siehe [Zeitplan](../README.md#️-zeitplan). Erst kurz vor der Schlussbesprechung starten, direkt mit [Auftrag 06](../06-rsat-admin-center/) weitermachen, danach die Managed-AD-Domain sofort wieder loeschen.
+
 ## 🎯 Ziel
 
-> _Noch zu ergaenzen, sobald der Auftrag gestartet wird._
+> AWS Managed Microsoft AD einrichten (Domaene, Ports gemaess [Setup-Sheet](../01-planung/setup-sheet.md)), Conditional Forwarder zur eigenen On-Prem-AD einrichten und einen beidseitigen Trust aufbauen und validieren.
+
+<br>
+
+## 🧭 Kernschritte
+
+- AWS Managed AD Domaene erstellen, Passwort im Setup-Sheet (Passwort-Manager) hinterlegen.
+- Ports gemaess Setup-Sheet sicherstellen.
+- Conditional Forwarder einrichten, damit die EC2-AD die AWS-Managed-Domain aufloesen kann, Test mit `nslookup -type=SOA aws.contoso.com`.
+- Trust beidseitig einrichten (EC2-AD ueber "Active Directory Domains and Trusts" sowie auf AWS-Managed-AD-Seite), danach validieren.
+- Sicherheitsdokumentation ergaenzen (welche Ports offen, warum).
 
 <br>
 
 ## ✅ Checkliste
 
-- [ ] Auftrag gestartet
+- [ ] Auftrag gestartet (erst kurz vor Schlussbesprechung)
+- [ ] Managed AD Domaene erstellt
+- [ ] Conditional Forwarder eingerichtet und getestet
+- [ ] Trust eingerichtet und validiert
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
 - [ ] `ki-log.md` ausgefuellt
+- [ ] Managed AD nach Abschluss von Auftrag 06 wieder geloescht (Kosten stoppen)
 
 <br>
 
