@@ -11,7 +11,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
 
-**[Ziel](#-ziel) · [Checkliste](#-checkliste) · [Namensschema](#2-namensschema-festlegen) · [Architektur](#️-architektur) · [Nachweise](#️-nachweise)**
+**[Ziel](#-ziel) · [Checkliste](#-checkliste) · [Namensschema](#2-namensschema-festlegen) · [Architektur](#️-architektur) · [Begriffe](#-begriffsklärungen) · [Nachweise](#️-nachweise)**
 
 </div>
 
@@ -100,6 +100,19 @@ flowchart TB
 | Trust-Typ | Tree-Root Trust | [Setup-Sheet](./setup-sheet.md#6-active-directory-umgebung) |
 | Entra ID Sync | Entra Connect | [Auftrag 10](../10-entra-connect/) |
 | Öffentlicher UPN (geplant) | `contoso-robin.dynv6.net` | [Auftrag 13](../13-sso-python-app/) |
+
+<br>
+
+## 📖 Begriffsklärungen
+
+Kurze, selbst recherchierte Erklärungen zu Begriffen aus dem Modul.
+
+<details open>
+<summary><strong>VPC (Virtual Private Cloud)</strong></summary>
+
+Eine VPC ist kein physisches Gerät, sondern ein isolierter, privater Netzwerkabschnitt in der Cloud (z. B. bei AWS oder Google Cloud), in dem eigene virtuelle Maschinen (Instanzen) laufen. Sie verhalten sich wie normale Server, sind aber durch Firewalls und private IP-Adressen vom öffentlichen Internet abgeschottet. Selbst recherchiert am 19.08.2026.
+
+</details>
 
 <br>
 
