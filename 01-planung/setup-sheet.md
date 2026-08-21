@@ -40,17 +40,15 @@
 
 ## 4. AWS VPC Setup
 
-> Alle Instanzen liegen in einem öffentlichen Subnetz, RDP (3389) von aussen erreichbar. Alle weiteren Ports nur innerhalb des VPCs offen.
+> Der DC liegt im privaten Subnetz (kein öffentlicher Zugriff), Client und Admin Center liegen im öffentlichen Subnetz mit Elastic IP und RDP (3389) von aussen erreichbar. Alle weiteren Ports nur innerhalb des VPCs offen.
 
 | Komponente | VPC-ID | CIDR | Name |
 |---|---|---|---|
-| VPC | _{{VPC_ID}}_ | `10.0.0.0/16` | n/a |
+| VPC | `vpc-006acd098b2993828` | `10.0.0.0/16` | M159-vpc |
 | Subnetz | n/a | `10.0.128.0/20` | M159-subnet-private1-us-east-1a |
 | Subnetz | n/a | `10.0.144.0/20` | M159-subnet-private2-us-east-1b |
 | Subnetz | n/a | `10.0.0.0/20` | M159-subnet-public1-us-east-1a |
 | Subnetz | n/a | `10.0.16.0/20` | M159-subnet-public2-us-east-1b |
-
-*(genaue CIDRs/IDs werden in Auftrag 02 beim tatsächlichen VPC-Aufbau final gesetzt)*
 
 ## 5. AWS Sicherheitsgruppen
 
@@ -123,9 +121,11 @@
 
 | Komponente | FQDN | Elastic IP | Private IP | Subnetz | DNS-Server 1 | DNS-Server 2 | Lokaler Admin | Kennwort |
 |---|---|---|---|---|---|---|---|---|
-| IaaS/OnPrem AD DC | `dc.ad.contoso.com` | _{{EIP_DC}}_ | `10.0.128.10` | M159-subnet-private1-us-east-1a | n/a | n/a | Administrator | _siehe PM_ |
-| Windows Server (Client) | `client.ad.contoso.com` | _{{EIP_CLIENT}}_ | `10.0.0.20` | M159-subnet-public1-us-east-1a | n/a | n/a | Administrator | _siehe PM_ |
-| Windows Server Admin Center | `admin.ad.contoso.com` | _{{EIP_ADMIN}}_ | `10.0.0.30` | M159-subnet-public1-us-east-1a | n/a | n/a | Administrator | _siehe PM_ |
+| IaaS/OnPrem AD DC | `dc.ad.contoso.com` | n/a (kein öffentlicher Zugriff) | `10.0.128.11` | M159-subnet-private1-us-east-1a | n/a | n/a | Administrator | _siehe PM_ |
+| Windows Server (Client) | `client.ad.contoso.com` | `52.71.123.76` | `10.0.0.20` | M159-subnet-public1-us-east-1a | n/a | n/a | Administrator | _siehe PM_ |
+| Windows Server Admin Center | `admin.ad.contoso.com` | `32.195.165.234` | `10.0.0.30` | M159-subnet-public1-us-east-1a | n/a | n/a | Administrator | _siehe PM_ |
+
+> Hinweis: Der DC hat abweichend vom ursprünglichen Plan die IP `10.0.128.11` statt `10.0.128.10` erhalten (AWS hat beim Erstellen automatisch vergeben statt der manuell gesetzten Adresse). Funktional ohne Unterschied, da weiterhin im geplanten Subnetz.
 
 ## 8. Abteilungen & Benutzer
 
