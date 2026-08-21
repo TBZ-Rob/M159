@@ -28,8 +28,8 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - [x] Repo-Grundstruktur angelegt
 - [x] Domain-Namensschema festgelegt (Contoso)
 - [ ] Setup-Sheet vollständig ausgefüllt (Platzhalter wie Klasse, Repo-Link, EIPs folgen in Auftrag 02)
-- [ ] Azure for Students aktiviert (Screenshot)
-- [ ] Entra-ID-Tenant geprüft (Screenshot)
+- [x] Azure for Students aktiviert (Screenshot)
+- [x] Entra-ID-Tenant geprüft (Screenshot, Ergebnis: kein Admin-Zugriff im TBZ-Tenant, dokumentiert)
 - [x] Architektur-Skizze erstellt (siehe unten)
 - [x] `ki-log.md` angelegt
 
@@ -56,10 +56,10 @@ Als Domain-Basis wurde **Contoso** gewählt, nämlich die von Microsoft in prakt
 
 </details>
 
-<details>
+<details open>
 <summary><strong>3. Cloud-Bereitschaft prüfen</strong></summary>
 
-Noch ausstehend, Azure for Students und Entra-ID-Tenant müssen noch geprüft werden, siehe [cloud-readiness.md](./cloud-readiness.md). Wichtig laut Modulvorgabe: **jetzt prüfen, nicht erst später**, da ein Scheitern des Tenants Zeit kostet, die sich später nicht mehr aufholen lässt.
+Azure for Students ist erfolgreich aktiviert. Der Entra-ID-Tenant lässt sich mit dem TBZ-Schul-Account nicht als Admin einsehen (kein Zugriff, dokumentiert), dafür wird in Auftrag 10 ein eigener Tenant benötigt. Details siehe [cloud-readiness.md](./cloud-readiness.md). Wichtig laut Modulvorgabe: **jetzt prüfen, nicht erst später**, da ein Scheitern des Tenants Zeit kostet, die sich später nicht mehr aufholen lässt, genau das haben wir hier frühzeitig erkannt.
 
 </details>
 
@@ -125,8 +125,8 @@ Eine VPC ist kein physisches Gerät, sondern ein isolierter, privater Netzwerkab
 
 | Screenshot | Beschreibung |
 |---|---|
-| _ausstehend_ | Azure for Students: Aktivierung/Ablehnung |
-| _ausstehend_ | Entra-ID-Tenant-Übersicht mit Tenant-ID |
+| [01-azure-for-students.png](./00-screenshots/01-azure-for-students.png) | Azure for Students: erfolgreich aktiviert |
+| [02-entra-id-tenant.png](./00-screenshots/02-entra-id-tenant.png) | Entra-ID-Tenant: kein Admin-Zugriff im TBZ-Tenant (dokumentierter Fehlschlag) |
 
 Details und Vorgehen bei Fehlschlag: [cloud-readiness.md](./cloud-readiness.md)
 
