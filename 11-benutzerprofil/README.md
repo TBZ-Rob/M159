@@ -17,7 +17,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ## 🎯 Ziel
 
-> _Noch zu ergaenzen, sobald der Auftrag gestartet wird._
+> _Noch zu ergänzen, sobald der Auftrag gestartet wird._
 
 <br>
 
@@ -26,7 +26,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - [ ] Auftrag gestartet
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
-- [ ] `ki-log.md` ausgefuellt
+- [ ] `ki-log.md` ausgefüllt
 
 <br>
 
@@ -41,6 +41,6 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <div align="center">
 
-⬅️ [Auftrag 10: MS Entra ID & MS Entra Connect](../10-entra-connect/) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 12: Netzlaufwerk to Azure Migration](../12-netzlaufwerk-azure/)
+⬅️ [Auftrag 10: MS Entra ID & MS Entra Connect](../10-entra-connect/README.md) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 12: Netzlaufwerk to Azure Migration](../12-netzlaufwerk-azure/README.md)
 
 </div>

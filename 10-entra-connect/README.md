@@ -17,7 +17,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ## 🎯 Ziel
 
-> _Noch zu ergaenzen, sobald der Auftrag gestartet wird._
+> _Noch zu ergänzen, sobald der Auftrag gestartet wird._
 
 <br>
 
@@ -26,7 +26,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - [ ] Auftrag gestartet
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
-- [ ] `ki-log.md` ausgefuellt
+- [ ] `ki-log.md` ausgefüllt
 
 <br>
 
@@ -35,13 +35,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 | Datei | Inhalt |
 |---|---|
 | [ki-log.md](./ki-log.md) | KI-Nutzung in diesem Auftrag |
-| [entscheidungsprotokoll.md](./entscheidungsprotokoll.md) | Begruendung des Entscheids in diesem Auftrag |
+| [entscheidungsprotokoll.md](./entscheidungsprotokoll.md) | Begründung des Entscheids in diesem Auftrag |
 | [Auftragsstellung (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-ms-entra-id-ms-entra-connect/) | Offizielle Aufgabenstellung |
 
 <br>
 
 <div align="center">
 
-⬅️ [Auftrag 09: Identity Management & PowerShell Debugging](../09-identity-mgmt-powershell/) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 11: Servergespeicherte Benutzerprofile](../11-benutzerprofil/)
+⬅️ [Auftrag 09: Identity Management & PowerShell Debugging](../09-identity-mgmt-powershell/README.md) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 11: Servergespeicherte Benutzerprofile](../11-benutzerprofil/README.md)
 
 </div>

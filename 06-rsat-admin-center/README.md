@@ -15,11 +15,11 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
-> ⚠️ **Direkt im Anschluss an [Auftrag 05](../05-aws-managed-ad/) durchfuehren** (gleicher kompakter Zeitraum kurz vor der Schlussbesprechung, siehe [Zeitplan](../README.md#️-zeitplan)), danach die AWS-Managed-AD-Domaene wieder loeschen um Kosten zu stoppen.
+> ⚠️ **Direkt im Anschluss an [Auftrag 05](../05-aws-managed-ad/) durchführen** (gleicher kompakter Zeitraum kurz vor der Schlussbesprechung, siehe [Zeitplan](../README.md#️-zeitplan)), danach die AWS-Managed-AD-Domäne wieder löschen um Kosten zu stoppen.
 
 ## 🎯 Ziel
 
-> RSAT-Tools zur Verwaltung installieren, Windows Admin Center V2 auf einer neuen EC2-Client-Instanz einrichten, den EC2-AD-DC hinzufuegen und von aussen sicher erreichbar machen.
+> RSAT-Tools zur Verwaltung installieren, Windows Admin Center V2 auf einer neuen EC2-Client-Instanz einrichten, den EC2-AD-DC hinzufügen und von aussen sicher erreichbar machen.
 
 <br>
 
@@ -28,8 +28,8 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - Neue EC2-Client-Instanz innerhalb AWS Managed AD.
 - RSAT installieren: `Install-WindowsFeature -Name RSAT -IncludeAllSubFeature -IncludeManagementTools`.
 - Windows Admin Center V2 installieren, dabei die Setup-EXE bei Bedarf suchen: `Get-ChildItem -Recurse -Path C:\ -Filter *AdminCenter*.exe -ErrorAction SilentlyContinue`.
-- Nur den EC2-AD-DC zum Admin Center hinzufuegen (Managed-AD-DCs koennen laut AWS nicht direkt hinzugefuegt werden).
-- WinRM-Ports 5985/5986 nur fuer die Admin-Center-IP/Subnetz oeffnen, **nicht** auf 0.0.0.0/0.
+- Nur den EC2-AD-DC zum Admin Center hinzufügen (Managed-AD-DCs können laut AWS nicht direkt hinzugefügt werden).
+- WinRM-Ports 5985/5986 nur für die Admin-Center-IP/Subnetz öffnen, **nicht** auf 0.0.0.0/0.
 - Admin Center via HTTPS/RDP von aussen erreichbar machen, Sicherheitsmassnahmen dokumentieren.
 
 <br>
@@ -39,12 +39,12 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - [ ] Auftrag gestartet (direkt nach Auftrag 05)
 - [ ] RSAT installiert
 - [ ] Admin Center V2 eingerichtet
-- [ ] EC2-AD-DC hinzugefuegt
-- [ ] Von aussen erreichbar, WinRM-Regeln eingeschraenkt
+- [ ] EC2-AD-DC hinzugefügt
+- [ ] Von aussen erreichbar, WinRM-Regeln eingeschränkt
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
-- [ ] `ki-log.md` ausgefuellt
-- [ ] AWS Managed AD danach wieder geloescht (Kosten stoppen)
+- [ ] `ki-log.md` ausgefüllt
+- [ ] AWS Managed AD danach wieder gelöscht (Kosten stoppen)
 
 <br>
 
@@ -59,6 +59,6 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <div align="center">
 
-⬅️ [Auftrag 05: AWS Managed Microsoft AD](../05-aws-managed-ad/) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 07: DIT & GPOs](../07-dit-gpos/)
+⬅️ [Auftrag 05: AWS Managed Microsoft AD](../05-aws-managed-ad/README.md) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 07: DIT & GPOs](../07-dit-gpos/README.md)
 
 </div>

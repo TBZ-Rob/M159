@@ -17,7 +17,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ## 🎯 Ziel
 
-> _Noch zu ergaenzen, sobald der Auftrag gestartet wird._
+> _Noch zu ergänzen, sobald der Auftrag gestartet wird._
 
 <br>
 
@@ -26,8 +26,8 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - [ ] Auftrag gestartet
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
-- [ ] `ki-log.md` ausgefuellt
-- [ ] `entscheidungsprotokoll.md` ausgefuellt (RDP-Konzept)
+- [ ] `ki-log.md` ausgefüllt
+- [ ] `entscheidungsprotokoll.md` ausgefüllt (RDP-Konzept)
 
 <br>
 
@@ -36,13 +36,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 | Datei | Inhalt |
 |---|---|
 | [ki-log.md](./ki-log.md) | KI-Nutzung in diesem Auftrag |
-| [entscheidungsprotokoll.md](./entscheidungsprotokoll.md) | Begruendung RDP-Konzept |
+| [entscheidungsprotokoll.md](./entscheidungsprotokoll.md) | Begründung RDP-Konzept |
 | [Auftragsstellung (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/03-neue-gesamtstruktur-und-client/) | Offizielle Aufgabenstellung |
 
 <br>
 
 <div align="center">
 
-⬅️ [Auftrag 02: Initial Setup](../02-initial-setup/) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 04: Freigaben, Laufwerke, Berechtigungen](../04-freigaben-berechtigungen/)
+⬅️ [Auftrag 02: Initial Setup](../02-initial-setup/README.md) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 04: Freigaben, Laufwerke, Berechtigungen](../04-freigaben-berechtigungen/README.md)
 
 </div>

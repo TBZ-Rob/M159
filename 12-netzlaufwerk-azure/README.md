@@ -17,7 +17,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ## 🎯 Ziel
 
-> _Noch zu ergaenzen, sobald der Auftrag gestartet wird._
+> _Noch zu ergänzen, sobald der Auftrag gestartet wird._
 
 <br>
 
@@ -26,7 +26,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - [ ] Auftrag gestartet
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
-- [ ] `ki-log.md` ausgefuellt
+- [ ] `ki-log.md` ausgefüllt
 
 <br>
 
@@ -41,6 +41,6 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <div align="center">
 
-⬅️ [Auftrag 11: Servergespeicherte Benutzerprofile](../11-benutzerprofil/) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 13: SSO Python App](../13-sso-python-app/)
+⬅️ [Auftrag 11: Servergespeicherte Benutzerprofile](../11-benutzerprofil/README.md) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 13: SSO Python App](../13-sso-python-app/README.md)
 
 </div>

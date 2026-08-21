@@ -148,6 +148,6 @@ Details und Vorgehen bei Fehlschlag: [cloud-readiness.md](./cloud-readiness.md)
 
 <div align="center">
 
-🏠 [Übersicht](../README.md) · ➡️ [Weiter zu Auftrag 02](../02-initial-setup/)
+🏠 [Übersicht](../README.md) · ➡️ [Weiter zu Auftrag 02](../02-initial-setup/README.md)
 
 </div>

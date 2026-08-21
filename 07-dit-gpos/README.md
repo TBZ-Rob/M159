@@ -17,7 +17,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ## 🎯 Ziel
 
-> _Noch zu ergaenzen, sobald der Auftrag gestartet wird._
+> _Noch zu ergänzen, sobald der Auftrag gestartet wird._
 
 <br>
 
@@ -26,7 +26,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - [ ] Auftrag gestartet
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
-- [ ] `ki-log.md` ausgefuellt
+- [ ] `ki-log.md` ausgefüllt
 
 <br>
 
@@ -41,6 +41,6 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <div align="center">
 
-⬅️ [Auftrag 06: RSAT & Admin Center V2](../06-rsat-admin-center/) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 08: Suche im Directory (LDAP)](../08-suche-im-directory/)
+⬅️ [Auftrag 06: RSAT & Admin Center V2](../06-rsat-admin-center/README.md) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 08: Suche im Directory (LDAP)](../08-suche-im-directory/README.md)
 
 </div>

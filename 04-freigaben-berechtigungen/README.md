@@ -17,7 +17,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ## 🎯 Ziel
 
-> _Noch zu ergaenzen, sobald der Auftrag gestartet wird._
+> _Noch zu ergänzen, sobald der Auftrag gestartet wird._
 
 <br>
 
@@ -26,7 +26,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - [ ] Auftrag gestartet
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
-- [ ] `ki-log.md` ausgefuellt
+- [ ] `ki-log.md` ausgefüllt
 
 <br>
 
@@ -41,6 +41,6 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <div align="center">
 
-⬅️ [Auftrag 03: Gesamtstruktur (1. DC) & Client](../03-gesamtstruktur-dc-client/) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 05: AWS Managed Microsoft AD](../05-aws-managed-ad/)
+⬅️ [Auftrag 03: Gesamtstruktur (1. DC) & Client](../03-gesamtstruktur-dc-client/README.md) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 05: AWS Managed Microsoft AD](../05-aws-managed-ad/README.md)
 
 </div>
