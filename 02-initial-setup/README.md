@@ -6,12 +6,12 @@
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
 -->
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-10%25-orange?style=flat)
+![Phase](https://img.shields.io/badge/Phase-Erledigt-brightgreen?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-100%25-brightgreen?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
 
-**[Ziel](#-ziel) · [Netzwerk](#-schritt-1-bis-5-netzwerkgrundlage) · [Checkliste](#-checkliste)**
+**[Ziel](#-ziel) · [Netzwerk](#-schritt-1-bis-5-netzwerkgrundlage) · [Nachweise](#️-nachweise) · [Checkliste](#-checkliste)**
 
 </div>
 
@@ -90,20 +90,41 @@ Zwei Security Groups, Regeln stehen bereits im [Setup-Sheet](../01-planung/setup
 
 <br>
 
+## 🖼️ Nachweise
+
+<details open>
+<summary><strong>Screenshots anzeigen</strong></summary>
+
+<br>
+
+| Screenshot | Beschreibung |
+|---|---|
+| [01-vpc-uebersicht.png](./00-screenshots/01-vpc-uebersicht.png) | VPC `M159-vpc` mit CIDR `10.0.0.0/16` |
+| [02-subnetze.png](./00-screenshots/02-subnetze.png) | Alle vier Subnetze mit CIDRs und Availability Zones |
+| [03-routing-tabelle.png](./00-screenshots/03-routing-tabelle.png) | Routentabelle `M159-rt-public` mit Route zum Internet Gateway |
+| [04-security-group-dc.png](./00-screenshots/04-security-group-dc.png) | Security Group `M159-sg-dc` mit Inbound-Regeln |
+| [05-security-group-clients.png](./00-screenshots/05-security-group-clients.png) | Security Group `M159-sg-clients` mit Inbound-Regeln |
+| [06-ec2-instanzen-und-ips.png](./00-screenshots/06-ec2-instanzen-und-ips.png) | Alle drei EC2-Instanzen inkl. privater IP, Public IP und Elastic IP |
+| [07-rdp-client01.png](./00-screenshots/07-rdp-client01.png) | RDP-Verbindung zu Client01 mit gesetztem Hostnamen, ipconfig und Ping-Test |
+
+</details>
+
+<br>
+
 ## ✅ Checkliste
 
-- [ ] AWS-Zugriff geprueft
-- [ ] VPC erstellt (`10.0.0.0/16`) inkl. Internet Gateway
-- [ ] 4 Subnetze erstellt, Routentabellen gesetzt
-- [ ] 2 Security Groups erstellt
-- [ ] Key Pair erstellt
-- [ ] DC erstellt (Core, privates Subnetz)
-- [ ] Client erstellt (Desktop, oeffentliches Subnetz)
-- [ ] Admin Center erstellt (Desktop, oeffentliches Subnetz)
-- [ ] Windows-Grundkonfiguration auf allen drei Instanzen
-- [ ] Screenshots/Nachweise abgelegt
-- [ ] `ki-log.md` ausgefuellt
-- [ ] Setup-Sheet mit effektiven VPC-ID/Elastic IPs nachgefuehrt
+- [x] AWS-Zugriff geprueft
+- [x] VPC erstellt (`10.0.0.0/16`) inkl. Internet Gateway
+- [x] 4 Subnetze erstellt, Routentabellen gesetzt
+- [x] 2 Security Groups erstellt
+- [x] Key Pair erstellt
+- [x] DC erstellt (Core, privates Subnetz, IP `10.0.128.11` statt `10.0.128.10`, siehe Setup-Sheet)
+- [x] Client erstellt (Desktop, oeffentliches Subnetz)
+- [x] Admin Center erstellt (Desktop, oeffentliches Subnetz)
+- [x] Windows-Grundkonfiguration auf allen drei Instanzen
+- [x] Screenshots/Nachweise abgelegt
+- [x] `ki-log.md` ausgefuellt
+- [x] Setup-Sheet mit effektiven VPC-ID/Elastic IPs nachgefuehrt
 
 <br>
 

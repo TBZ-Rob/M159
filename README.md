@@ -3,7 +3,7 @@
 # 🗂️ M159: Directoryservices | Projekt Contoso
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-8%25-orange?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-18%25-orange?style=flat)
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-1f6feb?style=flat)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-8957e5?style=flat)
 
@@ -37,8 +37,8 @@ gantt
     title       M159 Zeitplan (dienstags, 3 Netto-Lektionen)
 
     section Block 1
-    01 Planung                         :active, t1, 2026-08-18, 1d
-    02 Initial Setup                   :t2, 2026-08-25, 1d
+    01 Planung                         :done, t1, 2026-08-18, 1d
+    02 Initial Setup                   :done, t2, 2026-08-25, 1d
     03 Gesamtstruktur und Client       :t3, 2026-09-01, 1d
     04 Freigaben und Berechtigungen    :t4, 2026-09-08, 1d
     Checkpoint Zeitstand pruefen       :milestone, cp, 2026-09-08, 0d
@@ -60,8 +60,8 @@ gantt
 
 | # | Datum | Auftrag | Status |
 |---|---|---|---|
-| 1 | Di, 18.08.2026 | [01: Planung](./01-planung/) | 🟡 in Arbeit |
-| 2 | Di, 25.08.2026 | [02: Initial Setup](./02-initial-setup/) | ⬜ offen |
+| 1 | Di, 18.08.2026 | [01: Planung](./01-planung/) | ✅ erledigt |
+| 2 | Di, 25.08.2026 | [02: Initial Setup](./02-initial-setup/) | ✅ erledigt |
 | 3 | Di, 01.09.2026 | [03: Gesamtstruktur (1. DC) & Client](./03-gesamtstruktur-dc-client/) | ⬜ offen |
 | 4 | Di, 08.09.2026 | [04: Freigaben/Berechtigungen](./04-freigaben-berechtigungen/) | ⬜ offen |
 | n/a | n/a | **Checkpoint: Zeitstand prüfen** | n/a |
@@ -81,8 +81,8 @@ gantt
 
 | # | Auftrag | Status | Modul-Auftrag |
 |---|---|---|---|
-| [01](./01-planung/) | Planung | 🟡 in Arbeit | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/01-planung/) |
-| [02](./02-initial-setup/) | Initial Setup | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/02-initial-setup/) |
+| [01](./01-planung/) | Planung | ✅ erledigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/01-planung/) |
+| [02](./02-initial-setup/) | Initial Setup | ✅ erledigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/02-initial-setup/) |
 | [03](./03-gesamtstruktur-dc-client/) | Gesamtstruktur (1. DC) & Client | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/03-neue-gesamtstruktur-und-client/) |
 | [04](./04-freigaben-berechtigungen/) | Freigaben, Laufwerke, Berechtigungen | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/04-freigaben-laufwerke-berechtigungen/) |
 | [05](./05-aws-managed-ad/) | AWS Managed Microsoft AD | ⬜ ans Ende verschoben (Kosten) | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/) |
