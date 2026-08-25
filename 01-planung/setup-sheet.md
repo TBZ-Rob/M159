@@ -88,11 +88,13 @@
 
 | Feld | Wert |
 |---|---|
-| Third-Level-Domäne | `ad.contoso.com` |
+| Third-Level-Domäne | `ad.contoso.com` (erstellt, siehe [Auftrag 03](../03-gesamtstruktur-dc-client/README.md)) |
+| NetBIOS-Name | `AD` |
 | Öffentlicher UPN-Suffix (später) | `contoso-robin.dynv6.net` |
-| Domänenadministrator | Administrator |
+| DNS-Forwarder | `9.9.9.9` |
+| Domänenadministrator | Administrator (`AD\Administrator`) |
 | Kennwort Domänenadministrator | _siehe Passwort-Manager_ |
-| Kennwort Demote | _siehe Passwort-Manager_ |
+| Kennwort DSRM (Demote) | _siehe Passwort-Manager_ |
 
 ### Azure AD (Entra ID)
 
