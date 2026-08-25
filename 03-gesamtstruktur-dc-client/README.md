@@ -38,6 +38,8 @@ Install-ADDSForest -DomainName "ad.contoso.com" -DomainNetbiosName "AD" -Install
 
 Das DSRM-Passwort (Safe Mode Administrator Password) wird nur im Notfall (AD-Wiederherstellung) benötigt und ist sicher im Passwort-Manager abgelegt, nicht im Repo. Der Erfolg der Beförderung wurde über `Get-ADDomain` bestätigt (liefert die Domain-Infos ohne Fehler).
 
+![Get-ADDomain Bestätigung](./00-screenshots/01-get-addomain.png)
+
 </details>
 
 <details open>
@@ -51,12 +53,20 @@ Auf DC01:
 - Der A-Record für Client01 wurde nicht automatisch erstellt, sondern musste über `ipconfig /registerdns` auf Client01 aktiv angestossen werden.
 - Vorwärts- und Rückwärtsauflösung für beide Server mit `nslookup` erfolgreich getestet.
 
+![Reverse-Lookupzonen](./00-screenshots/02-dns-reverse-zonen.png)
+
+![nslookup DC01](./00-screenshots/03-nslookup-dc01.png)
+
+![nslookup Client01](./00-screenshots/04-nslookup-client01.png)
+
 </details>
 
 <details open>
 <summary><strong>3. AD Recycle Bin</strong></summary>
 
 Aktiviert mit `Enable-ADOptionalFeature -Identity 'Recycle Bin Feature' -Scope ForestOrConfigurationSet -Target 'ad.contoso.com'` (unumkehrbar, deshalb bewusst früh gemacht). Über `Get-ADOptionalFeature` mit gefülltem `EnabledScopes` bestätigt.
+
+![AD Recycle Bin aktiviert](./00-screenshots/05-recycle-bin.png)
 
 </details>
 
@@ -69,6 +79,10 @@ Auf beiden Clients (Client01, AdminCenter01) gleiches Vorgehen:
 - Domänenbeitritt mit `Add-Computer -DomainName "ad.contoso.com" -Credential (Get-Credential) -Restart`, angemeldet als `AD\Administrator` (nicht der lokale Administrator).
 - Nach Neustart Beitritt über `Get-ComputerInfo` verifiziert (`CsPartOfDomain = True`, `CsDomain = ad.contoso.com`).
 
+![Domänenbeitritt Client01](./00-screenshots/06a-domain-beitritt-client01.png)
+
+![Domänenbeitritt AdminCenter01](./00-screenshots/06b-domain-beitritt-admincenter01.png)
+
 </details>
 
 <details open>
@@ -80,7 +94,12 @@ Umgesetztes Modell (Begründung siehe [entscheidungsprotokoll.md](./entscheidung
 - Zwei Testbenutzer erstellt (`testadmin`, `testuser`) und den jeweiligen Gruppen zugewiesen (`Add-ADGroupMember`).
 - Auf DC01 (Domain Controller, keine lokale "Remote Desktop Users"-Gruppe vorhanden): `RDP-Admins` in die domänenweite Gruppe `Remote Desktop Users` aufgenommen (`Add-ADGroupMember -Identity "Remote Desktop Users" -Members "RDP-Admins"`).
 - Auf Client01 und AdminCenter01 (normale Member-Server): beide Gruppen in die lokale Gruppe `Remote Desktop Users` aufgenommen (`Add-LocalGroupMember -Group "Remote Desktop Users" -Member "AD\RDP-Admins"` bzw. `...RDP-Users`).
-- Konzept per RDP-Login getestet: `testuser` auf DC01 korrekt abgelehnt ("not authorized for remote login"), `testadmin` auf DC01 erfolgreich verbunden.
+- Wichtiger Fund beim Testen: Der erste RDP-Versuch mit `testadmin` auf DC01 wurde trotz korrekter Gruppenmitgliedschaft abgelehnt. Ursache war die tatsächliche lokale Sicherheitsrichtlinie "Allow log on through Remote Desktop Services" (`SeRemoteInteractiveLogonRight`), die auf DC01 nur die SID von `Administrators` (`S-1-5-32-544`) enthielt, nicht `Remote Desktop Users` (`S-1-5-32-555`). Über `secedit` geprüft, `Remote Desktop Users` ergänzt und mit `secedit /configure` sowie `gpupdate /force` angewendet, danach funktionierte der Login wie geplant.
+- Konzept per RDP-Login getestet: `testuser` auf DC01 korrekt abgelehnt ("not authorized for remote login"), `testadmin` auf DC01 nach der Richtlinien-Korrektur erfolgreich verbunden, Identität zusätzlich mit `whoami` (`ad\testadmin`) im Terminal bestätigt.
+
+![RDP testuser verweigert](./00-screenshots/07-rdp-testuser-verweigert.png)
+
+![RDP testadmin erfolgreich](./00-screenshots/08-rdp-testadmin-erfolgreich.png)
 
 </details>
 
@@ -100,9 +119,10 @@ Umgesetztes Modell (Begründung siehe [entscheidungsprotokoll.md](./entscheidung
 | [03-nslookup-dc01.png](./00-screenshots/03-nslookup-dc01.png) | Vorwärts-/Rückwärtsauflösung DC01 erfolgreich |
 | [04-nslookup-client01.png](./00-screenshots/04-nslookup-client01.png) | Vorwärts-/Rückwärtsauflösung Client01 erfolgreich |
 | [05-recycle-bin.png](./00-screenshots/05-recycle-bin.png) | `Get-ADOptionalFeature` zeigt aktivierte AD Recycle Bin |
-| [06-domain-beitritt-clients.png](./00-screenshots/06-domain-beitritt-clients.png) | `Get-ComputerInfo` auf Client01 und AdminCenter01, beide `CsPartOfDomain = True` |
+| [06a-domain-beitritt-client01.png](./00-screenshots/06a-domain-beitritt-client01.png) | `Get-ComputerInfo` auf Client01, `CsPartOfDomain = True` |
+| [06b-domain-beitritt-admincenter01.png](./00-screenshots/06b-domain-beitritt-admincenter01.png) | `Get-ComputerInfo` auf AdminCenter01, `CsPartOfDomain = True` |
 | [07-rdp-testuser-verweigert.png](./00-screenshots/07-rdp-testuser-verweigert.png) | `testuser` auf DC01 korrekt abgelehnt |
-| [08-rdp-testadmin-erfolgreich.png](./00-screenshots/08-rdp-testadmin-erfolgreich.png) | `testadmin` auf DC01 erfolgreich angemeldet |
+| [08-rdp-testadmin-erfolgreich.png](./00-screenshots/08-rdp-testadmin-erfolgreich.png) | `testadmin` auf DC01 erfolgreich angemeldet, `whoami` zeigt `ad\testadmin` |
 
 </details>
 

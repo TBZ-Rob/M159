@@ -131,12 +131,18 @@
 
 ## 8. Abteilungen & Benutzer
 
+> Erweitert in [Auftrag 04](../04-freigaben-berechtigungen/README.md) von ursprünglich 4 auf 8 Abteilungen, da die offizielle Berechtigungsmatrix 8 Abteilungen vorsieht. Intern/Extern-Zuordnung für die 4 neuen Abteilungen (Aussendienst, Partner, Informatik, Messemitarbeiter) war in der Matrix nicht explizit vorgegeben und wurde bewusst ergänzt.
+
 | Abteilung | Name der Abteilung | Benutzername | Vorname | Nachname | Kennwort | Bereiche |
 |---|---|---|---|---|---|---|
-| 1 | Sekretariat | _{{USER1}}_ | | | _siehe PM_ | intern |
-| 2 | Buchhaltung | _{{USER2}}_ | | | _siehe PM_ | intern |
-| 3 | GL | _{{USER3}}_ | | | _siehe PM_ | intern |
-| 4 | Promoter | _{{USER4}}_ | | | _siehe PM_ | extern |
+| 1 | Sekretariat | anna.muster | Anna | Muster | _siehe PM_ | intern |
+| 2 | Buchhaltung | peter.keller | Peter | Keller | _siehe PM_ | intern |
+| 3 | GL | sandra.weber | Sandra | Weber | _siehe PM_ | intern |
+| 4 | Promoter | marco.bianchi | Marco | Bianchi | _siehe PM_ | extern |
+| 5 | Aussendienst | laura.frei | Laura | Frei | _siehe PM_ | extern |
+| 6 | Partner | thomas.steiner | Thomas | Steiner | _siehe PM_ | extern |
+| 7 | Informatik | nina.huber | Nina | Huber | _siehe PM_ | intern |
+| 8 | Messemitarbeiter | david.roth | David | Roth | _siehe PM_ | intern |
 
 ## 09. Python-App-Registration (Entra-ID)
 

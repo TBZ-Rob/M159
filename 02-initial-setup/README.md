@@ -43,6 +43,8 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - **Internet Gateway erstellen und am VPC anhängen**, sonst sind auch die "öffentlichen" Subnetze von aussen nicht erreichbar (kein RDP möglich). Das "kein Gateway" aus der Modul-Aufgabenstellung ist so zu verstehen, dass vorerst **kein NAT Gateway** nötig ist (das braucht nur das private Subnetz für ausgehenden Internetzugriff, kostet zusätzlich und kann bei Bedarf später ergänzt werden).
 - Name z. B. `M159-vpc`, damit es im Setup-Sheet unter VPC-ID nachgetragen werden kann.
 
+![VPC Übersicht](./00-screenshots/01-vpc-uebersicht.png)
+
 </details>
 
 <details open>
@@ -67,6 +69,8 @@ Instanz-Platzierung gemäss Setup-Sheet Abschnitt 7 (DC bewusst im privaten Subn
 | Client (`client.ad.contoso.com`, `10.0.0.20`) | `M159-subnet-public1-us-east-1a` | Dient später u. a. als Zwischenstation (RDP) zum DC |
 | Admin Center (`admin.ad.contoso.com`, `10.0.0.30`) | `M159-subnet-public1-us-east-1a` | Muss von aussen erreichbar sein (Auftrag 06) |
 
+![Subnetze](./00-screenshots/02-subnetze.png)
+
 </details>
 
 <details open>
@@ -76,6 +80,12 @@ Zwei Security Groups, Regeln stehen bereits im [Setup-Sheet](../01-planung/setup
 
 - **Domain Controller**: RDP, LDAP, LDAPS, Kerberos, SMB, DNS, RPC (inkl. Ephemeral-Port-Bereich 49152 bis 65535), ICMP, Global Catalog, Global Catalog SSL, Kerberos Password Change. Da der DC im privaten Subnetz liegt, kommt RDP darauf ohnehin nur aus dem VPC selbst an (z. B. vom Client aus), die SG-Regel `0.0.0.0/0` schadet trotzdem nicht, weil sie durch das fehlende Routing zum Internet Gateway faktisch nicht von aussen nutzbar ist.
 - **Clients**: RDP von aussen, restliche Ports (Kerberos, RPC, NetBIOS, LDAP, DNS, SMB, RPC Ephemeral, ICMP) nur aus dem VPC-Adressbereich.
+
+![Routentabelle](./00-screenshots/03-routing-tabelle.png)
+
+![Security Group DC](./00-screenshots/04-security-group-dc.png)
+
+![Security Group Clients](./00-screenshots/05-security-group-clients.png)
 
 </details>
 
@@ -87,6 +97,16 @@ Zwei Security Groups, Regeln stehen bereits im [Setup-Sheet](../01-planung/setup
 - Wird für den ersten Login (Administrator-Passwort entschlüsseln) auf jeder neuen Instanz gebraucht.
 
 </details>
+
+<br>
+
+## 🖥️ EC2-Instanzen und Windows-Grundkonfiguration
+
+Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem IPv6 sowie (bei den beiden Desktop-Instanzen) deaktiviertem IE ESC und angepassten Ordneroptionen konfiguriert. RDP-Zugriffskette getestet: Client01/AdminCenter01 direkt über Elastic IP erreichbar, DC01 nur via Sprung über Client01 (kein öffentlicher Zugriff).
+
+![EC2-Instanzen und IPs](./00-screenshots/06-ec2-instanzen-und-ips.png)
+
+![RDP-Verbindung zu Client01](./00-screenshots/07-rdp-client01.png)
 
 <br>
 
