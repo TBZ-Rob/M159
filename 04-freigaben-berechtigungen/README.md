@@ -186,8 +186,8 @@ _Noch zu ergänzen: alternative Berechtigungsstruktur mit Rollengruppen nach dem
 - [x] Test 2: GL schreibt in Pool
 - [x] Test 3: Promoter kein Zugriff auf Aussendienst
 - [ ] Group Nesting nach AGDLP für mindestens 2 Abteilungen
-- [ ] Screenshots/Nachweise abgelegt
-- [ ] `ki-log.md` ausgefüllt
+- [ ] Screenshots/Nachweise abgelegt (Robin nimmt diese noch auf)
+- [x] `ki-log.md` ausgefüllt
 
 <br>
 

@@ -6,8 +6,8 @@
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
 -->
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-25%25-orange?style=flat)
+![Phase](https://img.shields.io/badge/Phase-Erledigt-brightgreen?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-100%25-brightgreen?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
 
@@ -27,7 +27,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 - [x] Repo-Grundstruktur angelegt
 - [x] Domain-Namensschema festgelegt (Contoso)
-- [ ] Setup-Sheet vollständig ausgefüllt (Platzhalter wie Klasse, Repo-Link, EIPs folgen in Auftrag 02)
+- [x] Setup-Sheet vollständig ausgefüllt (Klasse, Repo-Link, VPC-ID, EIPs; Azure-/Entra-Detailwerte folgen erst mit Auftrag 05/10)
 - [x] Azure for Students aktiviert (Screenshot)
 - [x] Entra-ID-Tenant geprüft (Screenshot, Ergebnis: kein Admin-Zugriff im TBZ-Tenant, dokumentiert)
 - [x] Architektur-Skizze erstellt (siehe unten)

@@ -65,7 +65,7 @@ Instanz-Platzierung gemäss Setup-Sheet Abschnitt 7 (DC bewusst im privaten Subn
 
 | Instanz | Subnetz | Grund |
 |---|---|---|
-| DC (`dc.ad.contoso.com`, `10.0.128.10`) | `M159-subnet-private1-us-east-1a` | Kein direkter Internetzugriff auf den Domain Controller, realistischer/sicherer |
+| DC (`dc.ad.contoso.com`, geplant `10.0.128.10`, effektiv `10.0.128.11`) | `M159-subnet-private1-us-east-1a` | Kein direkter Internetzugriff auf den Domain Controller, realistischer/sicherer |
 | Client (`client.ad.contoso.com`, `10.0.0.20`) | `M159-subnet-public1-us-east-1a` | Dient später u. a. als Zwischenstation (RDP) zum DC |
 | Admin Center (`admin.ad.contoso.com`, `10.0.0.30`) | `M159-subnet-public1-us-east-1a` | Muss von aussen erreichbar sein (Auftrag 06) |
 
