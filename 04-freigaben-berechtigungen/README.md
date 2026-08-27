@@ -7,7 +7,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-80%25-orange?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-95%25-orange?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
 
@@ -142,10 +142,97 @@ Drei geforderte Testszenarien über UNC-Pfad von Client01 aus durchgeführt (daf
 
 </details>
 
-<details>
-<summary><strong>5. Group Nesting nach AGDLP (noch offen)</strong></summary>
+<details open>
+<summary><strong>5. Group Nesting nach AGDLP</strong></summary>
 
-_Noch zu ergänzen: alternative Berechtigungsstruktur mit Rollengruppen nach dem AGDLP-Modell (Account, Global, Domain Local, Permissions), visualisiert dokumentiert, für mindestens zwei Abteilungen umgesetzt._
+Bisher wurden die NTFS-Rechte direkt auf die globalen Abteilungsgruppen (`AD\Buchhaltung`, `AD\Sekretariat`, ...) vergeben. Das funktioniert, ist aber nicht die von Microsoft empfohlene Best Practice: Bei direkter Vergabe muss bei jeder Änderung der Berechtigungsstruktur (z. B. neue lesende Abteilung) `icacls` erneut angepasst werden, und dieselbe globale Gruppe kann an vielen verschiedenen Orten im Dateisystem einzeln eingetragen sein.
+
+**AGDLP** löst das mit einer zusätzlichen Zwischenschicht: Account → **G**lobal Group → **D**omain **L**ocal Group → **P**ermission. Die Berechtigung wird nur einmal auf eine Domain-Local-Gruppe gesetzt, die eigentlichen Mitgliederlisten (globale Abteilungsgruppen) werden nur noch in diese Domain-Local-Gruppe verschachtelt. Genau dieses Muster wurde bereits in [Auftrag 03](../03-gesamtstruktur-dc-client/README.md) für `RDP-Admins`/`RDP-Users` verwendet, hier wird es nun bewusst auch für die Dateiberechtigungen nachgezogen.
+
+**Auswahl der Abteilungen**: Sekretariat und Buchhaltung, weil das laut Matrix die beiden einzigen Ordner mit echtem Querzugriff durch mehrere andere Abteilungen sind (Buchhaltung wird zusätzlich von Sekretariat und Aussendienst gelesen, Sekretariat wird zusätzlich von GL gelesen). Genau bei so einem Mehrfach-Lesezugriff zeigt sich der Nutzen von AGDLP am deutlichsten, bei Abteilungen ohne fremde Leser (z. B. GL, wo nur die eigene Gruppe Zugriff hat) würde eine zusätzliche Domain-Local-Ebene keinen echten Mehrwert bringen.
+
+Für jede der zwei Abteilungen zwei Domain-Local-Gruppen erstellt (getrennt nach Change- und Read-Zugriff, weil Modify und Read & Execute unterschiedliche Rechtestufen sind und nicht in derselben Gruppe vermischt werden sollen):
+
+```powershell
+New-ADGroup -Name "DL-Buchhaltung-Modify" -GroupScope DomainLocal -GroupCategory Security -Path "CN=Users,DC=ad,DC=contoso,DC=com"
+New-ADGroup -Name "DL-Buchhaltung-Read"   -GroupScope DomainLocal -GroupCategory Security -Path "CN=Users,DC=ad,DC=contoso,DC=com"
+New-ADGroup -Name "DL-Sekretariat-Modify" -GroupScope DomainLocal -GroupCategory Security -Path "CN=Users,DC=ad,DC=contoso,DC=com"
+New-ADGroup -Name "DL-Sekretariat-Read"   -GroupScope DomainLocal -GroupCategory Security -Path "CN=Users,DC=ad,DC=contoso,DC=com"
+```
+
+Globale Abteilungsgruppen gemäss Matrix in die passende Domain-Local-Gruppe verschachtelt:
+
+```powershell
+# Eigene Abteilung = Change-Zugriff auf den eigenen Ordner
+Add-ADGroupMember -Identity "DL-Buchhaltung-Modify" -Members "Buchhaltung"
+Add-ADGroupMember -Identity "DL-Sekretariat-Modify" -Members "Sekretariat"
+
+# Laut Matrix lesende Abteilungen = Read-Zugriff
+Add-ADGroupMember -Identity "DL-Buchhaltung-Read" -Members "Sekretariat","Aussendienst"
+Add-ADGroupMember -Identity "DL-Sekretariat-Read" -Members "GL"
+```
+
+Bestehende direkte Grants auf den globalen Gruppen entfernt und stattdessen auf die neuen Domain-Local-Gruppen gesetzt:
+
+```powershell
+icacls "C:\Daten\Abteilungen\Buchhaltung" /remove "AD\Buchhaltung" "AD\Sekretariat" "AD\Aussendienst"
+icacls "C:\Daten\Abteilungen\Buchhaltung" /grant "AD\DL-Buchhaltung-Modify:(M)"
+icacls "C:\Daten\Abteilungen\Buchhaltung" /grant "AD\DL-Buchhaltung-Read:(RX)"
+
+icacls "C:\Daten\Abteilungen\Sekretariat" /remove "AD\Sekretariat" "AD\GL"
+icacls "C:\Daten\Abteilungen\Sekretariat" /grant "AD\DL-Sekretariat-Modify:(M)"
+icacls "C:\Daten\Abteilungen\Sekretariat" /grant "AD\DL-Sekretariat-Read:(RX)"
+```
+
+Anschliessend erneut mit den bestehenden Testbenutzern verifiziert, dass sich am effektiven Zugriff nichts geändert hat (Test 1 aus Schritt 4 mit anna.muster gegen Buchhaltung erneut erfolgreich durchgeführt, nur der Berechtigungspfad im Hintergrund ist jetzt AGDLP-konform).
+
+```mermaid
+flowchart LR
+    subgraph Accounts["Accounts"]
+        anna["anna.muster"]
+        peter["peter.keller"]
+        laura["laura.frei"]
+        sandra["sandra.weber"]
+    end
+
+    subgraph Global["Global Groups (Abteilung)"]
+        Sek["Sekretariat"]
+        Buch["Buchhaltung"]
+        Aus["Aussendienst"]
+        GL["GL"]
+    end
+
+    subgraph DomainLocal["Domain Local Groups"]
+        DLBM["DL-Buchhaltung-Modify"]
+        DLBR["DL-Buchhaltung-Read"]
+        DLSM["DL-Sekretariat-Modify"]
+        DLSR["DL-Sekretariat-Read"]
+    end
+
+    subgraph Permission["NTFS-Berechtigung"]
+        FBuch["C:\Daten\Abteilungen\Buchhaltung"]
+        FSek["C:\Daten\Abteilungen\Sekretariat"]
+    end
+
+    anna --> Sek
+    peter --> Buch
+    laura --> Aus
+    sandra --> GL
+
+    Buch --> DLBM
+    Sek --> DLBR
+    Aus --> DLBR
+
+    Sek --> DLSM
+    GL --> DLSR
+
+    DLBM -- "(M)" --> FBuch
+    DLBR -- "(RX)" --> FBuch
+    DLSM -- "(M)" --> FSek
+    DLSR -- "(RX)" --> FSek
+```
+
+![AGDLP Group Nesting](./00-screenshots/07-agdlp-nesting.png)
 
 </details>
 
@@ -166,6 +253,7 @@ _Noch zu ergänzen: alternative Berechtigungsstruktur mit Rollengruppen nach dem
 | [04-test-sekretariat-buchhaltung.png](./00-screenshots/04-test-sekretariat-buchhaltung.png) | Test 1: Sekretariat liest Buchhaltung, Schreiben verweigert |
 | [05-test-gl-pool.png](./00-screenshots/05-test-gl-pool.png) | Test 2: GL schreibt erfolgreich in Pool |
 | [06-test-promoter-aussendienst.png](./00-screenshots/06-test-promoter-aussendienst.png) | Test 3: Promoter hat keinen Zugriff auf Aussendienst |
+| [07-agdlp-nesting.png](./00-screenshots/07-agdlp-nesting.png) | AGDLP-Gruppen für Buchhaltung und Sekretariat, `Get-ADGroupMember` der Domain-Local-Gruppen |
 
 </details>
 
@@ -185,8 +273,8 @@ _Noch zu ergänzen: alternative Berechtigungsstruktur mit Rollengruppen nach dem
 - [x] Test 1: Sekretariat liest Buchhaltung
 - [x] Test 2: GL schreibt in Pool
 - [x] Test 3: Promoter kein Zugriff auf Aussendienst
-- [ ] Group Nesting nach AGDLP für mindestens 2 Abteilungen
-- [ ] Screenshots/Nachweise abgelegt (Robin nimmt diese noch auf)
+- [x] Group Nesting nach AGDLP für mindestens 2 Abteilungen (Buchhaltung, Sekretariat)
+- [ ] Screenshots/Nachweise abgelegt (Robin nimmt diese noch auf, siehe 01 bis 07)
 - [x] `ki-log.md` ausgefüllt
 
 <br>
