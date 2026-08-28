@@ -18,8 +18,6 @@
 
 ---
 
-> Von der Planung bis zur Cloud-Integration: eine AD-Umgebung Schritt für Schritt.
-
 ```mermaid
 flowchart LR
     C["💻 Client"] --> DC["🖥️ DC ad.contoso.com"]
@@ -49,12 +47,17 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 | 🔑 Öffentlicher UPN | `contoso-robin.dynv6.net` |
 | 📋 Details | [Setup-Sheet](./01-planung/setup-sheet.md) |
 
+<div align="center">
+
 ```mermaid
+%%{init: {"pie": {"useWidth": 400}}}%%
 pie showData
     title Aufträge-Status (13 total)
     "Erledigt" : 4
     "Offen" : 9
 ```
+
+</div>
 
 <br>
 
