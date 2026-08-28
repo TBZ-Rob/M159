@@ -6,8 +6,8 @@
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
 -->
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-95%25-orange?style=flat)
+![Phase](https://img.shields.io/badge/Phase-Erledigt-brightgreen?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-100%25-brightgreen?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
 
@@ -131,7 +131,7 @@ Drei geforderte Testszenarien über UNC-Pfad von Client01 aus durchgeführt (daf
 |---|---|---|
 | Sekretariat liest Buchhaltung | `Get-ChildItem \\dc01.ad.contoso.com\Abteilungen\Buchhaltung` | ✅ Lesen erfolgreich |
 | Sekretariat schreibt in Buchhaltung | `New-Item \\dc01.ad.contoso.com\Abteilungen\Buchhaltung\test.txt` | ✅ korrekt verweigert ("Access is denied") |
-| GL schreibt in Pool | `New-Item \\dc01.ad.contoso.com\Pool\test-gl.txt` | ✅ erfolgreich |
+| GL schreibt in Pool | `New-Item \\dc01.ad.contoso.com\Pool\test-gl-2.txt` | ✅ erfolgreich (Dateiname mit `-2` ergänzt, da `test-gl.txt` aus einem früheren Testlauf bereits existierte) |
 | Promoter sieht Aussendienst | `Get-ChildItem \\dc01.ad.contoso.com\Abteilungen\Aussendienst` | ✅ korrekt verweigert (ABE blendet Ordner aus, "Could not find a part of the path") |
 
 ![Test Sekretariat liest Buchhaltung](./00-screenshots/04-test-sekretariat-buchhaltung.png)
@@ -274,7 +274,7 @@ flowchart LR
 - [x] Test 2: GL schreibt in Pool
 - [x] Test 3: Promoter kein Zugriff auf Aussendienst
 - [x] Group Nesting nach AGDLP für mindestens 2 Abteilungen (Buchhaltung, Sekretariat)
-- [ ] Screenshots/Nachweise abgelegt (Robin nimmt diese noch auf, siehe 01 bis 07)
+- [x] Screenshots/Nachweise abgelegt
 - [x] `ki-log.md` ausgefüllt
 
 <br>

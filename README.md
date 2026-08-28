@@ -3,7 +3,7 @@
 # 🗂️ M159: Directoryservices | Projekt Contoso
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-30%25-orange?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-31%25-orange?style=flat)
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-1f6feb?style=flat)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-8957e5?style=flat)
 
@@ -40,7 +40,7 @@ gantt
     01 Planung                         :done, t1, 2026-08-18, 1d
     02 Initial Setup                   :done, t2, 2026-08-25, 1d
     03 Gesamtstruktur und Client       :done, t3, 2026-09-01, 1d
-    04 Freigaben und Berechtigungen    :active, t4, 2026-09-08, 1d
+    04 Freigaben und Berechtigungen    :done, t4, 2026-09-08, 1d
     Checkpoint Zeitstand pruefen       :milestone, cp, 2026-09-08, 0d
 
     section Block 2
@@ -63,7 +63,7 @@ gantt
 | 1 | Di, 18.08.2026 | [01: Planung](./01-planung/README.md) | ✅ erledigt |
 | 2 | Di, 25.08.2026 | [02: Initial Setup](./02-initial-setup/README.md) | ✅ erledigt |
 | 3 | Di, 01.09.2026 | [03: Gesamtstruktur (1. DC) & Client](./03-gesamtstruktur-dc-client/README.md) | ✅ erledigt |
-| 4 | Di, 08.09.2026 | [04: Freigaben/Berechtigungen](./04-freigaben-berechtigungen/README.md) | 🟡 in Arbeit |
+| 4 | Di, 08.09.2026 | [04: Freigaben/Berechtigungen](./04-freigaben-berechtigungen/README.md) | ✅ erledigt |
 | n/a | n/a | **Checkpoint: Zeitstand prüfen** | n/a |
 | 5 | Di, 15.09.2026 | [07: DIT & GPOs](./07-dit-gpos/README.md) | ⬜ offen |
 | 6 | Di, 22.09.2026 | [08: Suche im Directory](./08-suche-im-directory/README.md) | ⬜ offen |
@@ -84,7 +84,7 @@ gantt
 | [01](./01-planung/README.md) | Planung | ✅ erledigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/01-planung/) |
 | [02](./02-initial-setup/README.md) | Initial Setup | ✅ erledigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/02-initial-setup/) |
 | [03](./03-gesamtstruktur-dc-client/README.md) | Gesamtstruktur (1. DC) & Client | ✅ erledigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/03-neue-gesamtstruktur-und-client/) |
-| [04](./04-freigaben-berechtigungen/README.md) | Freigaben, Laufwerke, Berechtigungen | 🟡 in Arbeit | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/04-freigaben-laufwerke-berechtigungen/) |
+| [04](./04-freigaben-berechtigungen/README.md) | Freigaben, Laufwerke, Berechtigungen | ✅ erledigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/04-freigaben-laufwerke-berechtigungen/) |
 | [05](./05-aws-managed-ad/README.md) | AWS Managed Microsoft AD | ⬜ ans Ende verschoben (Kosten) | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/) |
 | [06](./06-rsat-admin-center/README.md) | RSAT & Admin Center V2 | ⬜ ans Ende verschoben (Kosten) | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/06-rsat-admin-center-v2/) |
 | [07](./07-dit-gpos/README.md) | DIT & GPOs | ⬜ offen | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/07-dit-gpos/) |
