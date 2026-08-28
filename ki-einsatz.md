@@ -4,7 +4,7 @@
 
 ![Gültig für](https://img.shields.io/badge/Gültig%20für-Gesamtes%20Repo-1f6feb?style=flat)
 
-**Zentrale Übersicht, wie KI in diesem Projekt eingesetzt wird. Verlinkt aus jedem `ki-log.md`.**
+**Zentrale Übersicht, wie KI in diesem Projekt eingesetzt wird.**
 
 </div>
 
@@ -49,7 +49,7 @@ Konkrete Befehle (z. B. `New-ADGroup`, `icacls`, `Set-SmbShare`) wurden von der 
 <details open>
 <summary><strong>🖼️ Screenshots (Benennung, Einordnung, Ablage)</strong></summary>
 
-Screenshots werden ausschliesslich von Robin selbst erstellt (Konsole, PowerShell, RDP-Sitzungen), die KI kann keine eigenen Screenshots der AWS-/AD-Umgebung machen. Die KI übernimmt das Umbenennen nach dem Repo-Schema, das Verschieben in den korrekten `00-screenshots`-Ordner des jeweiligen Auftrags sowie die inhaltliche Prüfung (passt der Screenshot zum behaupteten Ergebnis, ist der richtige Befehl/Server sichtbar), bevor er im README verlinkt wird.
+Screenshots werden ausschliesslich selbst erstellt (Konsole, PowerShell, RDP-Sitzungen), die KI kann keine eigenen Screenshots der AWS-/AD-Umgebung machen. Die KI übernimmt das Umbenennen nach dem Repo-Schema, das Verschieben in den korrekten `00-screenshots`-Ordner des jeweiligen Auftrags sowie die inhaltliche Prüfung (passt der Screenshot zum behaupteten Ergebnis, ist der richtige Befehl/Server sichtbar), bevor er im README verlinkt wird.
 
 </details>
 
@@ -57,10 +57,10 @@ Screenshots werden ausschliesslich von Robin selbst erstellt (Konsole, PowerShel
 
 ## ⚠️ Wichtig: Was die KI nicht tut
 
-- Keine Befehle direkt auf den AWS-/AD-Systemen ausführen (kein Zugriff), alles wird von Robin ausgeführt und zurückgemeldet.
+- Keine Befehle direkt auf den AWS-/AD-Systemen ausführen (kein Zugriff), alles wird selbst ausgeführt und der KI zurückgemeldet.
 - Keine Screenshots oder Testergebnisse erfinden oder Schritte als erledigt markieren, die nicht tatsächlich durchgeführt wurden.
-- Keine git-Operationen (commit, push) durchführen, das bleibt bei Robin.
-- Keine Dateien auf dem lokalen Rechner löschen (technische Einschränkung der Geräte-Anbindung), auch das bleibt bei Robin.
+- Keine git-Operationen (commit, push) durchführen, das bleibt Handarbeit.
+- Keine Dateien auf dem lokalen Rechner löschen (technische Einschränkung der Geräte-Anbindung), auch das bleibt Handarbeit.
 - Bei Entscheidungen, die inhaltliches Wissen über den bisherigen Projektverlauf voraussetzen (z. B. welcher Auftrag tatsächlich fertig ist), soll die KI das selbst anhand der Dokumentation und des bisherigen Gesprächsverlaufs bestimmen, statt bei jeder Kleinigkeit nachzufragen.
 
 <br>
