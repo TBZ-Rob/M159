@@ -31,13 +31,15 @@ flowchart LR
 
 Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AWS Managed Microsoft AD und Anbindung an Microsoft Entra ID.
 
-| Technologie | Einsatz |
-|---|---|
-| ![AWS](https://img.shields.io/badge/-AWS%20EC2-FF9900?style=flat-square&logo=amazonaws&logoColor=white) | Cloud-Hosting der gesamten AD-Umgebung |
-| ![PowerShell](https://img.shields.io/badge/-PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white) | Automatisierung, AD-/DNS-/NTFS-Verwaltung |
-| ![Active Directory](https://img.shields.io/badge/-Active%20Directory-0078D4?style=flat-square&logo=windows&logoColor=white) | Domain Services, Gruppen, Berechtigungen, GPOs |
-| ![Entra ID](https://img.shields.io/badge/-Microsoft%20Entra%20ID-0078D4?style=flat-square&logo=microsoftazure&logoColor=white) | Cloud-Identity, Sync via Entra Connect |
-| ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white) | Versionierung, Dokumentation |
+![AWS](https://img.shields.io/badge/-AWS%20EC2-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+![PowerShell](https://img.shields.io/badge/-PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white)
+![Active Directory](https://img.shields.io/badge/-Active%20Directory-0078D4?style=flat-square&logo=windows&logoColor=white)
+![Entra ID](https://img.shields.io/badge/-Microsoft%20Entra%20ID-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
+![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white)
+
+<table>
+<tr>
+<td valign="top" width="55%">
 
 | | |
 |---|---|
@@ -47,14 +49,17 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 | 🔑 Öffentlicher UPN | `contoso-robin.dynv6.net` |
 | 📋 Details | [Setup-Sheet](./01-planung/setup-sheet.md) |
 
-<div align="center">
+</td>
+<td valign="top" width="45%" align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%284%29%22%2C%22Offen%20%289%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B4%2C9%5D%2C%22backgroundColor%22%3A%5B%22%232ea44f%22%2C%22%238b949e%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%C3%A4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=480&height=280&backgroundColor=transparent&format=png&version=4">
-  <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%284%29%22%2C%22Offen%20%289%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B4%2C9%5D%2C%22backgroundColor%22%3A%5B%22%232ea44f%22%2C%22%238b949e%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%C3%A4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=480&height=280&backgroundColor=transparent&format=png&version=4" alt="Aufträge-Status: 4 von 13 erledigt" width="480">
+  <source media="(prefers-color-scheme: dark)" srcset="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%284%29%22%2C%22Offen%20%289%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B4%2C9%5D%2C%22backgroundColor%22%3A%5B%22%232ea44f%22%2C%22%238b949e%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%C3%A4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=380&height=220&backgroundColor=transparent&format=png&version=4">
+  <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%284%29%22%2C%22Offen%20%289%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B4%2C9%5D%2C%22backgroundColor%22%3A%5B%22%232ea44f%22%2C%22%238b949e%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%C3%A4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=380&height=220&backgroundColor=transparent&format=png&version=4" alt="Aufträge-Status: 4 von 13 erledigt" width="380">
 </picture>
 
-</div>
+</td>
+</tr>
+</table>
 
 <br>
 
