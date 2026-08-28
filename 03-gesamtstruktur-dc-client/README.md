@@ -204,6 +204,7 @@ Umgesetztes Modell (Begründung siehe [entscheidungsprotokoll.md](./entscheidung
 | [ki-log.md](./ki-log.md) | KI-Nutzung in diesem Auftrag |
 | [setup-sheet.md](../01-planung/setup-sheet.md) | Netzwerk-/Instanzdaten (DC01-IP etc.) |
 | [Auftragsstellung (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/03-neue-gesamtstruktur-und-client/) | Offizielle Aufgabenstellung |
+| [Fragenkatalog (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/03-neue-gesamtstruktur-und-client/fragen.html) | Vorbereitung mündlicher Nachweis |
 
 <br>
 

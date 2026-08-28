@@ -125,6 +125,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 | Ordner | Inhalt |
 |---|---|
 | [`00-files/`](./00-files/) | Allgemeine Unterlagen (Modul-PDFs, Notizen, Sonstiges) |
+| [Kompetenzmatrix LB2](./00-files/modul-pdfs/kompetenzmatrix-lb2.pdf) | Bewertungskriterien und Notenberechnung je Auftrag |
 | [`kompetenznachweis/`](./kompetenznachweis/) | Vorbereitung mündlicher Nachweis, Gesamt-Reflexion |
 
 <br>

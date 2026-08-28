@@ -42,6 +42,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 |---|---|
 | [ki-log.md](./ki-log.md) | KI-Nutzung in diesem Auftrag |
 | [Auftragsstellung (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/12-netzlaufwerk-to-azure-migration/) | Offizielle Aufgabenstellung |
+| [Fragenkatalog (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/12-netzlaufwerk-to-azure-migration/fragen.html) | Vorbereitung mündlicher Nachweis |
 
 <br>
 

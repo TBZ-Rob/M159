@@ -138,6 +138,7 @@ Details und Vorgehen bei Fehlschlag: [cloud-readiness.md](./cloud-readiness.md)
 | [entscheidungsprotokoll.md](./entscheidungsprotokoll.md) | Begründung Domain-Namensschema |
 | [ki-log.md](./ki-log.md) | KI-Nutzung in diesem Auftrag |
 | [Auftragsstellung (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/01-planung/) | Offizielle Aufgabenstellung |
+| [Fragenkatalog (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/01-planung/fragen.html) | Vorbereitung mündlicher Nachweis |
 
 <br>
 
