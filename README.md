@@ -8,10 +8,10 @@
 
 <div align="center">
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-31%25-orange?style=flat)
+![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-31%25-d29922?style=flat)
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-1b7f79?style=flat)
-![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-c2740c?style=flat)
+![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-d29922?style=flat)
 
 **[Zeitplan](#zeitplan) · [Aufträge](#aufträge-übersicht) · [Architektur](./01-planung/README.md#architektur) · [Setup-Sheet](./01-planung/setup-sheet.md) · [KI-Nutzung](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html)**
 
