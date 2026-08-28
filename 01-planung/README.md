@@ -8,8 +8,8 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-brightgreen?style=flat)
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-100%25-brightgreen?style=flat)
-![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
-![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
+![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1b7f79?style=flat)
+![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8250df?style=flat)
 
 **[Ziel](#ziel) · [Checkliste](#checkliste) · [Namensschema](#namensschema-festlegen) · [Architektur](#architektur) · [Begriffe](#begriffsklärungen) · [Nachweise](#nachweise)**
 

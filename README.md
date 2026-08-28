@@ -1,20 +1,17 @@
 <div align="right">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://tbz.ch/wp-content/uploads/2026/04/TBZ-Logo-invertiert.svg">
-  <img src="https://tbz.ch/wp-content/uploads/2026/04/TBZ-Logo.svg" alt="TBZ Technische Berufsschule Zürich" width="140">
-</picture>
+<img src="./00-files/assets/tbz-logo-purple.png" alt="TBZ Technische Berufsschule Zürich" width="140">
 
 </div>
 
-# 🗂️ M159: Directoryservices | Projekt Contoso
+# M159: Directoryservices | Projekt Contoso
 
 <div align="center">
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-31%25-orange?style=flat)
-![Domain](https://img.shields.io/badge/Domain-contoso.com-1f6feb?style=flat)
-![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-8957e5?style=flat)
+![Domain](https://img.shields.io/badge/Domain-contoso.com-1b7f79?style=flat)
+![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-c2740c?style=flat)
 
 **[Zeitplan](#zeitplan) · [Aufträge](#aufträge-übersicht) · [Architektur](./01-planung/README.md#architektur) · [Setup-Sheet](./01-planung/setup-sheet.md) · [KI-Nutzung](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html)**
 
@@ -65,9 +62,9 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 ## Zeitplan
 
-🟥 Heutiges Datum
+🟨 Heutiges Datum
 
-🟦 Aktueller Stand (2 Aufträge im Vorsprung)
+🟪 Aktueller Stand (2 Aufträge im Vorsprung)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./00-files/assets/zeitplan-dark.png">
