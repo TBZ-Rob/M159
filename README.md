@@ -1,6 +1,6 @@
 <div align="right">
 
-<img src="./00-files/assets/tbz-logo-purple.png" alt="TBZ Technische Berufsschule Zürich" width="140">
+<img src="./00-files/assets/tbz-logo-purple.png" alt="TBZ Technische Berufsschule Zürich" width="190">
 
 </div>
 
