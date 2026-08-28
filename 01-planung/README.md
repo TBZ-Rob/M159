@@ -11,7 +11,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
 
-**[Ziel](#ziel) · [Checkliste](#checkliste) · [Namensschema](#2-namensschema-festlegen) · [Architektur](#architektur) · [Begriffe](#begriffsklärungen) · [Nachweise](#nachweise)**
+**[Ziel](#ziel) · [Checkliste](#checkliste) · [Namensschema](#namensschema-festlegen) · [Architektur](#architektur) · [Begriffe](#begriffsklärungen) · [Nachweise](#nachweise)**
 
 </div>
 
@@ -45,7 +45,7 @@ Repo-Grundgerüst mit einheitlichem Schema pro Auftrag (README, ki-log, ggf. Ent
 </details>
 
 <details open>
-<summary><strong>2. Namensschema festlegen</strong></summary>
+<summary><strong id="namensschema-festlegen">2. Namensschema festlegen</strong></summary>
 
 Als Domain-Basis wurde **Contoso** gewählt, nämlich die von Microsoft in praktisch jeder AD-/Azure-/Entra-Dokumentation verwendete fiktive Beispielfirma. Vorteil: sofort erkennbares, branchenübliches Namensschema statt modul-spezifischem Namen. Abwägung siehe [entscheidungsprotokoll.md](./entscheidungsprotokoll.md).
 

@@ -26,8 +26,14 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 ## Kernschritte
 
 - Neue EC2-Client-Instanz innerhalb AWS Managed AD.
-- RSAT installieren: `Install-WindowsFeature -Name RSAT -IncludeAllSubFeature -IncludeManagementTools`.
-- Windows Admin Center V2 installieren, dabei die Setup-EXE bei Bedarf suchen: `Get-ChildItem -Recurse -Path C:\ -Filter *AdminCenter*.exe -ErrorAction SilentlyContinue`.
+- RSAT installieren, Windows Admin Center V2 installieren (Setup-EXE bei Bedarf suchen):
+
+  ```powershell
+  Install-WindowsFeature -Name RSAT -IncludeAllSubFeature -IncludeManagementTools
+
+  Get-ChildItem -Recurse -Path C:\ -Filter *AdminCenter*.exe -ErrorAction SilentlyContinue
+  ```
+
 - Nur den EC2-AD-DC zum Admin Center hinzufügen (Managed-AD-DCs können laut AWS nicht direkt hinzugefügt werden).
 - WinRM-Ports 5985/5986 nur für die Admin-Center-IP/Subnetz öffnen, **nicht** auf 0.0.0.0/0.
 - Admin Center via HTTPS/RDP von aussen erreichbar machen, Sicherheitsmassnahmen dokumentieren.

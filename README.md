@@ -1,5 +1,10 @@
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://tbz.ch/wp-content/uploads/2026/04/TBZ-Logo-invertiert.svg">
+  <img src="https://tbz.ch/wp-content/uploads/2026/04/TBZ-Logo.svg" alt="TBZ Technische Berufsschule Zürich" width="180">
+</picture>
+
 # 🗂️ M159: Directoryservices | Projekt Contoso
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
@@ -13,13 +18,36 @@
 
 ---
 
+> Von der Planung bis zur Cloud-Integration: eine AD-Umgebung Schritt für Schritt.
+
+```mermaid
+flowchart LR
+    C["💻 Client"] --> DC["🖥️ DC ad.contoso.com"]
+    DC --> MAD["☁️ AWS Managed AD"]
+    DC --> ENTRA["🔷 Entra ID"]
+
+    click DC "./03-gesamtstruktur-dc-client/" "Auftrag 03 Gesamtstruktur und Client"
+    click MAD "./05-aws-managed-ad/" "Auftrag 05 AWS Managed AD"
+    click ENTRA "./10-entra-connect/" "Auftrag 10 Entra Connect"
+```
+
+<br>
+
 ## Kurzüberblick
 
 Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AWS Managed Microsoft AD und Anbindung an Microsoft Entra ID.
 
+| Technologie | Einsatz |
+|---|---|
+| ![AWS](https://img.shields.io/badge/-AWS%20EC2-FF9900?style=flat-square&logo=amazonaws&logoColor=white) | Cloud-Hosting der gesamten AD-Umgebung |
+| ![PowerShell](https://img.shields.io/badge/-PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white) | Automatisierung, AD-/DNS-/NTFS-Verwaltung |
+| ![Active Directory](https://img.shields.io/badge/-Active%20Directory-0078D4?style=flat-square&logo=windows&logoColor=white) | Domain Services, Gruppen, Berechtigungen, GPOs |
+| ![Entra ID](https://img.shields.io/badge/-Microsoft%20Entra%20ID-0078D4?style=flat-square&logo=microsoftazure&logoColor=white) | Cloud-Identity, Sync via Entra Connect |
+| ![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white) | Versionierung, Dokumentation |
+
 <table>
 <tr>
-<td valign="top" width="55%">
+<td valign="top" width="40%">
 
 | | |
 |---|---|
@@ -30,7 +58,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 | 📋 Details | [Setup-Sheet](./01-planung/setup-sheet.md) |
 
 </td>
-<td valign="top" width="45%">
+<td valign="top" width="60%">
 
 ```mermaid
 pie showData

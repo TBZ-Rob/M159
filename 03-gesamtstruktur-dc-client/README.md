@@ -49,7 +49,12 @@ Das DSRM-Passwort (Safe Mode Administrator Password) wird nur im Notfall (AD-Wie
 
 Auf DC01:
 
-- Forwarder auf `9.9.9.9` gesetzt (`Set-DnsServerForwarder -IPAddress 9.9.9.9`), damit externe Namen aufgelöst werden können.
+- Forwarder auf `9.9.9.9` gesetzt, damit externe Namen aufgelöst werden können:
+
+  ```powershell
+  Set-DnsServerForwarder -IPAddress 9.9.9.9
+  ```
+
 - Reverse-Lookupzonen für beide relevanten Subnetze erstellt (`Add-DnsServerPrimaryZone -NetworkID ... -ReplicationScope "Forest"`): `10.0.128.0/20` (DC01, private Subnetze) und `10.0.0.0/20` (Client01/AdminCenter01, öffentliches Subnetz).
 - PTR-Records für DC01 und Client01 manuell eingetragen (`Add-DnsServerResourceRecordPtr`).
 - Der A-Record für Client01 wurde nicht automatisch erstellt, sondern musste über `ipconfig /registerdns` auf Client01 aktiv angestossen werden.
@@ -72,7 +77,13 @@ Auf DC01:
 <details open>
 <summary><strong>3. AD Recycle Bin</strong></summary>
 
-Aktiviert mit `Enable-ADOptionalFeature -Identity 'Recycle Bin Feature' -Scope ForestOrConfigurationSet -Target 'ad.contoso.com'` (unumkehrbar, deshalb bewusst früh gemacht). Über `Get-ADOptionalFeature` mit gefülltem `EnabledScopes` bestätigt.
+Aktiviert (unumkehrbar, deshalb bewusst früh gemacht):
+
+```powershell
+Enable-ADOptionalFeature -Identity 'Recycle Bin Feature' -Scope ForestOrConfigurationSet -Target 'ad.contoso.com'
+```
+
+Über `Get-ADOptionalFeature` mit gefülltem `EnabledScopes` bestätigt.
 
 <img src="./00-screenshots/05-recycle-bin.png" width="850" alt="AD Recycle Bin aktiviert">
 
@@ -85,8 +96,15 @@ Aktiviert mit `Enable-ADOptionalFeature -Identity 'Recycle Bin Feature' -Scope F
 
 Auf beiden Clients (Client01, AdminCenter01) gleiches Vorgehen:
 
-- DNS-Server der Netzwerkkarte auf DC01 (`10.0.128.11`) umgestellt: `Set-DnsClientServerAddress -InterfaceAlias "Ethernet 3" -ServerAddresses "10.0.128.11"`.
-- Domänenbeitritt mit `Add-Computer -DomainName "ad.contoso.com" -Credential (Get-Credential) -Restart`, angemeldet als `AD\Administrator` (nicht der lokale Administrator).
+- DNS-Server der Netzwerkkarte auf DC01 (`10.0.128.11`) umgestellt.
+- Domänenbeitritt durchgeführt, angemeldet als `AD\Administrator` (nicht der lokale Administrator):
+
+  ```powershell
+  Set-DnsClientServerAddress -InterfaceAlias "Ethernet 3" -ServerAddresses "10.0.128.11"
+
+  Add-Computer -DomainName "ad.contoso.com" -Credential (Get-Credential) -Restart
+  ```
+
 - Nach Neustart Beitritt über `Get-ComputerInfo` verifiziert (`CsPartOfDomain = True`, `CsDomain = ad.contoso.com`).
 
 <img src="./00-screenshots/06a-domain-beitritt-client01.png" width="850" alt="Domänenbeitritt Client01">
@@ -106,8 +124,15 @@ Umgesetztes Modell (Begründung siehe [entscheidungsprotokoll.md](./entscheidung
 
 - Zwei globale Sicherheitsgruppen erstellt: `New-ADGroup -Name "RDP-Admins" ...` und `New-ADGroup -Name "RDP-Users" ...`.
 - Zwei Testbenutzer erstellt (`testadmin`, `testuser`) und den jeweiligen Gruppen zugewiesen (`Add-ADGroupMember`).
-- Auf DC01 (Domain Controller, keine lokale "Remote Desktop Users"-Gruppe vorhanden): `RDP-Admins` in die domänenweite Gruppe `Remote Desktop Users` aufgenommen (`Add-ADGroupMember -Identity "Remote Desktop Users" -Members "RDP-Admins"`).
-- Auf Client01 und AdminCenter01 (normale Member-Server): beide Gruppen in die lokale Gruppe `Remote Desktop Users` aufgenommen (`Add-LocalGroupMember -Group "Remote Desktop Users" -Member "AD\RDP-Admins"` bzw. `...RDP-Users`).
+- Auf DC01 (Domain Controller, keine lokale "Remote Desktop Users"-Gruppe vorhanden): `RDP-Admins` in die domänenweite Gruppe `Remote Desktop Users` aufgenommen.
+- Auf Client01 und AdminCenter01 (normale Member-Server): beide Gruppen in die lokale Gruppe `Remote Desktop Users` aufgenommen (analog für `RDP-Users`).
+
+  ```powershell
+  Add-ADGroupMember -Identity "Remote Desktop Users" -Members "RDP-Admins"
+
+  Add-LocalGroupMember -Group "Remote Desktop Users" -Member "AD\RDP-Admins"
+  ```
+
 - Wichtiger Fund beim Testen: Der erste RDP-Versuch mit `testadmin` auf DC01 wurde trotz korrekter Gruppenmitgliedschaft abgelehnt. Ursache war die tatsächliche lokale Sicherheitsrichtlinie "Allow log on through Remote Desktop Services" (`SeRemoteInteractiveLogonRight`), die auf DC01 nur die SID von `Administrators` (`S-1-5-32-544`) enthielt, nicht `Remote Desktop Users` (`S-1-5-32-555`). Über `secedit` geprüft, `Remote Desktop Users` ergänzt und mit `secedit /configure` sowie `gpupdate /force` angewendet, danach funktionierte der Login wie geplant.
 - Konzept per RDP-Login getestet: `testuser` auf DC01 korrekt abgelehnt ("not authorized for remote login"), `testadmin` auf DC01 nach der Richtlinien-Korrektur erfolgreich verbunden, Identität zusätzlich mit `whoami` (`ad\testadmin`) im Terminal bestätigt.
 
