@@ -3,7 +3,7 @@
 # Auftrag 09: Identity Management & PowerShell Debugging
 
 <!--
-Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
+Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=flat)
@@ -15,13 +15,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
-## Ziel
+<h2 id="ziel"><font color="#8250df">Ziel</font></h2>
 
 > _Noch zu ergänzen, sobald der Auftrag gestartet wird._
 
 <br>
 
-## Checkliste
+<h2 id="checkliste"><font color="#8250df">Checkliste</font></h2>
 
 - [ ] Auftrag gestartet
 - [ ] Umsetzung abgeschlossen
@@ -30,7 +30,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <br>
 
-## Verweise
+<h2 id="verweise"><font color="#8250df">Verweise</font></h2>
 
 | Datei | Inhalt |
 |---|---|

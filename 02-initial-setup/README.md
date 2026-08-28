@@ -3,7 +3,7 @@
 # Auftrag 02: Initial Setup
 
 <!--
-Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
+Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
@@ -17,7 +17,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
-## Ziel
+<h2 id="ziel"><font color="#8250df">Ziel</font></h2>
 
 > AWS-Netzwerkgrundlage aufbauen (VPC, Subnetze, Security Groups) und die drei EC2-Instanzen gemäss [Setup-Sheet](../01-planung/setup-sheet.md) erstellen.
 
@@ -25,7 +25,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 > Werte stammen aus dem bereits ausgefüllten [Setup-Sheet](../01-planung/setup-sheet.md). Genaue Klickpfade in der AWS-Konsole können sich ändern, im Zweifel an der Oberfläche orientieren statt stur dieser Anleitung folgen.
 
-## Schritt 1 bis 5: Netzwerkgrundlage
+<h2 id="schritt-1-bis-5-netzwerkgrundlage"><font color="#8250df">Schritt 1 bis 5: Netzwerkgrundlage</font></h2>
 
 <details open>
 <summary><strong>Schritt 1: AWS-Zugriff prüfen</strong></summary>
@@ -110,7 +110,7 @@ Zwei Security Groups, Regeln stehen bereits im [Setup-Sheet](../01-planung/setup
 
 <br>
 
-## EC2-Instanzen und Windows-Grundkonfiguration
+<h2 id="ec2-instanzen-und-windows-grundkonfiguration"><font color="#8250df">EC2-Instanzen und Windows-Grundkonfiguration</font></h2>
 
 Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem IPv6 sowie (bei den beiden Desktop-Instanzen) deaktiviertem IE ESC und angepassten Ordneroptionen konfiguriert. RDP-Zugriffskette getestet: Client01/AdminCenter01 direkt über Elastic IP erreichbar, DC01 nur via Sprung über Client01 (kein öffentlicher Zugriff).
 
@@ -124,7 +124,7 @@ Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem 
 
 <br>
 
-## Nachweise
+<h2 id="nachweise"><font color="#8250df">Nachweise</font></h2>
 
 <details open>
 <summary><strong>Screenshots anzeigen</strong></summary>
@@ -145,7 +145,7 @@ Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem 
 
 <br>
 
-## Checkliste
+<h2 id="checkliste"><font color="#8250df">Checkliste</font></h2>
 
 - [x] AWS-Zugriff geprüft
 - [x] VPC erstellt (`10.0.0.0/16`) inkl. Internet Gateway
@@ -162,7 +162,7 @@ Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem 
 
 <br>
 
-## Verweise
+<h2 id="verweise"><font color="#8250df">Verweise</font></h2>
 
 | Datei | Inhalt |
 |---|---|

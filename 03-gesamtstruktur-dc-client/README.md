@@ -3,7 +3,7 @@
 # Auftrag 03: Gesamtstruktur (1. DC) & Client
 
 <!--
-Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
+Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
@@ -17,13 +17,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
-## Ziel
+<h2 id="ziel"><font color="#8250df">Ziel</font></h2>
 
 > Erste Domäne (`ad.contoso.com`) auf DC01 erstellen, DNS vollständig konfigurieren (Forward-, Reverse-Zonen, PTR-Records), AD Recycle Bin aktivieren, beide Clients (Client01, AdminCenter01) der Domäne beitreten lassen und ein RDP-Berechtigungskonzept über AD-Gruppen umsetzen und testen.
 
 <br>
 
-## Vorgehen
+<h2 id="vorgehen"><font color="#8250df">Vorgehen</font></h2>
 
 <details open>
 <summary><strong>1. AD DS-Rolle und Domänen-Beförderung</strong></summary>
@@ -148,7 +148,7 @@ Umgesetztes Modell (Begründung siehe [entscheidungsprotokoll.md](./entscheidung
 
 <br>
 
-## Nachweise
+<h2 id="nachweise"><font color="#8250df">Nachweise</font></h2>
 
 <details open>
 <summary><strong>Screenshots anzeigen</strong></summary>
@@ -171,7 +171,7 @@ Umgesetztes Modell (Begründung siehe [entscheidungsprotokoll.md](./entscheidung
 
 <br>
 
-## Checkliste
+<h2 id="checkliste"><font color="#8250df">Checkliste</font></h2>
 
 - [x] AD DS-Rolle installiert
 - [x] DC01 zu Domain Controller befördert (`ad.contoso.com`)
@@ -190,7 +190,7 @@ Umgesetztes Modell (Begründung siehe [entscheidungsprotokoll.md](./entscheidung
 
 <br>
 
-## Verweise
+<h2 id="verweise"><font color="#8250df">Verweise</font></h2>
 
 | Datei | Inhalt |
 |---|---|

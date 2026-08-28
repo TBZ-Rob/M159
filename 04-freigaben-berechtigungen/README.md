@@ -3,7 +3,7 @@
 # Auftrag 04: Freigaben, Laufwerke, Berechtigungen
 
 <!--
-Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
+Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
@@ -17,7 +17,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
-## Ziel
+<h2 id="ziel"><font color="#8250df">Ziel</font></h2>
 
 > Benutzer und Gruppen gemäss Abteilungsstruktur anlegen, eine Ordner-/Freigabestruktur mit korrekten Freigabe- und NTFS-Berechtigungen aufbauen, Access-Based Enumeration aktivieren, die Berechtigungen mit drei konkreten Testszenarien verifizieren und die Struktur für mindestens zwei Abteilungen nach dem AGDLP-Konzept verbessern.
 
@@ -25,7 +25,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 > Ordner-/Freigabestruktur und Berechtigungsmatrix stammen aus der offiziellen Auftragsseite (Bild-Tabelle, per Screenshot übernommen). Die Matrix umfasst acht Abteilungen (GL, Aussendienst, Sekretariat, Buchhaltung, Promoter, Partner, Informatik, Messemitarbeiter), das ursprüngliche Setup-Sheet sah nur vier vor, deshalb wurden Gruppen/Benutzer für die restlichen vier bewusst ergänzt (Details siehe Schritt 1).
 
-## Vorgehen
+<h2 id="vorgehen"><font color="#8250df">Vorgehen</font></h2>
 
 <details open>
 <summary><strong>1. Benutzer und Gruppen</strong></summary>
@@ -226,7 +226,7 @@ Die beiden Ordner sind bewusst als zwei separate Diagramme dargestellt, weil die
 
 <br>
 
-## Nachweise
+<h2 id="nachweise"><font color="#8250df">Nachweise</font></h2>
 
 <details open>
 <summary><strong>Screenshots anzeigen</strong></summary>
@@ -247,7 +247,7 @@ Die beiden Ordner sind bewusst als zwei separate Diagramme dargestellt, weil die
 
 <br>
 
-## Checkliste
+<h2 id="checkliste"><font color="#8250df">Checkliste</font></h2>
 
 - [x] 8 Abteilungsgruppen erstellt (statt ursprünglich geplanter 4)
 - [x] Gruppen `Intern`/`Extern` erstellt und alle Abteilungen zugeordnet
@@ -267,7 +267,7 @@ Die beiden Ordner sind bewusst als zwei separate Diagramme dargestellt, weil die
 
 <br>
 
-## Verweise
+<h2 id="verweise"><font color="#8250df">Verweise</font></h2>
 
 | Datei | Inhalt |
 |---|---|

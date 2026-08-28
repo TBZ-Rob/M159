@@ -3,7 +3,7 @@
 # Auftrag 01: Planung
 
 <!--
-Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
+Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
@@ -17,13 +17,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
-## Ziel
+<h2 id="ziel"><font color="#8250df">Ziel</font></h2>
 
 > Detaillierte Projektplanung der AD/Cloud-Umgebung erstellen inkl. Definition aller relevanten Parameter und Nachweis der Cloud-Bereitschaft.
 
 <br>
 
-## Checkliste
+<h2 id="checkliste"><font color="#8250df">Checkliste</font></h2>
 
 - [x] Repo-Grundstruktur angelegt
 - [x] Domain-Namensschema festgelegt (Contoso)
@@ -35,7 +35,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <br>
 
-## Vorgehen
+<h2 id="vorgehen"><font color="#8250df">Vorgehen</font></h2>
 
 <details open>
 <summary><strong>1. Repo & Struktur</strong></summary>
@@ -73,7 +73,7 @@ Azure for Students ist erfolgreich aktiviert. Der Entra-ID-Tenant lässt sich mi
 
 <br>
 
-## Architektur
+<h2 id="architektur"><font color="#8250df">Architektur</font></h2>
 
 Erster Entwurf der Zielumgebung. Details (genaue CIDRs/IPs) folgen in [Auftrag 02](../02-initial-setup/) und stehen im [Setup-Sheet](./setup-sheet.md).
 
@@ -92,7 +92,7 @@ Erster Entwurf der Zielumgebung. Details (genaue CIDRs/IPs) folgen in [Auftrag 0
 
 <br>
 
-## Begriffsklärungen
+<h2 id="begriffsklärungen"><font color="#8250df">Begriffsklärungen</font></h2>
 
 Kurze, selbst recherchierte Erklärungen zu Begriffen aus dem Modul.
 
@@ -105,7 +105,7 @@ Eine VPC ist kein physisches Gerät, sondern ein isolierter, privater Netzwerkab
 
 <br>
 
-## Nachweise
+<h2 id="nachweise"><font color="#8250df">Nachweise</font></h2>
 
 <details>
 <summary><strong>Screenshots anzeigen</strong></summary>
@@ -123,7 +123,7 @@ Details und Vorgehen bei Fehlschlag: [cloud-readiness.md](./cloud-readiness.md)
 
 <br>
 
-## Verweise
+<h2 id="verweise"><font color="#8250df">Verweise</font></h2>
 
 | Datei | Inhalt |
 |---|---|

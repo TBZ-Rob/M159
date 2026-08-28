@@ -24,15 +24,15 @@
 
 <br>
 
-## Kurzüberblick
+<h2 id="kurzüberblick"><font color="#8250df">Kurzüberblick</font></h2>
 
 Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AWS Managed Microsoft AD und Anbindung an Microsoft Entra ID.
 
-![AWS](https://img.shields.io/badge/-AWS%20EC2-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
-![PowerShell](https://img.shields.io/badge/-PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white)
-![Active Directory](https://img.shields.io/badge/-Active%20Directory-0078D4?style=flat-square&logo=windows&logoColor=white)
-![Entra ID](https://img.shields.io/badge/-Microsoft%20Entra%20ID-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS%20EC2-1b7f79?style=flat-square&logo=amazonaws&logoColor=white)
+![PowerShell](https://img.shields.io/badge/-PowerShell-1b7f79?style=flat-square&logo=powershell&logoColor=white)
+![Active Directory](https://img.shields.io/badge/-Active%20Directory-1b7f79?style=flat-square&logo=windows&logoColor=white)
+![Entra ID](https://img.shields.io/badge/-Microsoft%20Entra%20ID-1b7f79?style=flat-square&logo=microsoftazure&logoColor=white)
+![GitHub](https://img.shields.io/badge/-GitHub-1b7f79?style=flat-square&logo=github&logoColor=white)
 
 <table>
 <tr>
@@ -60,7 +60,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 <br>
 
-## Zeitplan
+<h2 id="zeitplan"><font color="#8250df">Zeitplan</font></h2>
 
 🟨 Heutiges Datum
 
@@ -93,7 +93,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 <br>
 
-## Aufträge: Übersicht
+<h2 id="aufträge-übersicht"><font color="#8250df">Aufträge: Übersicht</font></h2>
 
 ### Block 1: Lokale Umgebung
 
@@ -120,7 +120,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 <br>
 
-## Weitere Ordner
+<h2 id="weitere-ordner"><font color="#8250df">Weitere Ordner</font></h2>
 
 | Ordner | Inhalt |
 |---|---|
@@ -129,7 +129,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 <br>
 
-## KI-Nutzung
+<h2 id="ki-nutzung"><font color="#8250df">KI-Nutzung</font></h2>
 
 Der KI-Einsatz in diesem Projekt folgt dem verbindlichen Rahmen aus [`ki-nutzung.md`](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html) des Modul-Repositories. Wie KI konkret in diesem Projekt eingesetzt wird (Dokumentation, Diagramme, Status-Updates, Anleitungen, Screenshots), steht in [ki-einsatz.md](./ki-einsatz.md). Pro Auftrag mit KI-Anteil liegt zusätzlich ein `ki-log.md` mit Prompt, Verifikation und Reflexion vor, siehe zum Beispiel [01-planung/ki-log.md](./01-planung/ki-log.md).
 

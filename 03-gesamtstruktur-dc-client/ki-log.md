@@ -2,8 +2,8 @@
 
 # Auftrag 03: KI-Einsatz
 
-![Phase](https://img.shields.io/badge/Phase-Erledigt-brightgreen?style=flat)
-![Einträge](https://img.shields.io/badge/Eintr%C3%A4ge-1-1f6feb?style=flat)
+![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
+![Einträge](https://img.shields.io/badge/Eintr%C3%A4ge-1-8250df?style=flat)
 
 **📖 [Wie KI in diesem Projekt eingesetzt wird](../ki-einsatz.md)**
 

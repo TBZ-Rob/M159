@@ -2,7 +2,7 @@
 
 # KI-Einsatz im Projekt
 
-![Gültig für](https://img.shields.io/badge/Gültig%20für-Gesamtes%20Repo-1f6feb?style=flat)
+![Gültig für](https://img.shields.io/badge/Gültig%20für-Gesamtes%20Repo-8250df?style=flat)
 
 **Zentrale Übersicht, wie KI in diesem Projekt eingesetzt wird.**
 

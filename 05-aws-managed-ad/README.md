@@ -3,7 +3,7 @@
 # Auftrag 05: AWS Managed Microsoft AD
 
 <!--
-Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
+Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=flat)
@@ -17,13 +17,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 > ⚠️ **Zeitlich bewusst ans Ende verschoben.** AWS Managed AD kostet ca. 18 Dollar pro Woche, siehe [Zeitplan](../README.md#zeitplan). Erst kurz vor der Schlussbesprechung starten, direkt mit [Auftrag 06](../06-rsat-admin-center/) weitermachen, danach die Managed-AD-Domain sofort wieder löschen.
 
-## Ziel
+<h2 id="ziel"><font color="#8250df">Ziel</font></h2>
 
 > AWS Managed Microsoft AD einrichten (Domäne, Ports gemäss [Setup-Sheet](../01-planung/setup-sheet.md)), Conditional Forwarder zur eigenen On-Prem-AD einrichten und einen beidseitigen Trust aufbauen und validieren.
 
 <br>
 
-## Kernschritte
+<h2 id="kernschritte"><font color="#8250df">Kernschritte</font></h2>
 
 - AWS Managed AD Domäne erstellen, Passwort im Setup-Sheet (Passwort-Manager) hinterlegen.
 - Ports gemäss Setup-Sheet sicherstellen.
@@ -33,7 +33,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <br>
 
-## Checkliste
+<h2 id="checkliste"><font color="#8250df">Checkliste</font></h2>
 
 - [ ] Auftrag gestartet (erst kurz vor Schlussbesprechung)
 - [ ] Managed AD Domäne erstellt
@@ -46,7 +46,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <br>
 
-## Verweise
+<h2 id="verweise"><font color="#8250df">Verweise</font></h2>
 
 | Datei | Inhalt |
 |---|---|
