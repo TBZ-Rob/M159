@@ -1,20 +1,9 @@
-<table width="100%">
-<tr>
-<td valign="middle">
-
-# 🗂️ M159: Directoryservices | Projekt Contoso
-
-</td>
-<td valign="middle" align="right" width="190">
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://tbz.ch/wp-content/uploads/2026/04/TBZ-Logo-invertiert.svg">
-  <img src="https://tbz.ch/wp-content/uploads/2026/04/TBZ-Logo.svg" alt="TBZ Technische Berufsschule Zürich" width="160">
+  <img align="right" src="https://tbz.ch/wp-content/uploads/2026/04/TBZ-Logo.svg" alt="TBZ Technische Berufsschule Zürich" width="140">
 </picture>
 
-</td>
-</tr>
-</table>
+# 🗂️ M159: Directoryservices | Projekt Contoso
 
 <div align="center">
 
