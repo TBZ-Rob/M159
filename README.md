@@ -113,7 +113,7 @@ gantt
 
 ## 🤖 KI-Nutzung
 
-Der KI-Einsatz in diesem Projekt folgt dem verbindlichen Rahmen aus [`ki-nutzung.md`](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html) des Modul-Repositories. Pro Auftrag mit KI-Anteil liegt ein `ki-log.md` mit Prompt, Verifikation und Reflexion vor, siehe zum Beispiel [01-planung/ki-log.md](./01-planung/ki-log.md).
+Der KI-Einsatz in diesem Projekt folgt dem verbindlichen Rahmen aus [`ki-nutzung.md`](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html) des Modul-Repositories. Wie KI konkret in diesem Projekt eingesetzt wird (Dokumentation, Diagramme, Status-Updates, Anleitungen, Screenshots), steht in [ki-einsatz.md](./ki-einsatz.md). Pro Auftrag mit KI-Anteil liegt zusätzlich ein `ki-log.md` mit Prompt, Verifikation und Reflexion vor, siehe zum Beispiel [01-planung/ki-log.md](./01-planung/ki-log.md).
 
 <br>
 
