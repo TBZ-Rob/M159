@@ -61,6 +61,10 @@ Als Domain-Basis wurde **Contoso** gewählt, nämlich die von Microsoft in prakt
 
 Azure for Students ist erfolgreich aktiviert. Der Entra-ID-Tenant lässt sich mit dem TBZ-Schul-Account nicht als Admin einsehen (kein Zugriff, dokumentiert), dafür wird in Auftrag 10 ein eigener Tenant benötigt. Details siehe [cloud-readiness.md](./cloud-readiness.md). Wichtig laut Modulvorgabe: **jetzt prüfen, nicht erst später**, da ein Scheitern des Tenants Zeit kostet, die sich später nicht mehr aufholen lässt, genau das haben wir hier frühzeitig erkannt.
 
+![Azure for Students aktiviert](./00-screenshots/01-azure-for-students.png)
+
+![Entra-ID-Tenant kein Admin-Zugriff](./00-screenshots/02-entra-id-tenant.png)
+
 </details>
 
 <br>
