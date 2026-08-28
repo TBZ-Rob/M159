@@ -187,17 +187,18 @@ icacls "C:\Daten\Abteilungen\Sekretariat" /grant "AD\DL-Sekretariat-Read:(RX)"
 Anschliessend erneut mit den bestehenden Testbenutzern verifiziert, dass sich am effektiven Zugriff nichts geändert hat (Test 1 aus Schritt 4 mit anna.muster gegen Buchhaltung erneut erfolgreich durchgeführt, nur der Berechtigungspfad im Hintergrund ist jetzt AGDLP-konform).
 
 ```mermaid
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "themeVariables": {"lineColor": "#000000"}} }%%
 flowchart LR
     subgraph Accounts["Accounts"]
-        anna["anna.muster"]
         peter["peter.keller"]
+        anna["anna.muster"]
         laura["laura.frei"]
         sandra["sandra.weber"]
     end
 
     subgraph Global["Global Groups (Abteilung)"]
-        Sek["Sekretariat"]
         Buch["Buchhaltung"]
+        Sek["Sekretariat"]
         Aus["Aussendienst"]
         GL["GL"]
     end
@@ -214,22 +215,24 @@ flowchart LR
         FSek["C:\Daten\Abteilungen\Sekretariat"]
     end
 
-    anna --> Sek
     peter --> Buch
+    anna --> Sek
     laura --> Aus
     sandra --> GL
 
     Buch --> DLBM
-    Sek --> DLBR
-    Aus --> DLBR
-
+    Buch -.-> DLBR
     Sek --> DLSM
-    GL --> DLSR
+    Sek -.-> DLBR
+    Aus -.-> DLBR
+    GL -.-> DLSR
 
     DLBM -- "(M)" --> FBuch
     DLBR -- "(RX)" --> FBuch
     DLSM -- "(M)" --> FSek
     DLSR -- "(RX)" --> FSek
+
+    linkStyle default stroke:#000000,stroke-width:1.5px
 ```
 
 ![AGDLP Group Nesting](./00-screenshots/07-agdlp-nesting.png)
