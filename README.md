@@ -67,32 +67,14 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 > ⚠️ AWS Managed AD (Auftrag 05) kostet ca. 18 Dollar pro Woche. Deshalb liegen 05 und 06 bewusst nicht in der Mitte, sondern kompakt am Ende, direkt hintereinander, Managed AD wird erst kurz davor erstellt und sofort danach wieder gelöscht. 05/06 sind laut Modul die einzigen Aufträge, die verschoben werden dürfen.
 
-🔴 Heutiges Datum &nbsp;·&nbsp; ❇️ Aktueller Stand (12 Tage im Vorsprung)
+🟥 Heutiges Datum
 
-```mermaid
-gantt
-    dateFormat  YYYY-MM-DD
-    title       M159 Zeitplan (dienstags, 3 Netto-Lektionen)
+🟦 Aktueller Stand (12 Tage im Vorsprung)
 
-    section Block 1
-    01 Planung                         :done, t1, 2026-08-18, 1d
-    02 Initial Setup                   :done, t2, 2026-08-25, 1d
-    03 Gesamtstruktur und Client       :done, t3, 2026-09-01, 1d
-    04 Freigaben und Berechtigungen    :done, t4, 2026-09-08, 1d
-    Checkpoint Zeitstand pruefen       :milestone, cp, 2026-09-08, 0d
-    Aktueller Stand                    :milestone, active, as1, 2026-09-09, 0d
-
-    section Block 2
-    07 DIT und GPOs                    :t5, 2026-09-15, 1d
-    08 Suche im Directory              :t6, 2026-09-22, 1d
-    09 PowerShell und 10 Entra Connect :t7, 2026-09-29, 1d
-    10 fertig und 11 und 12 und 13     :t8, 2026-10-20, 1d
-    Aktueller Stand                    :milestone, active, as2, 2026-09-09, 0d
-
-    section Zum Schluss kurz vor Abgabe
-    05 AWS Managed AD und 06 RSAT      :crit, t9, 2026-10-21, 3d
-    Aktueller Stand                    :milestone, active, as3, 2026-09-09, 0d
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./00-files/assets/zeitplan-dark.png">
+  <img src="./00-files/assets/zeitplan-light.png" alt="M159 Zeitplan: Block 1 erledigt, Block 2 offen, 05/06 kurz vor Abgabe" width="850">
+</picture>
 
 <details>
 <summary>Als Tabelle anzeigen</summary>
@@ -120,26 +102,26 @@ gantt
 
 ### Block 1: Lokale Umgebung
 
-| # | Auftrag | Status | Gezeigt | Modul-Auftrag |
+| # | Auftrag | Status | Dem Lehrer gezeigt | Modul-Auftrag |
 |---|---|---|---|---|
-| [01](./01-planung/README.md) | Planung | ✅ erledigt | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/01-planung/) |
-| [02](./02-initial-setup/README.md) | Initial Setup | ✅ erledigt | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/02-initial-setup/) |
-| [03](./03-gesamtstruktur-dc-client/README.md) | Gesamtstruktur (1. DC) & Client | ✅ erledigt | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/03-neue-gesamtstruktur-und-client/) |
-| [04](./04-freigaben-berechtigungen/README.md) | Freigaben, Laufwerke, Berechtigungen | ✅ erledigt | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/04-freigaben-laufwerke-berechtigungen/) |
-| [05](./05-aws-managed-ad/README.md) | AWS Managed Microsoft AD | ⬜ ans Ende verschoben (Kosten) | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/) |
-| [06](./06-rsat-admin-center/README.md) | RSAT & Admin Center V2 | ⬜ ans Ende verschoben (Kosten) | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/06-rsat-admin-center-v2/) |
-| [07](./07-dit-gpos/README.md) | DIT & GPOs | ⬜ offen | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/07-dit-gpos/) |
-| [08](./08-suche-im-directory/README.md) | Suche im Directory (LDAP) | ⬜ offen | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/08-suche-im-directory/) |
-| [09](./09-identity-mgmt-powershell/README.md) | Identity Management & PowerShell Debugging | ⬜ offen | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/09-automation-und-debugging/) |
+| [01](./01-planung/README.md) | Planung | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/01-planung/) |
+| [02](./02-initial-setup/README.md) | Initial Setup | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/02-initial-setup/) |
+| [03](./03-gesamtstruktur-dc-client/README.md) | Gesamtstruktur (1. DC) & Client | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/03-neue-gesamtstruktur-und-client/) |
+| [04](./04-freigaben-berechtigungen/README.md) | Freigaben, Laufwerke, Berechtigungen | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/04-freigaben-laufwerke-berechtigungen/) |
+| [05](./05-aws-managed-ad/README.md) | AWS Managed Microsoft AD | ⬜ ans Ende verschoben (Kosten) | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/) |
+| [06](./06-rsat-admin-center/README.md) | RSAT & Admin Center V2 | ⬜ ans Ende verschoben (Kosten) | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/06-rsat-admin-center-v2/) |
+| [07](./07-dit-gpos/README.md) | DIT & GPOs | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/07-dit-gpos/) |
+| [08](./08-suche-im-directory/README.md) | Suche im Directory (LDAP) | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/08-suche-im-directory/) |
+| [09](./09-identity-mgmt-powershell/README.md) | Identity Management & PowerShell Debugging | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/09-automation-und-debugging/) |
 
 ### Block 2: Cloud-Integration
 
-| # | Auftrag | Status | Gezeigt | Modul-Auftrag |
+| # | Auftrag | Status | Dem Lehrer gezeigt | Modul-Auftrag |
 |---|---|---|---|---|
-| [10](./10-entra-connect/README.md) | MS Entra ID & MS Entra Connect | ⬜ offen | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-ms-entra-id-ms-entra-connect/) |
-| [11](./11-benutzerprofil/README.md) | Servergespeicherte Benutzerprofile | ⬜ offen | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/11-servergespeicherte-benutzerprofile/) |
-| [12](./12-netzlaufwerk-azure/README.md) | Netzlaufwerk to Azure Migration | ⬜ offen | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/12-netzlaufwerk-to-azure-migration/) |
-| [13](./13-sso-python-app/README.md) | SSO Python App | ⬜ offen | ⬜ nicht gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/13-sso-python-app/) |
+| [10](./10-entra-connect/README.md) | MS Entra ID & MS Entra Connect | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-ms-entra-id-ms-entra-connect/) |
+| [11](./11-benutzerprofil/README.md) | Servergespeicherte Benutzerprofile | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/11-servergespeicherte-benutzerprofile/) |
+| [12](./12-netzlaufwerk-azure/README.md) | Netzlaufwerk to Azure Migration | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/12-netzlaufwerk-to-azure-migration/) |
+| [13](./13-sso-python-app/README.md) | SSO Python App | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/13-sso-python-app/) |
 
 <br>
 
