@@ -1,3 +1,9 @@
+<div align="right">
+
+<img src="../00-files/assets/tbz-logo-purple.png" alt="TBZ Technische Berufsschule Zürich" width="190">
+
+</div>
+
 <div align="center">
 
 # Auftrag 04: Freigaben, Laufwerke, Berechtigungen
