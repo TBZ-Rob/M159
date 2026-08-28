@@ -61,11 +61,11 @@ Als Domain-Basis wurde **Contoso** gewählt, nämlich die von Microsoft in prakt
 
 Azure for Students ist erfolgreich aktiviert. Der Entra-ID-Tenant lässt sich mit dem TBZ-Schul-Account nicht als Admin einsehen (kein Zugriff, dokumentiert), dafür wird in Auftrag 10 ein eigener Tenant benötigt. Details siehe [cloud-readiness.md](./cloud-readiness.md). Wichtig laut Modulvorgabe: **jetzt prüfen, nicht erst später**, da ein Scheitern des Tenants Zeit kostet, die sich später nicht mehr aufholen lässt, genau das haben wir hier frühzeitig erkannt.
 
-<img src="./00-screenshots/01-azure-for-students.png" width="850" alt="Azure for Students aktiviert">
+<img src="./00-screenshots/01-azure-for-students.png" width="700" alt="Azure for Students aktiviert">
 
 *Azure for Students: erfolgreich aktiviert, Guthaben sichtbar.*
 
-<img src="./00-screenshots/02-entra-id-tenant.png" width="850" alt="Entra-ID-Tenant kein Admin-Zugriff">
+<img src="./00-screenshots/02-entra-id-tenant.png" width="700" alt="Entra-ID-Tenant kein Admin-Zugriff">
 
 *Entra-ID-Tenant: kein Admin-Zugriff im TBZ-Tenant, dokumentierter Fehlschlag.*
 
@@ -77,24 +77,10 @@ Azure for Students ist erfolgreich aktiviert. Der Entra-ID-Tenant lässt sich mi
 
 Erster Entwurf der Zielumgebung. Details (genaue CIDRs/IPs) folgen in [Auftrag 02](../02-initial-setup/) und stehen im [Setup-Sheet](./setup-sheet.md).
 
-```mermaid
-flowchart TB
-    subgraph AWS["AWS VPC 10.0.0.0/16"]
-        DC["🖥️ DC EC2<br/>dc.ad.contoso.com<br/>ad.contoso.com"]
-        CLIENT["💻 Client EC2<br/>client.ad.contoso.com"]
-        ADMIN["🛠️ Admin Center EC2<br/>admin.ad.contoso.com"]
-        MAD["☁️ AWS Managed AD<br/>aws.contoso.com"]
-        DC --- CLIENT
-        DC --- ADMIN
-    end
-
-    ENTRA["🔷 Microsoft Entra ID<br/>contoso.com Tenant"]
-    UPN["🌐 Öffentlicher UPN<br/>contoso-robin.dynv6.net"]
-
-    DC -- "Tree-Root Trust" --> MAD
-    DC -- "Entra Connect (Sync)" --> ENTRA
-    ENTRA --- UPN
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../00-files/assets/architektur-dark.png">
+  <img src="../00-files/assets/architektur-light.png" alt="Architektur: AWS VPC mit DC, Client und Admin Center EC2 sowie AWS Managed AD, DC hat Tree-Root Trust zu AWS Managed AD und synct via Entra Connect zu Microsoft Entra ID, welches mit dem oeffentlichen UPN verbunden ist" width="1000">
+</picture>
 
 | Feld | Wert | Details |
 |---|---|---|

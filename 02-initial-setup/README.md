@@ -43,7 +43,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - **Internet Gateway erstellen und am VPC anhängen**, sonst sind auch die "öffentlichen" Subnetze von aussen nicht erreichbar (kein RDP möglich). Das "kein Gateway" aus der Modul-Aufgabenstellung ist so zu verstehen, dass vorerst **kein NAT Gateway** nötig ist (das braucht nur das private Subnetz für ausgehenden Internetzugriff, kostet zusätzlich und kann bei Bedarf später ergänzt werden).
 - Name z. B. `M159-vpc`, damit es im Setup-Sheet unter VPC-ID nachgetragen werden kann.
 
-<img src="./00-screenshots/01-vpc-uebersicht.png" width="850" alt="VPC Übersicht">
+<img src="./00-screenshots/01-vpc-uebersicht.png" width="700" alt="VPC Übersicht">
 
 *VPC `M159-vpc` mit CIDR `10.0.0.0/16`.*
 
@@ -71,7 +71,7 @@ Instanz-Platzierung gemäss Setup-Sheet Abschnitt 7 (DC bewusst im privaten Subn
 | Client (`client.ad.contoso.com`, `10.0.0.20`) | `M159-subnet-public1-us-east-1a` | Dient später u. a. als Zwischenstation (RDP) zum DC |
 | Admin Center (`admin.ad.contoso.com`, `10.0.0.30`) | `M159-subnet-public1-us-east-1a` | Muss von aussen erreichbar sein (Auftrag 06) |
 
-<img src="./00-screenshots/02-subnetze.png" width="850" alt="Subnetze">
+<img src="./00-screenshots/02-subnetze.png" width="700" alt="Subnetze">
 
 *Alle vier Subnetze mit CIDRs und Availability Zones.*
 
@@ -85,15 +85,15 @@ Zwei Security Groups, Regeln stehen bereits im [Setup-Sheet](../01-planung/setup
 - **Domain Controller**: RDP, LDAP, LDAPS, Kerberos, SMB, DNS, RPC (inkl. Ephemeral-Port-Bereich 49152 bis 65535), ICMP, Global Catalog, Global Catalog SSL, Kerberos Password Change. Da der DC im privaten Subnetz liegt, kommt RDP darauf ohnehin nur aus dem VPC selbst an (z. B. vom Client aus), die SG-Regel `0.0.0.0/0` schadet trotzdem nicht, weil sie durch das fehlende Routing zum Internet Gateway faktisch nicht von aussen nutzbar ist.
 - **Clients**: RDP von aussen, restliche Ports (Kerberos, RPC, NetBIOS, LDAP, DNS, SMB, RPC Ephemeral, ICMP) nur aus dem VPC-Adressbereich.
 
-<img src="./00-screenshots/03-routing-tabelle.png" width="850" alt="Routentabelle">
+<img src="./00-screenshots/03-routing-tabelle.png" width="700" alt="Routentabelle">
 
 *Routentabelle `M159-rt-public` mit Route zum Internet Gateway.*
 
-<img src="./00-screenshots/04-security-group-dc.png" width="850" alt="Security Group DC">
+<img src="./00-screenshots/04-security-group-dc.png" width="700" alt="Security Group DC">
 
 *Security Group `M159-sg-dc` mit Inbound-Regeln.*
 
-<img src="./00-screenshots/05-security-group-clients.png" width="850" alt="Security Group Clients">
+<img src="./00-screenshots/05-security-group-clients.png" width="700" alt="Security Group Clients">
 
 *Security Group `M159-sg-clients` mit Inbound-Regeln.*
 
@@ -114,11 +114,11 @@ Zwei Security Groups, Regeln stehen bereits im [Setup-Sheet](../01-planung/setup
 
 Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem IPv6 sowie (bei den beiden Desktop-Instanzen) deaktiviertem IE ESC und angepassten Ordneroptionen konfiguriert. RDP-Zugriffskette getestet: Client01/AdminCenter01 direkt über Elastic IP erreichbar, DC01 nur via Sprung über Client01 (kein öffentlicher Zugriff).
 
-<img src="./00-screenshots/06-ec2-instanzen-und-ips.png" width="850" alt="EC2-Instanzen und IPs">
+<img src="./00-screenshots/06-ec2-instanzen-und-ips.png" width="700" alt="EC2-Instanzen und IPs">
 
 *Alle drei EC2-Instanzen inkl. privater IP, Public IP und Elastic IP.*
 
-<img src="./00-screenshots/07-rdp-client01.png" width="850" alt="RDP-Verbindung zu Client01">
+<img src="./00-screenshots/07-rdp-client01.png" width="700" alt="RDP-Verbindung zu Client01">
 
 *RDP-Verbindung zu Client01 mit gesetztem Hostnamen, ipconfig und Ping-Test.*
 

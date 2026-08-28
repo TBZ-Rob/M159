@@ -1,11 +1,22 @@
-<div align="center">
+<table width="100%">
+<tr>
+<td valign="middle">
+
+# 🗂️ M159: Directoryservices | Projekt Contoso
+
+</td>
+<td valign="middle" align="right" width="190">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://tbz.ch/wp-content/uploads/2026/04/TBZ-Logo-invertiert.svg">
-  <img src="https://tbz.ch/wp-content/uploads/2026/04/TBZ-Logo.svg" alt="TBZ Technische Berufsschule Zürich" width="180">
+  <img src="https://tbz.ch/wp-content/uploads/2026/04/TBZ-Logo.svg" alt="TBZ Technische Berufsschule Zürich" width="160">
 </picture>
 
-# 🗂️ M159: Directoryservices | Projekt Contoso
+</td>
+</tr>
+</table>
+
+<div align="center">
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-31%25-orange?style=flat)
@@ -18,12 +29,14 @@
 
 ---
 
-```mermaid
-flowchart LR
-    C["💻 Client"] --> DC["🖥️ DC ad.contoso.com"]
-    DC --> MAD["☁️ AWS Managed AD"]
-    DC --> ENTRA["🔷 Entra ID"]
-```
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./00-files/assets/banner-dark.png">
+  <img src="./00-files/assets/banner-light.png" alt="Client verbindet sich mit DC ad.contoso.com, DC ist verbunden mit AWS Managed AD und Entra ID" width="700">
+</picture>
+
+</div>
 
 <br>
 

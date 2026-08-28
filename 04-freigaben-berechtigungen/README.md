@@ -52,7 +52,7 @@ Kategorisierung in Intern/Extern (Aussendienst und Partner sind ausserhalb der F
 
 Anmeldetests mit allen acht Benutzern durchgeführt: Alle Konten funktionieren (Login lässt sich mit korrektem Passwort ausführen), aber noch keiner ist in einer RDP-Berechtigungsgruppe, daher werden alle Verbindungsversuche korrekt mit "not authorized for remote login" abgelehnt.
 
-<img src="./00-screenshots/01-ad-gruppen.png" width="850" alt="AD-Gruppenstruktur">
+<img src="./00-screenshots/01-ad-gruppen.png" width="700" alt="AD-Gruppenstruktur">
 
 *Alle acht Abteilungsgruppen plus Intern/Extern in AD.*
 
@@ -88,7 +88,7 @@ icacls "C:\Daten" /remove:g "BUILTIN\Users"
 icacls "C:\Daten" /remove:g "Authenticated Users"
 ```
 
-<img src="./00-screenshots/02-freigaben-uebersicht.png" width="850" alt="Freigabe- und Ordnerstruktur">
+<img src="./00-screenshots/02-freigaben-uebersicht.png" width="700" alt="Freigabe- und Ordnerstruktur">
 
 *`Get-SmbShare`, alle fünf Freigaben mit ABE aktiv.*
 
@@ -122,7 +122,7 @@ Set-SmbShare -Name "Intern" -FolderEnumerationMode AccessBased -Force
 Set-SmbShare -Name "Extern" -FolderEnumerationMode AccessBased -Force
 ```
 
-<img src="./00-screenshots/03-ntfs-berechtigungen.png" width="850" alt="NTFS-Berechtigungen Abteilungen">
+<img src="./00-screenshots/03-ntfs-berechtigungen.png" width="700" alt="NTFS-Berechtigungen Abteilungen">
 
 *`icacls`-Ausgabe der Abteilungsordner.*
 
@@ -140,15 +140,15 @@ Drei geforderte Testszenarien über UNC-Pfad von Client01 aus durchgeführt (daf
 | GL schreibt in Pool | `New-Item \\dc01.ad.contoso.com\Pool\test-gl-2.txt` | ✅ erfolgreich (Dateiname mit `-2` ergänzt, da `test-gl.txt` aus einem früheren Testlauf bereits existierte) |
 | Promoter sieht Aussendienst | `Get-ChildItem \\dc01.ad.contoso.com\Abteilungen\Aussendienst` | ✅ korrekt verweigert (ABE blendet Ordner aus, "Could not find a part of the path") |
 
-<img src="./00-screenshots/04-test-sekretariat-buchhaltung.png" width="850" alt="Test Sekretariat liest Buchhaltung">
+<img src="./00-screenshots/04-test-sekretariat-buchhaltung.png" width="700" alt="Test Sekretariat liest Buchhaltung">
 
 *Test 1: Sekretariat liest Buchhaltung, Schreiben verweigert.*
 
-<img src="./00-screenshots/05-test-gl-pool.png" width="850" alt="Test GL schreibt Pool">
+<img src="./00-screenshots/05-test-gl-pool.png" width="700" alt="Test GL schreibt Pool">
 
 *Test 2: GL schreibt erfolgreich in Pool.*
 
-<img src="./00-screenshots/06-test-promoter-aussendienst.png" width="850" alt="Test Promoter Aussendienst verweigert">
+<img src="./00-screenshots/06-test-promoter-aussendienst.png" width="700" alt="Test Promoter Aussendienst verweigert">
 
 *Test 3: Promoter hat keinen Zugriff auf Aussendienst.*
 
@@ -198,43 +198,27 @@ icacls "C:\Daten\Abteilungen\Sekretariat" /grant "AD\DL-Sekretariat-Read:(RX)"
 
 Anschliessend erneut mit den bestehenden Testbenutzern verifiziert, dass sich am effektiven Zugriff nichts geändert hat (Test 1 aus Schritt 4 mit anna.muster gegen Buchhaltung erneut erfolgreich durchgeführt, nur der Berechtigungspfad im Hintergrund ist jetzt AGDLP-konform).
 
+🟦 Durchgezogener Pfeil: eigene Abteilung, Change-Zugriff (Modify)
+
+⬜ Gepunkteter Pfeil: fremde, laut Matrix lesende Abteilung, Read-Zugriff (Read & Execute)
+
 **Buchhaltung** (eigener Change-Zugriff plus Lesezugriff für Sekretariat und Aussendienst):
 
-```mermaid
-%%{init: {"themeVariables": {"lineColor": "#000000"}} }%%
-flowchart LR
-    peter["👤 peter.keller"] ==>|Mitglied| Buch["🌐 Buchhaltung"]
-    Buch ==>|"eigene Abteilung (M)"| DLBM["🔒 DL-Buchhaltung-Modify"]
-    DLBM ==> FBuch["📁 C:\Daten\Abteilungen\Buchhaltung"]
-
-    anna["👤 anna.muster"] -.->|Mitglied| Sek2["🌐 Sekretariat"]
-    laura["👤 laura.frei"] -.->|Mitglied| Aus2["🌐 Aussendienst"]
-    Sek2 -.->|"Lesezugriff (RX)"| DLBR["🔒 DL-Buchhaltung-Read"]
-    Aus2 -.->|"Lesezugriff (RX)"| DLBR
-    DLBR -.-> FBuch
-
-    linkStyle default stroke:#000000,stroke-width:2px
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../00-files/assets/agdlp-buchhaltung-dark.png">
+  <img src="../00-files/assets/agdlp-buchhaltung-light.png" alt="AGDLP Buchhaltung: peter.keller Mitglied von Buchhaltung mit Change-Zugriff via DL-Buchhaltung-Modify, anna.muster und laura.frei ueber Sekretariat und Aussendienst mit Lesezugriff via DL-Buchhaltung-Read" width="1000">
+</picture>
 
 **Sekretariat** (eigener Change-Zugriff plus Lesezugriff für GL):
 
-```mermaid
-%%{init: {"themeVariables": {"lineColor": "#000000"}} }%%
-flowchart LR
-    anna2["👤 anna.muster"] ==>|Mitglied| Sek["🌐 Sekretariat"]
-    Sek ==>|"eigene Abteilung (M)"| DLSM["🔒 DL-Sekretariat-Modify"]
-    DLSM ==> FSek["📁 C:\Daten\Abteilungen\Sekretariat"]
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../00-files/assets/agdlp-sekretariat-dark.png">
+  <img src="../00-files/assets/agdlp-sekretariat-light.png" alt="AGDLP Sekretariat: anna.muster Mitglied von Sekretariat mit Change-Zugriff via DL-Sekretariat-Modify, sandra.weber ueber GL mit Lesezugriff via DL-Sekretariat-Read" width="1000">
+</picture>
 
-    sandra["👤 sandra.weber"] -.->|Mitglied| GL["🌐 GL"]
-    GL -.->|"Lesezugriff (RX)"| DLSR["🔒 DL-Sekretariat-Read"]
-    DLSR -.-> FSek
+Die beiden Ordner sind bewusst als zwei separate Diagramme dargestellt, weil die gemeinsame Darstellung durch die sich kreuzenden Lesezugriffe (Sekretariat und Aussendienst lesen beide Buchhaltung) unübersichtlich wurde.
 
-    linkStyle default stroke:#000000,stroke-width:2px
-```
-
-**Legende**: durchgezogener, fetter Pfeil (`➜`) = eigene Abteilung, Change-Zugriff (Modify). Gepunkteter Pfeil (`⇢`) = fremde, laut Matrix lesende Abteilung, Read-Zugriff (Read & Execute). Die beiden Ordner sind bewusst als zwei separate Diagramme dargestellt, weil die gemeinsame Darstellung durch die sich kreuzenden Lesezugriffe (Sekretariat und Aussendienst lesen beide Buchhaltung) unübersichtlich wurde.
-
-<img src="./00-screenshots/07-agdlp-nesting.png" width="850" alt="AGDLP Group Nesting">
+<img src="./00-screenshots/07-agdlp-nesting.png" width="700" alt="AGDLP Group Nesting">
 
 *`Get-ADGroupMember` der Domain-Local-Gruppen für Buchhaltung und Sekretariat.*
 

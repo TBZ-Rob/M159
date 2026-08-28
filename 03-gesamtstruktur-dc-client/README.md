@@ -38,7 +38,7 @@ Install-ADDSForest -DomainName "ad.contoso.com" -DomainNetbiosName "AD" -Install
 
 Das DSRM-Passwort (Safe Mode Administrator Password) wird nur im Notfall (AD-Wiederherstellung) benötigt und ist sicher im Passwort-Manager abgelegt, nicht im Repo. Der Erfolg der Beförderung wurde über `Get-ADDomain` bestätigt (liefert die Domain-Infos ohne Fehler).
 
-<img src="./00-screenshots/01-get-addomain.png" width="850" alt="Get-ADDomain Bestätigung">
+<img src="./00-screenshots/01-get-addomain.png" width="700" alt="Get-ADDomain Bestätigung">
 
 *`Get-ADDomain`-Ausgabe nach erfolgreicher Beförderung, keine Fehler.*
 
@@ -60,15 +60,15 @@ Auf DC01:
 - Der A-Record für Client01 wurde nicht automatisch erstellt, sondern musste über `ipconfig /registerdns` auf Client01 aktiv angestossen werden.
 - Vorwärts- und Rückwärtsauflösung für beide Server mit `nslookup` erfolgreich getestet.
 
-<img src="./00-screenshots/02-dns-reverse-zonen.png" width="850" alt="Reverse-Lookupzonen">
+<img src="./00-screenshots/02-dns-reverse-zonen.png" width="700" alt="Reverse-Lookupzonen">
 
 *Beide Reverse-Lookupzonen (`10.0.128.0/20`, `10.0.0.0/20`) angelegt.*
 
-<img src="./00-screenshots/03-nslookup-dc01.png" width="850" alt="nslookup DC01">
+<img src="./00-screenshots/03-nslookup-dc01.png" width="700" alt="nslookup DC01">
 
 *Vorwärts- und Rückwärtsauflösung für DC01 erfolgreich.*
 
-<img src="./00-screenshots/04-nslookup-client01.png" width="850" alt="nslookup Client01">
+<img src="./00-screenshots/04-nslookup-client01.png" width="700" alt="nslookup Client01">
 
 *Vorwärts- und Rückwärtsauflösung für Client01 erfolgreich.*
 
@@ -85,7 +85,7 @@ Enable-ADOptionalFeature -Identity 'Recycle Bin Feature' -Scope ForestOrConfigur
 
 Über `Get-ADOptionalFeature` mit gefülltem `EnabledScopes` bestätigt.
 
-<img src="./00-screenshots/05-recycle-bin.png" width="850" alt="AD Recycle Bin aktiviert">
+<img src="./00-screenshots/05-recycle-bin.png" width="700" alt="AD Recycle Bin aktiviert">
 
 *`Get-ADOptionalFeature` zeigt gefüllte `EnabledScopes`.*
 
@@ -107,11 +107,11 @@ Auf beiden Clients (Client01, AdminCenter01) gleiches Vorgehen:
 
 - Nach Neustart Beitritt über `Get-ComputerInfo` verifiziert (`CsPartOfDomain = True`, `CsDomain = ad.contoso.com`).
 
-<img src="./00-screenshots/06a-domain-beitritt-client01.png" width="850" alt="Domänenbeitritt Client01">
+<img src="./00-screenshots/06a-domain-beitritt-client01.png" width="700" alt="Domänenbeitritt Client01">
 
 *Client01: `Get-ComputerInfo` bestätigt Domänenbeitritt.*
 
-<img src="./00-screenshots/06b-domain-beitritt-admincenter01.png" width="850" alt="Domänenbeitritt AdminCenter01">
+<img src="./00-screenshots/06b-domain-beitritt-admincenter01.png" width="700" alt="Domänenbeitritt AdminCenter01">
 
 *AdminCenter01: `Get-ComputerInfo` bestätigt Domänenbeitritt.*
 
@@ -136,11 +136,11 @@ Umgesetztes Modell (Begründung siehe [entscheidungsprotokoll.md](./entscheidung
 - Wichtiger Fund beim Testen: Der erste RDP-Versuch mit `testadmin` auf DC01 wurde trotz korrekter Gruppenmitgliedschaft abgelehnt. Ursache war die tatsächliche lokale Sicherheitsrichtlinie "Allow log on through Remote Desktop Services" (`SeRemoteInteractiveLogonRight`), die auf DC01 nur die SID von `Administrators` (`S-1-5-32-544`) enthielt, nicht `Remote Desktop Users` (`S-1-5-32-555`). Über `secedit` geprüft, `Remote Desktop Users` ergänzt und mit `secedit /configure` sowie `gpupdate /force` angewendet, danach funktionierte der Login wie geplant.
 - Konzept per RDP-Login getestet: `testuser` auf DC01 korrekt abgelehnt ("not authorized for remote login"), `testadmin` auf DC01 nach der Richtlinien-Korrektur erfolgreich verbunden, Identität zusätzlich mit `whoami` (`ad\testadmin`) im Terminal bestätigt.
 
-<img src="./00-screenshots/07-rdp-testuser-verweigert.png" width="850" alt="RDP testuser verweigert">
+<img src="./00-screenshots/07-rdp-testuser-verweigert.png" width="700" alt="RDP testuser verweigert">
 
 *`testuser` auf DC01 korrekt mit "not authorized for remote login" abgelehnt.*
 
-<img src="./00-screenshots/08-rdp-testadmin-erfolgreich.png" width="850" alt="RDP testadmin erfolgreich">
+<img src="./00-screenshots/08-rdp-testadmin-erfolgreich.png" width="700" alt="RDP testadmin erfolgreich">
 
 *`testadmin` auf DC01 erfolgreich verbunden, `whoami` bestätigt `ad\testadmin`.*
 
