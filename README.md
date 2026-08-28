@@ -67,6 +67,8 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 > ⚠️ AWS Managed AD (Auftrag 05) kostet ca. 18 Dollar pro Woche. Deshalb liegen 05 und 06 bewusst nicht in der Mitte, sondern kompakt am Ende, direkt hintereinander, Managed AD wird erst kurz davor erstellt und sofort danach wieder gelöscht. 05/06 sind laut Modul die einzigen Aufträge, die verschoben werden dürfen.
 
+🔴 Heutiges Datum &nbsp;·&nbsp; ❇️ Aktueller Stand (12 Tage im Vorsprung)
+
 ```mermaid
 gantt
     dateFormat  YYYY-MM-DD
@@ -78,15 +80,18 @@ gantt
     03 Gesamtstruktur und Client       :done, t3, 2026-09-01, 1d
     04 Freigaben und Berechtigungen    :done, t4, 2026-09-08, 1d
     Checkpoint Zeitstand pruefen       :milestone, cp, 2026-09-08, 0d
+    Aktueller Stand                    :milestone, active, as1, 2026-09-09, 0d
 
     section Block 2
     07 DIT und GPOs                    :t5, 2026-09-15, 1d
     08 Suche im Directory              :t6, 2026-09-22, 1d
     09 PowerShell und 10 Entra Connect :t7, 2026-09-29, 1d
     10 fertig und 11 und 12 und 13     :t8, 2026-10-20, 1d
+    Aktueller Stand                    :milestone, active, as2, 2026-09-09, 0d
 
     section Zum Schluss kurz vor Abgabe
     05 AWS Managed AD und 06 RSAT      :crit, t9, 2026-10-21, 3d
+    Aktueller Stand                    :milestone, active, as3, 2026-09-09, 0d
 ```
 
 <details>
