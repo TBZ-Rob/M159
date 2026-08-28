@@ -65,15 +65,13 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 ## Zeitplan
 
-> ⚠️ AWS Managed AD (Auftrag 05) kostet ca. 18 Dollar pro Woche. Deshalb liegen 05 und 06 bewusst nicht in der Mitte, sondern kompakt am Ende, direkt hintereinander, Managed AD wird erst kurz davor erstellt und sofort danach wieder gelöscht. 05/06 sind laut Modul die einzigen Aufträge, die verschoben werden dürfen.
-
 🟥 Heutiges Datum
 
-🟦 Aktueller Stand (12 Tage im Vorsprung)
+🟦 Aktueller Stand (2 Aufträge im Vorsprung)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./00-files/assets/zeitplan-dark.png">
-  <img src="./00-files/assets/zeitplan-light.png" alt="M159 Zeitplan: Block 1 erledigt, Block 2 offen, 05/06 kurz vor Abgabe" width="850">
+  <img src="./00-files/assets/zeitplan-light.png" alt="M159 Zeitplan: Block 1 erledigt, Block 2 offen, 05/06 kurz vor Abgabe" width="1000">
 </picture>
 
 <details>
