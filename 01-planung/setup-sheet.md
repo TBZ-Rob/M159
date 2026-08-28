@@ -11,7 +11,7 @@
 
 ---
 
-## 1. Übersicht Umgebung
+## 01. Übersicht Umgebung
 
 - 1× Windows Server (DC) auf AWS EC2
 - 1× Windows Server (Client) auf AWS EC2
@@ -20,7 +20,7 @@
 - Entra Connect zur Synchronisation mit Entra ID
 - Lokale AD-Domain zu Beginn, später öffentliche Domain als UPN
 
-## 2. Allgemeine Angaben
+## 02. Allgemeine Angaben
 
 | Feld | Wert |
 |---|---|
@@ -29,16 +29,16 @@
 | Klasse | PE24c |
 | Dokumentation (Git-Repo-Link) | [github.com/TBZ-Rob/M159](https://github.com/TBZ-Rob/M159) |
 
-## 3. Ressourcen
+## 03. Ressourcen
 
 | Feld | Wert |
 |---|---|
 | AD Second-Level-Domäne | `contoso.com` |
 | Geplante öffentliche Domain (UPN) | `contoso-robin.dynv6.net` |
-| Azure Education Account | _{{AZURE_ACCOUNT_EMAIL}}_ |
+| Azure Education Account | `robin.nydegger@edu.tbz.ch` |
 | Azure Education Account Passwort | _siehe Passwort-Manager_ |
 
-## 4. AWS VPC Setup
+## 04. AWS VPC Setup
 
 > Der DC liegt im privaten Subnetz (kein öffentlicher Zugriff), Client und Admin Center liegen im öffentlichen Subnetz mit Elastic IP und RDP (3389) von aussen erreichbar. Alle weiteren Ports nur innerhalb des VPCs offen.
 
@@ -50,7 +50,7 @@
 | Subnetz | n/a | `10.0.0.0/20` | M159-subnet-public1-us-east-1a |
 | Subnetz | n/a | `10.0.16.0/20` | M159-subnet-public2-us-east-1b |
 
-## 5. AWS Sicherheitsgruppen
+## 05. AWS Sicherheitsgruppen
 
 ### Sicherheitsgruppe für Domain Controller
 
@@ -82,7 +82,7 @@
 | TCP | 49152 bis 65535 | RPC Ephemeral Ports | 10.0.0.0/20, 10.0.128.0/20, 10.0.144.0/20 |
 | ICMP | Alle | Ping etc. | 10.0.0.0/20, 10.0.128.0/20, 10.0.144.0/20 |
 
-## 6. Active Directory Umgebung
+## 06. Active Directory Umgebung
 
 ### On-Premises AD (AWS EC2)
 
@@ -119,7 +119,7 @@
 | Subnetz 1 | M159-subnet-private1-us-east-1a (10.0.128.0/20) |
 | Subnetz 2 | M159-subnet-private2-us-east-1b (10.0.144.0/20) |
 
-## 7. EC2-Instanzen
+## 07. EC2-Instanzen
 
 | Komponente | FQDN | Elastic IP | Private IP | Subnetz | DNS-Server 1 | DNS-Server 2 | Lokaler Admin | Kennwort |
 |---|---|---|---|---|---|---|---|---|
@@ -129,7 +129,7 @@
 
 > Hinweis: Der DC hat abweichend vom ursprünglichen Plan die IP `10.0.128.11` statt `10.0.128.10` erhalten (AWS hat beim Erstellen automatisch vergeben statt der manuell gesetzten Adresse). Funktional ohne Unterschied, da weiterhin im geplanten Subnetz.
 
-## 8. Abteilungen & Benutzer
+## 08. Abteilungen & Benutzer
 
 > Erweitert in [Auftrag 04](../04-freigaben-berechtigungen/README.md) von ursprünglich 4 auf 8 Abteilungen, da die offizielle Berechtigungsmatrix 8 Abteilungen vorsieht. Intern/Extern-Zuordnung für die 4 neuen Abteilungen (Aussendienst, Partner, Informatik, Messemitarbeiter) war in der Matrix nicht explizit vorgegeben und wurde bewusst ergänzt.
 

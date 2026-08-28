@@ -16,6 +16,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-100%25-1b7f79?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1b7f79?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8250df?style=flat)
+![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-A%2C%20I-d29922?style=flat)
 
 **[Ziel](#ziel) · [Checkliste](#checkliste) · [Namensschema](#namensschema-festlegen) · [Architektur](#architektur) · [Begriffe](#begriffsklärungen) · [Nachweise](#nachweise)**
 
@@ -92,7 +93,7 @@ Erster Entwurf der Zielumgebung. Details (genaue CIDRs/IPs) folgen in [Auftrag 0
 |---|---|---|
 | On-Prem AD Domäne | `ad.contoso.com` | [Auftrag 03](../03-gesamtstruktur-dc-client/) |
 | AWS Managed AD Domäne | `aws.contoso.com` | [Auftrag 05](../05-aws-managed-ad/) |
-| Trust-Typ | Tree-Root Trust | [Setup-Sheet](./setup-sheet.md#6-active-directory-umgebung) |
+| Trust-Typ | Tree-Root Trust | [Setup-Sheet](./setup-sheet.md#06-active-directory-umgebung) |
 | Entra ID Sync | Entra Connect | [Auftrag 10](../10-entra-connect/) |
 | Öffentlicher UPN (geplant) | `contoso-robin.dynv6.net` | [Auftrag 13](../13-sso-python-app/) |
 

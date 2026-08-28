@@ -6,7 +6,7 @@
 
 <div align="center">
 
-# Auftrag 05: AWS Managed Microsoft AD
+# Auftrag 05: AWS Managed Microsoft AD (Variante B: Authentik)
 
 <!--
 Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
@@ -16,39 +16,44 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-0%25-lightgrey?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1b7f79?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Offen-lightgrey?style=flat)
+![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-B%2C%20C%2C%20G-d29922?style=flat)
 
 </div>
 
 ---
 
-> ⚠️ **Zeitlich bewusst ans Ende verschoben.** AWS Managed AD kostet ca. 18 Dollar pro Woche, siehe [Zeitplan](../README.md#zeitplan). Erst kurz vor der Schlussbesprechung starten, direkt mit [Auftrag 06](../06-rsat-admin-center/) weitermachen, danach die Managed-AD-Domain sofort wieder löschen.
+> ℹ️ **Variante B gewählt statt AWS Managed AD.** Begründung siehe [entscheidungsprotokoll.md](./entscheidungsprotokoll.md). Authentik läuft auf einer eigenen, regulär bepreisten EC2-Instanz statt des teuren AWS-Managed-AD-Dienstes (ca. 18 Dollar pro Woche), das On-Prem-AD (`ad.contoso.com`) bleibt dabei die massgebliche Quelle.
 
 <h2 id="ziel"><font color="#8250df">Ziel</font></h2>
 
-> AWS Managed Microsoft AD einrichten (Domäne, Ports gemäss [Setup-Sheet](../01-planung/setup-sheet.md)), Conditional Forwarder zur eigenen On-Prem-AD einrichten und einen beidseitigen Trust aufbauen und validieren.
+> Authentik als modernen Identity Provider auf einer eigenen EC2-Instanz einrichten, per LDAP Source mit dem On-Prem-AD synchronisieren und eine Anwendung per SSO anbinden, der Zugriff wird über eine AD-Gruppe gesteuert.
 
 <br>
 
 <h2 id="kernschritte"><font color="#8250df">Kernschritte</font></h2>
 
-- AWS Managed AD Domäne erstellen, Passwort im Setup-Sheet (Passwort-Manager) hinterlegen.
-- Ports gemäss Setup-Sheet sicherstellen.
-- Conditional Forwarder einrichten, damit die EC2-AD die AWS-Managed-Domain aufloesen kann, Test mit `nslookup -type=SOA aws.contoso.com`.
-- Trust beidseitig einrichten (EC2-AD über "Active Directory Domains and Trusts" sowie auf AWS-Managed-AD-Seite), danach validieren.
-- Sicherheitsdokumentation ergänzen (welche Ports offen, warum).
+- Neue EC2-Instanz für Authentik erstellen, Installation gemäss offizieller Authentik-Dokumentation (Docker Compose).
+- LDAP Source in Authentik einrichten, die AD-Benutzer und -Gruppen aus dem On-Prem-AD synchronisiert.
+- Eigenes Bind-Konto mit least-privilege-Rechten für die LDAP-Anbindung erstellen (kein Domain Admin), Begründung dokumentieren.
+- Anbindung über LDAPS mit Zertifikat statt Klartext-LDAP absichern, Notwendigkeit dokumentieren (LDAP-Signing ist ab Server 2025 verbindlich).
+- Login mit einem bestehenden AD-Konto testen, Prüfung erfolgt dabei gegen den DC.
+- Eine Anwendung per OIDC/SAML oder Proxy mit funktionierendem SSO anbinden, Zugriff über eine AD-Gruppe steuern.
 
 <br>
 
 <h2 id="checkliste"><font color="#8250df">Checkliste</font></h2>
 
-- [ ] Auftrag gestartet (erst kurz vor Schlussbesprechung)
-- [ ] Managed AD Domäne erstellt
-- [ ] Conditional Forwarder eingerichtet und getestet
-- [ ] Trust eingerichtet und validiert
+- [ ] Auftrag gestartet
+- [ ] EC2-Instanz für Authentik erstellt und läuft
+- [ ] LDAP Source eingerichtet, AD-Benutzer und -Gruppen synchronisiert
+- [ ] Login mit AD-Konto nachgewiesen (Prüfung gegen den DC)
+- [ ] LDAPS mit Zertifikat eingerichtet, Notwendigkeit dokumentiert
+- [ ] Least-privilege Bind-Konto verwendet und begründet
+- [ ] Anwendung per SSO angebunden, Zugriff über AD-Gruppe gesteuert
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
 - [ ] `ki-log.md` ausgefüllt
-- [ ] Managed AD nach Abschluss von Auftrag 06 wieder gelöscht (Kosten stoppen)
+- [ ] `entscheidungsprotokoll.md` ausgefüllt (Variante A vs. B)
 
 <br>
 
@@ -56,6 +61,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 
 | Datei | Inhalt |
 |---|---|
+| [entscheidungsprotokoll.md](./entscheidungsprotokoll.md) | Begründung Variante B statt AWS Managed AD |
 | [ki-log.md](./ki-log.md) | KI-Nutzung in diesem Auftrag |
 | [Auftragsstellung (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/) | Offizielle Aufgabenstellung |
 | [Fragenkatalog (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/fragen.html) | Vorbereitung mündlicher Nachweis |

@@ -16,6 +16,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-100%25-1b7f79?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1b7f79?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8250df?style=flat)
+![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-Keine-lightgrey?style=flat)
 
 **[Ziel](#ziel) · [Netzwerk](#schritt-1-bis-5-netzwerkgrundlage) · [Nachweise](#nachweise) · [Checkliste](#checkliste)**
 
@@ -86,7 +87,7 @@ Instanz-Platzierung gemäss Setup-Sheet Abschnitt 7 (DC bewusst im privaten Subn
 <details open>
 <summary><strong>Schritt 4: Security Groups erstellen</strong></summary>
 
-Zwei Security Groups, Regeln stehen bereits im [Setup-Sheet](../01-planung/setup-sheet.md#5-aws-sicherheitsgruppen):
+Zwei Security Groups, Regeln stehen bereits im [Setup-Sheet](../01-planung/setup-sheet.md#05-aws-sicherheitsgruppen):
 
 - **Domain Controller**: RDP, LDAP, LDAPS, Kerberos, SMB, DNS, RPC (inkl. Ephemeral-Port-Bereich 49152 bis 65535), ICMP, Global Catalog, Global Catalog SSL, Kerberos Password Change. Da der DC im privaten Subnetz liegt, kommt RDP darauf ohnehin nur aus dem VPC selbst an (z. B. vom Client aus), die SG-Regel `0.0.0.0/0` schadet trotzdem nicht, weil sie durch das fehlende Routing zum Internet Gateway faktisch nicht von aussen nutzbar ist.
 - **Clients**: RDP von aussen, restliche Ports (Kerberos, RPC, NetBIOS, LDAP, DNS, SMB, RPC Ephemeral, ICMP) nur aus dem VPC-Adressbereich.
