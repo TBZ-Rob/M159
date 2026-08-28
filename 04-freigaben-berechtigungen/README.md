@@ -187,30 +187,34 @@ icacls "C:\Daten\Abteilungen\Sekretariat" /grant "AD\DL-Sekretariat-Read:(RX)"
 Anschliessend erneut mit den bestehenden Testbenutzern verifiziert, dass sich am effektiven Zugriff nichts geändert hat (Test 1 aus Schritt 4 mit anna.muster gegen Buchhaltung erneut erfolgreich durchgeführt, nur der Berechtigungspfad im Hintergrund ist jetzt AGDLP-konform).
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "themeVariables": {"lineColor": "#000000"}} }%%
-flowchart LR
-    subgraph Accounts["Accounts"]
+%%{init: {"flowchart": {"defaultRenderer": "elk", "nodeSpacing": 35, "rankSpacing": 55}, "themeVariables": {"lineColor": "#000000"}} }%%
+flowchart TD
+    subgraph Accounts["👤 Accounts"]
+        direction LR
         peter["peter.keller"]
         anna["anna.muster"]
         laura["laura.frei"]
         sandra["sandra.weber"]
     end
 
-    subgraph Global["Global Groups (Abteilung)"]
+    subgraph Global["🌐 Global Groups (Abteilung)"]
+        direction LR
         Buch["Buchhaltung"]
         Sek["Sekretariat"]
         Aus["Aussendienst"]
         GL["GL"]
     end
 
-    subgraph DomainLocal["Domain Local Groups"]
+    subgraph DomainLocal["🔒 Domain Local Groups"]
+        direction LR
         DLBM["DL-Buchhaltung-Modify"]
         DLBR["DL-Buchhaltung-Read"]
         DLSM["DL-Sekretariat-Modify"]
         DLSR["DL-Sekretariat-Read"]
     end
 
-    subgraph Permission["NTFS-Berechtigung"]
+    subgraph Permission["📁 NTFS-Berechtigung"]
+        direction LR
         FBuch["C:\Daten\Abteilungen\Buchhaltung"]
         FSek["C:\Daten\Abteilungen\Sekretariat"]
     end
@@ -220,20 +224,27 @@ flowchart LR
     laura --> Aus
     sandra --> GL
 
-    Buch --> DLBM
-    Buch -.-> DLBR
-    Sek --> DLSM
-    Sek -.-> DLBR
-    Aus -.-> DLBR
-    GL -.-> DLSR
+    Buch ==>|"eigene Abteilung"| DLBM
+    Sek ==>|"eigene Abteilung"| DLSM
+    Sek -.->|"Lesezugriff"| DLBR
+    Aus -.->|"Lesezugriff"| DLBR
+    Buch -.->|"Lesezugriff"| DLBR
+    GL -.->|"Lesezugriff"| DLSR
 
-    DLBM -- "(M)" --> FBuch
-    DLBR -- "(RX)" --> FBuch
-    DLSM -- "(M)" --> FSek
-    DLSR -- "(RX)" --> FSek
+    DLBM ==>|"(M)"| FBuch
+    DLBR -.->|"(RX)"| FBuch
+    DLSM ==>|"(M)"| FSek
+    DLSR -.->|"(RX)"| FSek
 
-    linkStyle default stroke:#000000,stroke-width:1.5px
+    linkStyle default stroke:#000000,stroke-width:2px
+
+    style Accounts fill:transparent,stroke:#000000
+    style Global fill:transparent,stroke:#000000
+    style DomainLocal fill:transparent,stroke:#000000
+    style Permission fill:transparent,stroke:#000000
 ```
+
+**Legende**: durchgezogener Pfeil (`➜`) = eigene Abteilung, Change-Zugriff (Modify). Gepunkteter Pfeil (`⇢`) = fremde, laut Matrix lesende Abteilung, Read-Zugriff (Read & Execute).
 
 ![AGDLP Group Nesting](./00-screenshots/07-agdlp-nesting.png)
 
