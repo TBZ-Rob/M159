@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Entscheidungsprotokoll: Auftrag 03
+# Entscheidungsprotokoll: Auftrag 03
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-brightgreen?style=flat)
 

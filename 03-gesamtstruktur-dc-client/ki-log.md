@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Auftrag 03: KI-Einsatz
+# Auftrag 03: KI-Einsatz
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-brightgreen?style=flat)
 ![Einträge](https://img.shields.io/badge/Eintr%C3%A4ge-1-1f6feb?style=flat)

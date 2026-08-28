@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Auftrag 01: KI-Einsatz
+# Auftrag 01: KI-Einsatz
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
 ![Einträge](https://img.shields.io/badge/Eintr%C3%A4ge-2-1f6feb?style=flat)
@@ -19,7 +19,7 @@
 ### Reflexion
 
 1. **Wo hat die KI geholfen?** Beim schnellen Strukturieren des Repos und beim Formulieren einer sauberen, wiederverwendbaren README/ki-log-Vorlage, da hätte ich manuell länger gebraucht.
-2. **Wo lag sie falsch, und wie habe ich es gemerkt?** Keine grossen Probleme. Es wurde nur in der [Auftrags-Tabelle im Root-README](../README.md#-aufträge-übersicht) der 1. Auftrag fälschlicherweise abgehakt, obwohl die Screenshots noch gefehlt haben.
+2. **Wo lag sie falsch, und wie habe ich es gemerkt?** Keine grossen Probleme. Es wurde nur in der [Auftrags-Tabelle im Root-README](../README.md#aufträge-übersicht) der 1. Auftrag fälschlicherweise abgehakt, obwohl die Screenshots noch gefehlt haben.
 
 <br>
 

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Auftrag 04: Freigaben, Laufwerke, Berechtigungen
+# Auftrag 04: Freigaben, Laufwerke, Berechtigungen
 
 <!--
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
@@ -11,13 +11,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
 
-**[Ziel](#-ziel) · [Vorgehen](#-vorgehen) · [Nachweise](#️-nachweise) · [Checkliste](#-checkliste)**
+**[Ziel](#ziel) · [Vorgehen](#vorgehen) · [Nachweise](#nachweise) · [Checkliste](#checkliste)**
 
 </div>
 
 ---
 
-## 🎯 Ziel
+## Ziel
 
 > Benutzer und Gruppen gemäss Abteilungsstruktur anlegen, eine Ordner-/Freigabestruktur mit korrekten Freigabe- und NTFS-Berechtigungen aufbauen, Access-Based Enumeration aktivieren, die Berechtigungen mit drei konkreten Testszenarien verifizieren und die Struktur für mindestens zwei Abteilungen nach dem AGDLP-Konzept verbessern.
 
@@ -25,7 +25,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 > Ordner-/Freigabestruktur und Berechtigungsmatrix stammen aus der offiziellen Auftragsseite (Bild-Tabelle, per Screenshot übernommen). Die Matrix umfasst acht Abteilungen (GL, Aussendienst, Sekretariat, Buchhaltung, Promoter, Partner, Informatik, Messemitarbeiter), das ursprüngliche Setup-Sheet sah nur vier vor, deshalb wurden Gruppen/Benutzer für die restlichen vier bewusst ergänzt (Details siehe Schritt 1).
 
-## 🧭 Vorgehen
+## Vorgehen
 
 <details open>
 <summary><strong>1. Benutzer und Gruppen</strong></summary>
@@ -52,7 +52,9 @@ Kategorisierung in Intern/Extern (Aussendienst und Partner sind ausserhalb der F
 
 Anmeldetests mit allen acht Benutzern durchgeführt: Alle Konten funktionieren (Login lässt sich mit korrektem Passwort ausführen), aber noch keiner ist in einer RDP-Berechtigungsgruppe, daher werden alle Verbindungsversuche korrekt mit "not authorized for remote login" abgelehnt.
 
-![AD-Gruppenstruktur](./00-screenshots/01-ad-gruppen.png)
+<img src="./00-screenshots/01-ad-gruppen.png" width="850" alt="AD-Gruppenstruktur">
+
+*Alle acht Abteilungsgruppen plus Intern/Extern in AD.*
 
 </details>
 
@@ -86,7 +88,9 @@ icacls "C:\Daten" /remove:g "BUILTIN\Users"
 icacls "C:\Daten" /remove:g "Authenticated Users"
 ```
 
-![Freigabe- und Ordnerstruktur](./00-screenshots/02-freigaben-uebersicht.png)
+<img src="./00-screenshots/02-freigaben-uebersicht.png" width="850" alt="Freigabe- und Ordnerstruktur">
+
+*`Get-SmbShare`, alle fünf Freigaben mit ABE aktiv.*
 
 </details>
 
@@ -118,7 +122,9 @@ Set-SmbShare -Name "Intern" -FolderEnumerationMode AccessBased -Force
 Set-SmbShare -Name "Extern" -FolderEnumerationMode AccessBased -Force
 ```
 
-![NTFS-Berechtigungen Abteilungen](./00-screenshots/03-ntfs-berechtigungen.png)
+<img src="./00-screenshots/03-ntfs-berechtigungen.png" width="850" alt="NTFS-Berechtigungen Abteilungen">
+
+*`icacls`-Ausgabe der Abteilungsordner.*
 
 </details>
 
@@ -134,11 +140,17 @@ Drei geforderte Testszenarien über UNC-Pfad von Client01 aus durchgeführt (daf
 | GL schreibt in Pool | `New-Item \\dc01.ad.contoso.com\Pool\test-gl-2.txt` | ✅ erfolgreich (Dateiname mit `-2` ergänzt, da `test-gl.txt` aus einem früheren Testlauf bereits existierte) |
 | Promoter sieht Aussendienst | `Get-ChildItem \\dc01.ad.contoso.com\Abteilungen\Aussendienst` | ✅ korrekt verweigert (ABE blendet Ordner aus, "Could not find a part of the path") |
 
-![Test Sekretariat liest Buchhaltung](./00-screenshots/04-test-sekretariat-buchhaltung.png)
+<img src="./00-screenshots/04-test-sekretariat-buchhaltung.png" width="850" alt="Test Sekretariat liest Buchhaltung">
 
-![Test GL schreibt Pool](./00-screenshots/05-test-gl-pool.png)
+*Test 1: Sekretariat liest Buchhaltung, Schreiben verweigert.*
 
-![Test Promoter Aussendienst verweigert](./00-screenshots/06-test-promoter-aussendienst.png)
+<img src="./00-screenshots/05-test-gl-pool.png" width="850" alt="Test GL schreibt Pool">
+
+*Test 2: GL schreibt erfolgreich in Pool.*
+
+<img src="./00-screenshots/06-test-promoter-aussendienst.png" width="850" alt="Test Promoter Aussendienst verweigert">
+
+*Test 3: Promoter hat keinen Zugriff auf Aussendienst.*
 
 </details>
 
@@ -222,13 +234,15 @@ flowchart LR
 
 **Legende**: durchgezogener, fetter Pfeil (`➜`) = eigene Abteilung, Change-Zugriff (Modify). Gepunkteter Pfeil (`⇢`) = fremde, laut Matrix lesende Abteilung, Read-Zugriff (Read & Execute). Die beiden Ordner sind bewusst als zwei separate Diagramme dargestellt, weil die gemeinsame Darstellung durch die sich kreuzenden Lesezugriffe (Sekretariat und Aussendienst lesen beide Buchhaltung) unübersichtlich wurde.
 
-![AGDLP Group Nesting](./00-screenshots/07-agdlp-nesting.png)
+<img src="./00-screenshots/07-agdlp-nesting.png" width="850" alt="AGDLP Group Nesting">
+
+*`Get-ADGroupMember` der Domain-Local-Gruppen für Buchhaltung und Sekretariat.*
 
 </details>
 
 <br>
 
-## 🖼️ Nachweise
+## Nachweise
 
 <details open>
 <summary><strong>Screenshots anzeigen</strong></summary>
@@ -249,7 +263,7 @@ flowchart LR
 
 <br>
 
-## ✅ Checkliste
+## Checkliste
 
 - [x] 8 Abteilungsgruppen erstellt (statt ursprünglich geplanter 4)
 - [x] Gruppen `Intern`/`Extern` erstellt und alle Abteilungen zugeordnet
@@ -269,7 +283,7 @@ flowchart LR
 
 <br>
 
-## 🔗 Verweise
+## Verweise
 
 | Datei | Inhalt |
 |---|---|

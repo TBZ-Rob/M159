@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Auftrag 09: Identity Management & PowerShell Debugging
+# Auftrag 09: Identity Management & PowerShell Debugging
 
 <!--
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
@@ -15,13 +15,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
-## 🎯 Ziel
+## Ziel
 
 > _Noch zu ergänzen, sobald der Auftrag gestartet wird._
 
 <br>
 
-## ✅ Checkliste
+## Checkliste
 
 - [ ] Auftrag gestartet
 - [ ] Umsetzung abgeschlossen
@@ -30,7 +30,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <br>
 
-## 🔗 Verweise
+## Verweise
 
 | Datei | Inhalt |
 |---|---|

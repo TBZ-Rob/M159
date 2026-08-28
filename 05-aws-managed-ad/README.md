@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Auftrag 05: AWS Managed Microsoft AD
+# Auftrag 05: AWS Managed Microsoft AD
 
 <!--
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
@@ -15,15 +15,15 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
-> ⚠️ **Zeitlich bewusst ans Ende verschoben.** AWS Managed AD kostet ca. 18 Dollar pro Woche, siehe [Zeitplan](../README.md#️-zeitplan). Erst kurz vor der Schlussbesprechung starten, direkt mit [Auftrag 06](../06-rsat-admin-center/) weitermachen, danach die Managed-AD-Domain sofort wieder löschen.
+> ⚠️ **Zeitlich bewusst ans Ende verschoben.** AWS Managed AD kostet ca. 18 Dollar pro Woche, siehe [Zeitplan](../README.md#zeitplan). Erst kurz vor der Schlussbesprechung starten, direkt mit [Auftrag 06](../06-rsat-admin-center/) weitermachen, danach die Managed-AD-Domain sofort wieder löschen.
 
-## 🎯 Ziel
+## Ziel
 
 > AWS Managed Microsoft AD einrichten (Domäne, Ports gemäss [Setup-Sheet](../01-planung/setup-sheet.md)), Conditional Forwarder zur eigenen On-Prem-AD einrichten und einen beidseitigen Trust aufbauen und validieren.
 
 <br>
 
-## 🧭 Kernschritte
+## Kernschritte
 
 - AWS Managed AD Domäne erstellen, Passwort im Setup-Sheet (Passwort-Manager) hinterlegen.
 - Ports gemäss Setup-Sheet sicherstellen.
@@ -33,7 +33,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <br>
 
-## ✅ Checkliste
+## Checkliste
 
 - [ ] Auftrag gestartet (erst kurz vor Schlussbesprechung)
 - [ ] Managed AD Domäne erstellt
@@ -46,7 +46,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <br>
 
-## 🔗 Verweise
+## Verweise
 
 | Datei | Inhalt |
 |---|---|

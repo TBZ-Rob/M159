@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Auftrag 01: Planung
+# Auftrag 01: Planung
 
 <!--
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
@@ -11,19 +11,19 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
 
-**[Ziel](#-ziel) · [Checkliste](#-checkliste) · [Namensschema](#2-namensschema-festlegen) · [Architektur](#️-architektur) · [Begriffe](#-begriffsklärungen) · [Nachweise](#️-nachweise)**
+**[Ziel](#ziel) · [Checkliste](#checkliste) · [Namensschema](#2-namensschema-festlegen) · [Architektur](#architektur) · [Begriffe](#begriffsklärungen) · [Nachweise](#nachweise)**
 
 </div>
 
 ---
 
-## 🎯 Ziel
+## Ziel
 
 > Detaillierte Projektplanung der AD/Cloud-Umgebung erstellen inkl. Definition aller relevanten Parameter und Nachweis der Cloud-Bereitschaft.
 
 <br>
 
-## ✅ Checkliste
+## Checkliste
 
 - [x] Repo-Grundstruktur angelegt
 - [x] Domain-Namensschema festgelegt (Contoso)
@@ -35,7 +35,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <br>
 
-## 🧭 Vorgehen
+## Vorgehen
 
 <details open>
 <summary><strong>1. Repo & Struktur</strong></summary>
@@ -61,15 +61,19 @@ Als Domain-Basis wurde **Contoso** gewählt, nämlich die von Microsoft in prakt
 
 Azure for Students ist erfolgreich aktiviert. Der Entra-ID-Tenant lässt sich mit dem TBZ-Schul-Account nicht als Admin einsehen (kein Zugriff, dokumentiert), dafür wird in Auftrag 10 ein eigener Tenant benötigt. Details siehe [cloud-readiness.md](./cloud-readiness.md). Wichtig laut Modulvorgabe: **jetzt prüfen, nicht erst später**, da ein Scheitern des Tenants Zeit kostet, die sich später nicht mehr aufholen lässt, genau das haben wir hier frühzeitig erkannt.
 
-![Azure for Students aktiviert](./00-screenshots/01-azure-for-students.png)
+<img src="./00-screenshots/01-azure-for-students.png" width="850" alt="Azure for Students aktiviert">
 
-![Entra-ID-Tenant kein Admin-Zugriff](./00-screenshots/02-entra-id-tenant.png)
+*Azure for Students: erfolgreich aktiviert, Guthaben sichtbar.*
+
+<img src="./00-screenshots/02-entra-id-tenant.png" width="850" alt="Entra-ID-Tenant kein Admin-Zugriff">
+
+*Entra-ID-Tenant: kein Admin-Zugriff im TBZ-Tenant, dokumentierter Fehlschlag.*
 
 </details>
 
 <br>
 
-## 🖥️ Architektur
+## Architektur
 
 Erster Entwurf der Zielumgebung. Details (genaue CIDRs/IPs) folgen in [Auftrag 02](../02-initial-setup/) und stehen im [Setup-Sheet](./setup-sheet.md).
 
@@ -107,7 +111,7 @@ flowchart TB
 
 <br>
 
-## 📖 Begriffsklärungen
+## Begriffsklärungen
 
 Kurze, selbst recherchierte Erklärungen zu Begriffen aus dem Modul.
 
@@ -120,7 +124,7 @@ Eine VPC ist kein physisches Gerät, sondern ein isolierter, privater Netzwerkab
 
 <br>
 
-## 🖼️ Nachweise
+## Nachweise
 
 <details>
 <summary><strong>Screenshots anzeigen</strong></summary>
@@ -138,7 +142,7 @@ Details und Vorgehen bei Fehlschlag: [cloud-readiness.md](./cloud-readiness.md)
 
 <br>
 
-## 🔗 Verweise
+## Verweise
 
 | Datei | Inhalt |
 |---|---|

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 M159: Projekt-Setup-Sheet
+# M159: Projekt-Setup-Sheet
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-orange?style=flat)
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-1f6feb?style=flat)
@@ -162,6 +162,6 @@
 
 <div align="center">
 
-⬅️ [Zurück zu Auftrag 01](./README.md) · 🌐 [Architektur-Diagramm](./README.md#️-architektur)
+⬅️ [Zurück zu Auftrag 01](./README.md) · 🌐 [Architektur-Diagramm](./README.md#architektur)
 
 </div>

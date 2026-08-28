@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Cloud-Bereitschaft: Nachweis
+# Cloud-Bereitschaft: Nachweis
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-brightgreen?style=flat)
 

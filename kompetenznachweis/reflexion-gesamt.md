@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Gesamt-Reflexion
+# Gesamt-Reflexion
 
 ![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=flat)
 

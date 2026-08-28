@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤖 KI-Einsatz im Projekt
+# KI-Einsatz im Projekt
 
 ![Gültig für](https://img.shields.io/badge/Gültig%20für-Gesamtes%20Repo-1f6feb?style=flat)
 
@@ -10,13 +10,13 @@
 
 ---
 
-## 🎯 Zweck dieser Seite
+## Zweck dieser Seite
 
 Der verbindliche Rahmen für KI-Nutzung in diesem Modul steht in [`ki-nutzung.md`](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html) des Modul-Repositories: KI darf als Tutor, Sparringpartner und Reviewer eingesetzt werden, nicht um Arbeit zu übernehmen, die selbst gemacht werden muss. Diese Seite beschreibt konkret, in welchen Bereichen dieses Projekts KI wie genau eingesetzt wurde, damit das nicht in jedem `ki-log.md` einzeln neu erklärt werden muss.
 
 <br>
 
-## 🧭 Einsatzbereiche
+## Einsatzbereiche
 
 <details open>
 <summary><strong>📝 Dokumentation (README, Vorgehen-Texte)</strong></summary>
@@ -55,7 +55,7 @@ Screenshots werden ausschliesslich selbst erstellt (Konsole, PowerShell, RDP-Sit
 
 <br>
 
-## ⚠️ Wichtig: Was die KI nicht tut
+## Wichtig: Was die KI nicht tut
 
 - Keine Befehle direkt auf den AWS-/AD-Systemen ausführen (kein Zugriff), alles wird selbst ausgeführt und der KI zurückgemeldet.
 - Keine Screenshots oder Testergebnisse erfinden oder Schritte als erledigt markieren, die nicht tatsächlich durchgeführt wurden.
@@ -65,7 +65,7 @@ Screenshots werden ausschliesslich selbst erstellt (Konsole, PowerShell, RDP-Sit
 
 <br>
 
-## 🔗 Verweise
+## Verweise
 
 | Datei | Inhalt |
 |---|---|

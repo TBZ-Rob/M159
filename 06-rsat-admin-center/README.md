@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Auftrag 06: RSAT & Admin Center V2
+# Auftrag 06: RSAT & Admin Center V2
 
 <!--
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
@@ -15,15 +15,15 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 ---
 
-> ⚠️ **Direkt im Anschluss an [Auftrag 05](../05-aws-managed-ad/) durchführen** (gleicher kompakter Zeitraum kurz vor der Schlussbesprechung, siehe [Zeitplan](../README.md#️-zeitplan)), danach die AWS-Managed-AD-Domäne wieder löschen um Kosten zu stoppen.
+> ⚠️ **Direkt im Anschluss an [Auftrag 05](../05-aws-managed-ad/) durchführen** (gleicher kompakter Zeitraum kurz vor der Schlussbesprechung, siehe [Zeitplan](../README.md#zeitplan)), danach die AWS-Managed-AD-Domäne wieder löschen um Kosten zu stoppen.
 
-## 🎯 Ziel
+## Ziel
 
 > RSAT-Tools zur Verwaltung installieren, Windows Admin Center V2 auf einer neuen EC2-Client-Instanz einrichten, den EC2-AD-DC hinzufügen und von aussen sicher erreichbar machen.
 
 <br>
 
-## 🧭 Kernschritte
+## Kernschritte
 
 - Neue EC2-Client-Instanz innerhalb AWS Managed AD.
 - RSAT installieren: `Install-WindowsFeature -Name RSAT -IncludeAllSubFeature -IncludeManagementTools`.
@@ -34,7 +34,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <br>
 
-## ✅ Checkliste
+## Checkliste
 
 - [ ] Auftrag gestartet (direkt nach Auftrag 05)
 - [ ] RSAT installiert
@@ -48,7 +48,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 <br>
 
-## 🔗 Verweise
+## Verweise
 
 | Datei | Inhalt |
 |---|---|

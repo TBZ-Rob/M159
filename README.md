@@ -7,15 +7,19 @@
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-1f6feb?style=flat)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-8957e5?style=flat)
 
-**[Zeitplan](#️-zeitplan) · [Aufträge](#-aufträge-übersicht) · [Architektur](./01-planung/README.md#️-architektur) · [Setup-Sheet](./01-planung/setup-sheet.md) · [KI-Nutzung](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html)**
+**[Zeitplan](#zeitplan) · [Aufträge](#aufträge-übersicht) · [Architektur](./01-planung/README.md#architektur) · [Setup-Sheet](./01-planung/setup-sheet.md) · [KI-Nutzung](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html)**
 
 </div>
 
 ---
 
-## 📌 Kurzüberblick
+## Kurzüberblick
 
 Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AWS Managed Microsoft AD und Anbindung an Microsoft Entra ID.
+
+<table>
+<tr>
+<td valign="top" width="55%">
 
 | | |
 |---|---|
@@ -25,9 +29,23 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 | 🔑 Öffentlicher UPN | `contoso-robin.dynv6.net` |
 | 📋 Details | [Setup-Sheet](./01-planung/setup-sheet.md) |
 
+</td>
+<td valign="top" width="45%">
+
+```mermaid
+pie showData
+    title Aufträge-Status (13 total)
+    "Erledigt" : 4
+    "Offen" : 9
+```
+
+</td>
+</tr>
+</table>
+
 <br>
 
-## 🗓️ Zeitplan
+## Zeitplan
 
 > ⚠️ AWS Managed AD (Auftrag 05) kostet ca. 18 Dollar pro Woche. Deshalb liegen 05 und 06 bewusst nicht in der Mitte, sondern kompakt am Ende, direkt hintereinander, Managed AD wird erst kurz davor erstellt und sofort danach wieder gelöscht. 05/06 sind laut Modul die einzigen Aufträge, die verschoben werden dürfen.
 
@@ -75,7 +93,7 @@ gantt
 
 <br>
 
-## 📋 Aufträge: Übersicht
+## Aufträge: Übersicht
 
 ### Block 1: Lokale Umgebung
 
@@ -102,7 +120,7 @@ gantt
 
 <br>
 
-## 📁 Weitere Ordner
+## Weitere Ordner
 
 | Ordner | Inhalt |
 |---|---|
@@ -111,7 +129,7 @@ gantt
 
 <br>
 
-## 🤖 KI-Nutzung
+## KI-Nutzung
 
 Der KI-Einsatz in diesem Projekt folgt dem verbindlichen Rahmen aus [`ki-nutzung.md`](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html) des Modul-Repositories. Wie KI konkret in diesem Projekt eingesetzt wird (Dokumentation, Diagramme, Status-Updates, Anleitungen, Screenshots), steht in [ki-einsatz.md](./ki-einsatz.md). Pro Auftrag mit KI-Anteil liegt zusätzlich ein `ki-log.md` mit Prompt, Verifikation und Reflexion vor, siehe zum Beispiel [01-planung/ki-log.md](./01-planung/ki-log.md).
 
@@ -119,6 +137,6 @@ Der KI-Einsatz in diesem Projekt folgt dem verbindlichen Rahmen aus [`ki-nutzung
 
 <div align="center">
 
-⬆️ [Nach oben](#️-m159-directoryservices--projekt-contoso) · ➡️ [Weiter zu Auftrag 01](./01-planung/README.md)
+⬆️ [Nach oben](#-m159-directoryservices--projekt-contoso) · ➡️ [Weiter zu Auftrag 01](./01-planung/README.md)
 
 </div>

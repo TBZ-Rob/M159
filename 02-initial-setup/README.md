@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📁 Auftrag 02: Initial Setup
+# Auftrag 02: Initial Setup
 
 <!--
 Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · fertig=brightgreen
@@ -11,13 +11,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1f6feb?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8957e5?style=flat)
 
-**[Ziel](#-ziel) · [Netzwerk](#-schritt-1-bis-5-netzwerkgrundlage) · [Nachweise](#️-nachweise) · [Checkliste](#-checkliste)**
+**[Ziel](#ziel) · [Netzwerk](#schritt-1-bis-5-netzwerkgrundlage) · [Nachweise](#nachweise) · [Checkliste](#checkliste)**
 
 </div>
 
 ---
 
-## 🎯 Ziel
+## Ziel
 
 > AWS-Netzwerkgrundlage aufbauen (VPC, Subnetze, Security Groups) und die drei EC2-Instanzen gemäss [Setup-Sheet](../01-planung/setup-sheet.md) erstellen.
 
@@ -25,7 +25,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 
 > Werte stammen aus dem bereits ausgefüllten [Setup-Sheet](../01-planung/setup-sheet.md). Genaue Klickpfade in der AWS-Konsole können sich ändern, im Zweifel an der Oberfläche orientieren statt stur dieser Anleitung folgen.
 
-## 🧭 Schritt 1 bis 5: Netzwerkgrundlage
+## Schritt 1 bis 5: Netzwerkgrundlage
 
 <details open>
 <summary><strong>Schritt 1: AWS-Zugriff prüfen</strong></summary>
@@ -43,7 +43,9 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=orange · review=blueviolet · f
 - **Internet Gateway erstellen und am VPC anhängen**, sonst sind auch die "öffentlichen" Subnetze von aussen nicht erreichbar (kein RDP möglich). Das "kein Gateway" aus der Modul-Aufgabenstellung ist so zu verstehen, dass vorerst **kein NAT Gateway** nötig ist (das braucht nur das private Subnetz für ausgehenden Internetzugriff, kostet zusätzlich und kann bei Bedarf später ergänzt werden).
 - Name z. B. `M159-vpc`, damit es im Setup-Sheet unter VPC-ID nachgetragen werden kann.
 
-![VPC Übersicht](./00-screenshots/01-vpc-uebersicht.png)
+<img src="./00-screenshots/01-vpc-uebersicht.png" width="850" alt="VPC Übersicht">
+
+*VPC `M159-vpc` mit CIDR `10.0.0.0/16`.*
 
 </details>
 
@@ -69,7 +71,9 @@ Instanz-Platzierung gemäss Setup-Sheet Abschnitt 7 (DC bewusst im privaten Subn
 | Client (`client.ad.contoso.com`, `10.0.0.20`) | `M159-subnet-public1-us-east-1a` | Dient später u. a. als Zwischenstation (RDP) zum DC |
 | Admin Center (`admin.ad.contoso.com`, `10.0.0.30`) | `M159-subnet-public1-us-east-1a` | Muss von aussen erreichbar sein (Auftrag 06) |
 
-![Subnetze](./00-screenshots/02-subnetze.png)
+<img src="./00-screenshots/02-subnetze.png" width="850" alt="Subnetze">
+
+*Alle vier Subnetze mit CIDRs und Availability Zones.*
 
 </details>
 
@@ -81,11 +85,17 @@ Zwei Security Groups, Regeln stehen bereits im [Setup-Sheet](../01-planung/setup
 - **Domain Controller**: RDP, LDAP, LDAPS, Kerberos, SMB, DNS, RPC (inkl. Ephemeral-Port-Bereich 49152 bis 65535), ICMP, Global Catalog, Global Catalog SSL, Kerberos Password Change. Da der DC im privaten Subnetz liegt, kommt RDP darauf ohnehin nur aus dem VPC selbst an (z. B. vom Client aus), die SG-Regel `0.0.0.0/0` schadet trotzdem nicht, weil sie durch das fehlende Routing zum Internet Gateway faktisch nicht von aussen nutzbar ist.
 - **Clients**: RDP von aussen, restliche Ports (Kerberos, RPC, NetBIOS, LDAP, DNS, SMB, RPC Ephemeral, ICMP) nur aus dem VPC-Adressbereich.
 
-![Routentabelle](./00-screenshots/03-routing-tabelle.png)
+<img src="./00-screenshots/03-routing-tabelle.png" width="850" alt="Routentabelle">
 
-![Security Group DC](./00-screenshots/04-security-group-dc.png)
+*Routentabelle `M159-rt-public` mit Route zum Internet Gateway.*
 
-![Security Group Clients](./00-screenshots/05-security-group-clients.png)
+<img src="./00-screenshots/04-security-group-dc.png" width="850" alt="Security Group DC">
+
+*Security Group `M159-sg-dc` mit Inbound-Regeln.*
+
+<img src="./00-screenshots/05-security-group-clients.png" width="850" alt="Security Group Clients">
+
+*Security Group `M159-sg-clients` mit Inbound-Regeln.*
 
 </details>
 
@@ -100,17 +110,21 @@ Zwei Security Groups, Regeln stehen bereits im [Setup-Sheet](../01-planung/setup
 
 <br>
 
-## 🖥️ EC2-Instanzen und Windows-Grundkonfiguration
+## EC2-Instanzen und Windows-Grundkonfiguration
 
 Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem IPv6 sowie (bei den beiden Desktop-Instanzen) deaktiviertem IE ESC und angepassten Ordneroptionen konfiguriert. RDP-Zugriffskette getestet: Client01/AdminCenter01 direkt über Elastic IP erreichbar, DC01 nur via Sprung über Client01 (kein öffentlicher Zugriff).
 
-![EC2-Instanzen und IPs](./00-screenshots/06-ec2-instanzen-und-ips.png)
+<img src="./00-screenshots/06-ec2-instanzen-und-ips.png" width="850" alt="EC2-Instanzen und IPs">
 
-![RDP-Verbindung zu Client01](./00-screenshots/07-rdp-client01.png)
+*Alle drei EC2-Instanzen inkl. privater IP, Public IP und Elastic IP.*
+
+<img src="./00-screenshots/07-rdp-client01.png" width="850" alt="RDP-Verbindung zu Client01">
+
+*RDP-Verbindung zu Client01 mit gesetztem Hostnamen, ipconfig und Ping-Test.*
 
 <br>
 
-## 🖼️ Nachweise
+## Nachweise
 
 <details open>
 <summary><strong>Screenshots anzeigen</strong></summary>
@@ -131,7 +145,7 @@ Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem 
 
 <br>
 
-## ✅ Checkliste
+## Checkliste
 
 - [x] AWS-Zugriff geprüft
 - [x] VPC erstellt (`10.0.0.0/16`) inkl. Internet Gateway
@@ -148,7 +162,7 @@ Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem 
 
 <br>
 
-## 🔗 Verweise
+## Verweise
 
 | Datei | Inhalt |
 |---|---|
