@@ -120,6 +120,24 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 <br>
 
+<h2 id="kompetenzfelder"><font color="#8250df">Kompetenzfelder</font></h2>
+
+Welches Kompetenzfeld der Modul-Kompetenzmatrix (siehe [Kompetenzmatrix LB2](./00-files/modul-pdfs/kompetenzmatrix-lb2.pdf)) in welchem Auftrag abgedeckt wird.
+
+| Feld | Bezeichnung | Abgedeckt in |
+|---|---|---|
+| A | Struktur und Objekte | [01](./01-planung/README.md) · [03](./03-gesamtstruktur-dc-client/README.md) · [04](./04-freigaben-berechtigungen/README.md) · [07](./07-dit-gpos/README.md) |
+| B | Einsatz Directory Service | [03](./03-gesamtstruktur-dc-client/README.md) · [05](./05-aws-managed-ad/README.md) · [06](./06-rsat-admin-center/README.md) · [10](./10-entra-connect/README.md) · [11](./11-benutzerprofil/README.md) · [13](./13-sso-python-app/README.md) |
+| C | LDAP als Protokoll | [05](./05-aws-managed-ad/README.md) · [08](./08-suche-im-directory/README.md) · [13](./13-sso-python-app/README.md) |
+| D | Suche im Directory | [08](./08-suche-im-directory/README.md) |
+| E | Objektklassen und Attribute | [04](./04-freigaben-berechtigungen/README.md) · [07](./07-dit-gpos/README.md) · [09](./09-identity-mgmt-powershell/README.md) |
+| F | LDIF | noch durch keinen Auftrag abgedeckt |
+| G | Datenaustausch | [05](./05-aws-managed-ad/README.md) · [10](./10-entra-connect/README.md) · [11](./11-benutzerprofil/README.md) · [12](./12-netzlaufwerk-azure/README.md) |
+| H | Testen | [03](./03-gesamtstruktur-dc-client/README.md) · [09](./09-identity-mgmt-powershell/README.md) · [12](./12-netzlaufwerk-azure/README.md) |
+| I | Dokumentation und Übergabe | [01](./01-planung/README.md) · [06](./06-rsat-admin-center/README.md) |
+
+<br>
+
 <h2 id="weitere-ordner"><font color="#8250df">Weitere Ordner</font></h2>
 
 | Ordner | Inhalt |
