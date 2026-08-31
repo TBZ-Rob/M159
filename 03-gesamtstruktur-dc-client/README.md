@@ -9,14 +9,14 @@
 # Auftrag 03: Gesamtstruktur (1. DC) & Client
 
 <!--
-Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
+Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal) · Kompetenzfelder=58a6ff (blau, neutral)
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-100%25-1b7f79?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1b7f79?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8250df?style=flat)
-![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-A%2C%20B%2C%20H-d29922?style=flat)
+![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-A%2C%20B%2C%20H-58a6ff?style=flat)
 
 **[Ziel](#ziel) · [Vorgehen](#vorgehen) · [Nachweise](#nachweise) · [Checkliste](#checkliste)**
 

@@ -9,7 +9,7 @@
 # Auftrag 02: Initial Setup
 
 <!--
-Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
+Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal) · Kompetenzfelder=58a6ff (blau, neutral)
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)

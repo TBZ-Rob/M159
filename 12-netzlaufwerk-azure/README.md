@@ -9,14 +9,14 @@
 # Auftrag 12: Netzlaufwerk to Azure Migration
 
 <!--
-Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
+Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal) · Kompetenzfelder=58a6ff (blau, neutral)
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=flat)
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-0%25-lightgrey?style=flat)
 ![Block](https://img.shields.io/badge/Block-2%20Cloud%20Integration-1b7f79?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Offen-lightgrey?style=flat)
-![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-G%2C%20H-d29922?style=flat)
+![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-G%2C%20H-58a6ff?style=flat)
 
 </div>
 

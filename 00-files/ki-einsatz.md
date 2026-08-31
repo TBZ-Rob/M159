@@ -70,12 +70,12 @@ Screenshots werden ausschliesslich selbst erstellt (Konsole, PowerShell, RDP-Sit
 | Datei | Inhalt |
 |---|---|
 | [ki-nutzung.md (Modul-Repo)](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html) | Verbindlicher Rahmen für KI-Nutzung im Modul |
-| [README.md](./README.md) | Projektübersicht |
+| [README.md](../README.md) | Projektübersicht |
 
 <br>
 
 <div align="center">
 
-🏠 [Übersicht](./README.md)
+🏠 [Übersicht](../README.md)
 
 </div>

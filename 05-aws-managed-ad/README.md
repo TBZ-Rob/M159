@@ -9,14 +9,14 @@
 # Auftrag 05: AWS Managed Microsoft AD (Variante B: Authentik)
 
 <!--
-Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal)
+Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal) · Kompetenzfelder=58a6ff (blau, neutral)
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=flat)
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-0%25-lightgrey?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-1b7f79?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Offen-lightgrey?style=flat)
-![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-B%2C%20C%2C%20G-d29922?style=flat)
+![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-B%2C%20C%2C%20G-58a6ff?style=flat)
 
 </div>
 
