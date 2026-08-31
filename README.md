@@ -10,9 +10,9 @@
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-31%25-d29922?style=flat)
-![Domain](https://img.shields.io/badge/Domain-contoso.com-1b7f79?style=flat)
+![Domain](https://img.shields.io/badge/Domain-contoso.com-lightgrey?style=flat)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-d29922?style=flat)
-[![Tags-Legende](https://img.shields.io/badge/Tags--Legende-Hier%20klicken-8c959f?style=flat&labelColor=57606a)](#tags-legende)
+[![Badges-Legende](https://img.shields.io/badge/Badges--Legende-Hier%20klicken-8c959f?style=flat&labelColor=57606a)](#badges-legende)
 
 **[Zeitplan](#zeitplan) · [Aufträge](#aufträge-übersicht) · [Architektur](./01-planung/README.md#architektur) · [Setup-Sheet](./01-planung/setup-sheet.md) · [KI-Nutzung](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html)**
 
@@ -29,11 +29,11 @@
 
 Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AWS Managed Microsoft AD und Anbindung an Microsoft Entra ID.
 
-![AWS](https://img.shields.io/badge/-AWS%20EC2-1b7f79?style=flat-square&logo=amazonaws&logoColor=white)
-![PowerShell](https://img.shields.io/badge/-PowerShell-1b7f79?style=flat-square&logo=powershell&logoColor=white)
-![Active Directory](https://img.shields.io/badge/-Active%20Directory-1b7f79?style=flat-square&logo=windows&logoColor=white)
-![Entra ID](https://img.shields.io/badge/-Microsoft%20Entra%20ID-1b7f79?style=flat-square&logo=microsoftazure&logoColor=white)
-![GitHub](https://img.shields.io/badge/-GitHub-1b7f79?style=flat-square&logo=github&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS%20EC2-6e7681?style=flat-square&logo=amazonaws&logoColor=white)
+![PowerShell](https://img.shields.io/badge/-PowerShell-6e7681?style=flat-square&logo=powershell&logoColor=white)
+![Active Directory](https://img.shields.io/badge/-Active%20Directory-6e7681?style=flat-square&logo=windows&logoColor=white)
+![Entra ID](https://img.shields.io/badge/-Microsoft%20Entra%20ID-6e7681?style=flat-square&logo=microsoftazure&logoColor=white)
+![GitHub](https://img.shields.io/badge/-GitHub-6e7681?style=flat-square&logo=github&logoColor=white)
 
 <table>
 <tr>
@@ -135,7 +135,7 @@ Welches Kompetenzfeld der Modul-Kompetenzmatrix (siehe [Kompetenzmatrix LB2](./0
 
 <br>
 
-<h2 id="tags-legende"><font color="#8250df">Tags-Legende</font></h2>
+<h2 id="badges-legende"><font color="#8250df">Badges-Legende</font></h2>
 
 Was die Farben der Badges und Status-Symbole im gesamten Repository bedeuten.
 
@@ -144,7 +144,7 @@ Was die Farben der Badges und Status-Symbole im gesamten Repository bedeuten.
 | 🟪 Lila | `#8250df` | Akzent, Überschriften, KI-Anteil |
 | 🟩 Teal | `#1b7f79` | Erledigt, positiv |
 | 🟨 Amber | `#d29922` | In Arbeit, Warnung |
-| ⬜ Hellgrau | `lightgrey` | Offen, neutral |
+| ⬜ Hellgrau | `lightgrey` bzw. `#6e7681` | Offen, neutral |
 | 🟦 Blau | `#58a6ff` | Kompetenzfelder (werden nicht abgeschlossen, daher neutral) |
 
 <br>
