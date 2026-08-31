@@ -64,7 +64,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./00-files/assets/zeitplan-dark.png">
-  <img src="./00-files/assets/zeitplan-light.png" alt="M159 Zeitplan: Block 1 erledigt, Block 2 offen, 05/06 kurz vor Abgabe" width="1500">
+  <img src="./00-files/assets/zeitplan-light.png" alt="M159 Zeitplan: Block 1 erledigt, Block 2 offen, 05/06 kurz vor Abgabe" width="800">
 </picture>
 
 <details>
