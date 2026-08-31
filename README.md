@@ -12,7 +12,7 @@
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-31%25-d29922?style=flat)
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-1b7f79?style=flat)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-d29922?style=flat)
-[![Tags-Legende](https://img.shields.io/badge/Tags--Legende-Farben%20erkl%C3%A4rt-8250df?style=flat)](#tags-legende)
+[![Tags-Legende](https://img.shields.io/badge/Tags--Legende-Hier%20klicken-8c959f?style=flat&labelColor=57606a)](#tags-legende)
 
 **[Zeitplan](#zeitplan) · [Aufträge](#aufträge-übersicht) · [Architektur](./01-planung/README.md#architektur) · [Setup-Sheet](./01-planung/setup-sheet.md) · [KI-Nutzung](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html)**
 
