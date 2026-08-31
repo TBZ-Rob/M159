@@ -12,6 +12,7 @@
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-31%25-d29922?style=flat)
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-1b7f79?style=flat)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-d29922?style=flat)
+[![Tags-Legende](https://img.shields.io/badge/Tags--Legende-Farben%20erkl%C3%A4rt-8250df?style=flat)](#tags-legende)
 
 **[Zeitplan](#zeitplan) · [Aufträge](#aufträge-übersicht) · [Architektur](./01-planung/README.md#architektur) · [Setup-Sheet](./01-planung/setup-sheet.md) · [KI-Nutzung](https://ch-tbz-it.gitlab.io/Stud/m159/ki-nutzung.html)**
 
@@ -131,6 +132,20 @@ Welches Kompetenzfeld der Modul-Kompetenzmatrix (siehe [Kompetenzmatrix LB2](./0
 | G | Datenaustausch | [05](./05-aws-managed-ad/README.md) · [10](./10-entra-connect/README.md) · [11](./11-benutzerprofil/README.md) · [12](./12-netzlaufwerk-azure/README.md) |
 | H | Testen | [03](./03-gesamtstruktur-dc-client/README.md) · [09](./09-identity-mgmt-powershell/README.md) · [12](./12-netzlaufwerk-azure/README.md) |
 | I | Dokumentation und Übergabe | [01](./01-planung/README.md) · [06](./06-rsat-admin-center/README.md) |
+
+<br>
+
+<h2 id="tags-legende"><font color="#8250df">Tags-Legende</font></h2>
+
+Was die Farben der Badges und Status-Symbole im gesamten Repository bedeuten.
+
+| Farbe | Hex | Bedeutung |
+|---|---|---|
+| 🟪 Lila | `#8250df` | Akzent, Überschriften, KI-Anteil |
+| 🟩 Teal | `#1b7f79` | Erledigt, positiv |
+| 🟨 Amber | `#d29922` | In Arbeit, Warnung |
+| ⬜ Hellgrau | `lightgrey` | Offen, neutral |
+| 🟦 Blau | `#58a6ff` | Kompetenzfelder (werden nicht abgeschlossen, daher neutral) |
 
 <br>
 
