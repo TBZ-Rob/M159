@@ -86,14 +86,14 @@ Erster Entwurf der Zielumgebung. Details (genaue CIDRs/IPs) folgen in [Auftrag 0
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../00-files/assets/architektur-dark.png">
-  <img src="../00-files/assets/architektur-light.png" alt="Architektur: AWS VPC mit DC, Client und Admin Center EC2 sowie AWS Managed AD, DC hat Tree-Root Trust zu AWS Managed AD und synct via Entra Connect zu Microsoft Entra ID, welches mit dem oeffentlichen UPN verbunden ist" width="1000">
+  <img src="../00-files/assets/architektur-light.png" alt="Architektur: AWS VPC mit DC, Client und Admin Center EC2 sowie AWS Managed AD, DC hat beidseitigen Forest Trust und Conditional Forwarder zu AWS Managed AD und synct via Entra Connect zu Microsoft Entra ID in der Microsoft Cloud, welches mit dem oeffentlichen UPN verbunden ist" width="1000">
 </picture>
 
 | Feld | Wert | Details |
 |---|---|---|
 | On-Prem AD Domäne | `ad.contoso.com` | [Auftrag 03](../03-gesamtstruktur-dc-client/) |
 | AWS Managed AD Domäne | `aws.contoso.com` | [Auftrag 05](../05-aws-managed-ad/) |
-| Trust-Typ | Tree-Root Trust | [Setup-Sheet](./setup-sheet.md#06-active-directory-umgebung) |
+| Trust-Typ | Forest Trust (beidseitig) | [Setup-Sheet](./setup-sheet.md#06-active-directory-umgebung) |
 | Entra ID Sync | Entra Connect | [Auftrag 10](../10-entra-connect/) |
 | Öffentlicher UPN (geplant) | `contoso-robin.dynv6.net` | [Auftrag 13](../13-sso-python-app/) |
 

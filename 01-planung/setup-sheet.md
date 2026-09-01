@@ -110,7 +110,7 @@
 | Feld | Wert |
 |---|---|
 | Third-Level-Domäne | `aws.contoso.com` |
-| Trust-Typ | Tree-Root Trust |
+| Trust-Typ | Forest Trust (beidseitig) |
 | AWS Managed Admin User | admin |
 | AWS Managed Admin Passwort | _siehe Passwort-Manager_ |
 | DNS-Server 1 | _{{DNS1}}_ |
