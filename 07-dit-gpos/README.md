@@ -154,11 +154,11 @@ $shortcut.Save()
 
 Eine weitere wichtige Erkenntnis während der Fehlersuche: `gpupdate /force`, selbst mit `/boot`, aktualisiert eine bereits offene Sitzung nicht zuverlässig, weder für Logon-Scripts noch für Preferences. Erst ein vollständiges Ab- und wieder Anmelden hat die GPO-Anwendung zuverlässig ausgelöst.
 
-<img src="./00-screenshots/03-crm-link-anna-intern.png" width="700" alt="Desktop von anna.muster mit sichtbarer CRM-Verknuepfung">
+<img src="./00-screenshots/03-crm-link-anna-intern.png" width="450" alt="Desktop von anna.muster mit sichtbarer CRM-Verknuepfung">
 
 *anna.muster (Sekretariat, intern) hat die CRM-Verknüpfung auf dem Desktop.*
 
-<img src="./00-screenshots/04-crm-link-marco-extern.png" width="700" alt="Desktop von marco.bianchi ohne CRM-Verknuepfung">
+<img src="./00-screenshots/04-crm-link-marco-extern.png" width="450" alt="Desktop von marco.bianchi ohne CRM-Verknuepfung">
 
 *marco.bianchi (Promoter, extern) hat keine CRM-Verknüpfung.*
 
@@ -186,7 +186,7 @@ $copyScript | Out-File -FilePath "C:\Windows\SYSVOL\domain\Policies\{$gpoIdCopy}
 
 Der WMI-Filter wurde über die GUI erstellt (`gpmc.msc`, WMI Filters, New) und im Scope-Tab der GPO "Textdatei kopieren" zugewiesen. Mit dem Testbenutzer marco.bianchi (Promoter, auf Server 2022) verifiziert: Die Datei wurde korrekt nicht kopiert, und `gpresult` zeigt die GPO unter den durch WMI-Filter verweigerten Objekten.
 
-<img src="./00-screenshots/05-wmi-filter-denied-gpo.png" width="700" alt="gpresult HTML Bericht mit der GPO Textdatei kopieren unter Denied GPOs">
+<img src="./00-screenshots/05-wmi-filter-denied-gpo.png" width="450" alt="gpresult HTML Bericht mit der GPO Textdatei kopieren unter Denied GPOs">
 
 *`gpresult`, "Textdatei kopieren" korrekt als verweigert markiert, weil Client01 ein Server-Betriebssystem ist.*
 

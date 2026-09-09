@@ -143,6 +143,18 @@ else {
 
 **Test 1 (Erstlauf):** Alle drei Benutzer aus der CSV wurden ohne Fehler angelegt, jeweils mit grüner Erfolgsmeldung.
 
+<img src="./00-screenshots/01-adusers-it.png" width="700" alt="Active Directory-Benutzer und -Computer, OU IT mit dem angelegten Benutzer Hans Muster">
+
+*OU `IT` mit dem angelegten Benutzer Hans Muster.*
+
+<img src="./00-screenshots/02-adusers-marketing.png" width="700" alt="Active Directory-Benutzer und -Computer, OU Marketing mit dem angelegten Benutzer Petra Beispiel">
+
+*OU `Marketing` mit der angelegten Benutzerin Petra Beispiel.*
+
+<img src="./00-screenshots/03-adusers-support.png" width="700" alt="Active Directory-Benutzer und -Computer, OU Support mit dem angelegten Benutzer Lars Lustig">
+
+*OU `Support` mit dem angelegten Benutzer Lars Lustig.*
+
 **Test 2 (Zweitlauf):** Beim erneuten Ausführen desselben Skripts mit derselben CSV wurden alle drei Benutzer korrekt als bereits existierend erkannt, jeweils mit gelber Warnmeldung, und kein Duplikat wurde angelegt. Damit ist die Idempotenz des Skripts bestätigt.
 
 Das vollständige korrigierte Skript liegt unter [`import-users-korrigiert.ps1`](./import-users-korrigiert.ps1).

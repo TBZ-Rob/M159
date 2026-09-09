@@ -47,7 +47,7 @@ Im Baum navigiert zu `OU=Benutzer,OU=Promoter,DC=ad,DC=contoso,DC=com`, dort Mar
 CN=Marco Bianchi,OU=Benutzer,OU=Promoter,DC=ad,DC=contoso,DC=com
 ```
 
-<img src="./00-screenshots/02-teil1-ldp-bind-marco.png" width="700" alt="ldp.exe Baumansicht nach erfolgreichem Bind, Marco Bianchi markiert mit vollstaendigem DN">
+<img src="./00-screenshots/02-teil1-ldp-bind-marco.png" width="450" alt="ldp.exe Baumansicht nach erfolgreichem Bind, Marco Bianchi markiert mit vollstaendigem DN">
 
 *ldp.exe nach erfolgreichem Bind, Marco Bianchi im Baum gefunden.*
 
@@ -190,7 +190,7 @@ Zweitens, die eigentliche Ursache für die falsche Auswertung selbst: eine LDAP-
 
 Erst mit dieser Variable wertete das Targeting korrekt aus: Marco Bianchi (extern, aktiv) erhält den Shortcut, anna.muster (intern) nicht. Bestätigt über `gpresult /r /scope:user` bei marco.bianchi, das "VPN-Verknuepfung" korrekt unter "Applied Group Policy Objects" zeigt.
 
-<img src="./00-screenshots/01-teil4-gpresult-vpn-marco.png" width="700" alt="gpresult zeigt VPN-Verknuepfung als angewendete GPO bei marco.bianchi">
+<img src="./00-screenshots/01-teil4-gpresult-vpn-marco.png" width="450" alt="gpresult zeigt VPN-Verknuepfung als angewendete GPO bei marco.bianchi">
 
 *`gpresult /r /scope:user` bei marco.bianchi, VPN-Verknuepfung korrekt unter Applied Group Policy Objects.*
 
