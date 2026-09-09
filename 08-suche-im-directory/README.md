@@ -47,6 +47,10 @@ Im Baum navigiert zu `OU=Benutzer,OU=Promoter,DC=ad,DC=contoso,DC=com`, dort Mar
 CN=Marco Bianchi,OU=Benutzer,OU=Promoter,DC=ad,DC=contoso,DC=com
 ```
 
+<img src="./00-screenshots/02-teil1-ldp-bind-marco.png" width="700" alt="ldp.exe Baumansicht nach erfolgreichem Bind, Marco Bianchi markiert mit vollstaendigem DN">
+
+*ldp.exe nach erfolgreichem Bind, Marco Bianchi im Baum gefunden.*
+
 </details>
 
 <details open>
@@ -64,6 +68,10 @@ Get-ADUser -LDAPFilter "(sAMAccountName=marco.bianchi)"
 
 Beide liefern denselben Treffer mit demselben DN.
 
+<img src="./00-screenshots/03-teil21-getaduser-marco.png" width="700" alt="PowerShell Get-ADUser Ausgabe fuer marco.bianchi">
+
+*`Get-ADUser` liefert denselben Treffer wie zuvor `ldp.exe`.*
+
 **2.2 Alle Buchhaltungs-Benutzer, One Level vs. Subtree**:
 
 ```powershell
@@ -79,6 +87,10 @@ Get-ADUser -LDAPFilter "(objectClass=user)" -SearchBase "OU=Buchhaltung,DC=ad,DC
 
 Der Unterschied zeigt sich deutlich: Auf der direkten ersten Ebene unter `OU=Buchhaltung` liegen nur die beiden Unter-OUs `Benutzer` und `Computer`, keine Benutzerobjekte selbst, daher liefert "One Level" auf dieser Basis keinen Treffer. "Subtree" durchsucht dagegen rekursiv alle Ebenen darunter und findet Peter Keller unabhängig von der Verschachtelungstiefe. "One Level" ist also stark abhängig von der genauen Position der Base-DN in der Hierarchie, "Subtree" nicht.
 
+<img src="./00-screenshots/04-teil22-onelevel-vs-subtree.png" width="700" alt="PowerShell Terminalverlauf mit allen drei Get-ADUser Befehlen und ihren unterschiedlichen Ergebnissen">
+
+*Alle drei Suchen im Terminalverlauf: OneLevel auf Benutzer-Unter-OU (Treffer), Subtree auf Buchhaltung (Treffer), OneLevel direkt auf Buchhaltung (kein Treffer).*
+
 **2.3 Alle Domänengruppen**, DN der Gruppe "Extern" notiert:
 
 ```powershell
@@ -88,6 +100,10 @@ Get-ADGroup -LDAPFilter "(objectClass=group)" -SearchBase "DC=ad,DC=contoso,DC=c
 ```
 CN=Extern,CN=Users,DC=ad,DC=contoso,DC=com
 ```
+
+<img src="./00-screenshots/05-teil23-alle-gruppen-extern.png" width="700" alt="PowerShell Ausgabe aller Domaenengruppen, Zeile Extern mit DN markiert">
+
+*Vollständige Gruppenliste, Zeile "Extern" mit ihrem DN markiert.*
 
 </details>
 
@@ -104,13 +120,21 @@ Get-ADUser -LDAPFilter "(memberOf=CN=Promoter,CN=Users,DC=ad,DC=contoso,DC=com)"
 
 Ergebnis: 1 Treffer (marco.bianchi).
 
+<img src="./00-screenshots/06-teil31-promoter-direkt.png" width="700" alt="PowerShell Ausgabe direkter Promoter Mitglieder, ein Treffer marco.bianchi">
+
+*Direkte Mitgliedschaft in "Promoter": 1 Treffer.*
+
 **3.2 Alle Mitglieder von "Extern", inklusive verschachtelter Gruppen**, über die LDAP-Vergleichsregel `LDAP_MATCHING_RULE_IN_CHAIN` (OID `1.2.840.113556.1.4.1941`), die transitive Gruppenmitgliedschaft über beliebig viele Verschachtelungsebenen auflöst:
 
 ```powershell
 Get-ADUser -LDAPFilter "(memberOf:1.2.840.113556.1.4.1941:=CN=Extern,CN=Users,DC=ad,DC=contoso,DC=com)" -SearchBase "DC=ad,DC=contoso,DC=com"
 ```
 
-Ergebnis: 3 Treffer (marco.bianchi, laura.frei, thomas.steiner), obwohl keiner direkt Mitglied von "Extern" ist, sondern nur über ihre jeweilige Abteilungsgruppe (Promoter, Aussendienst, Partner).
+Ergebnis (Stand nach dem unten beschriebenen Validierungstest 2): 4 Treffer (marco.bianchi, laura.frei, thomas.steiner, test.berater), obwohl keiner davon direkt Mitglied von "Extern" ist, sondern jeweils nur über ihre Abteilungsgruppe (Promoter, Aussendienst, Partner) bzw. über die Testgruppe "Externe Berater".
+
+<img src="./00-screenshots/07-teil32-extern-transitiv.png" width="700" alt="PowerShell Ausgabe transitiver Extern Mitglieder, vier Treffer inklusive test.berater ueber zwei Verschachtelungsebenen">
+
+*Transitive Mitgliedschaft in "Extern": 4 Treffer, inklusive test.berater über zwei Verschachtelungsebenen (siehe Validierungstest 2).*
 
 **3.3 Dasselbe, aber nur aktive Konten**, zusätzlich mit einer bitweisen UND-Vergleichsregel (OID `1.2.840.113556.1.4.803`) auf `userAccountControl`, um deaktivierte Konten (Bit `0x2`, ACCOUNTDISABLE) auszuschliessen:
 
@@ -118,11 +142,19 @@ Ergebnis: 3 Treffer (marco.bianchi, laura.frei, thomas.steiner), obwohl keiner d
 Get-ADUser -LDAPFilter "(&(memberOf:1.2.840.113556.1.4.1941:=CN=Extern,CN=Users,DC=ad,DC=contoso,DC=com)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))" -SearchBase "DC=ad,DC=contoso,DC=com"
 ```
 
-Ergebnis: 3 Treffer (alle aktuell aktiv).
+Ergebnis: 4 Treffer (alle aktuell aktiv).
+
+<img src="./00-screenshots/08-teil33-nur-aktive.png" width="700" alt="PowerShell Ausgabe des kombinierten Filters, vier Treffer alle mit Enabled True">
+
+*Kombinierter Filter (transitiv + nur aktive Konten): 4 Treffer, alle mit `Enabled: True`.*
 
 **Validierungstests**:
 
-Test 1, Deaktivierung: `Disable-ADAccount -Identity "marco.bianchi"` gefolgt vom erneuten Filter zeigt korrekt nur noch 2 Treffer (laura.frei, thomas.steiner). Nach `Enable-ADAccount -Identity "marco.bianchi"` wieder 3 Treffer.
+Test 1, Deaktivierung: `Disable-ADAccount -Identity "marco.bianchi"` gefolgt vom erneuten Filter zeigt korrekt nur noch 3 Treffer (laura.frei, thomas.steiner, test.berater). Nach `Enable-ADAccount -Identity "marco.bianchi"` wieder 4 Treffer.
+
+<img src="./00-screenshots/09-validierung-disable-enable-marco.png" width="700" alt="PowerShell Terminalverlauf Disable-ADAccount und Enable-ADAccount fuer marco.bianchi mit den jeweiligen Filterergebnissen">
+
+*Validierungstest 1: nach `Disable-ADAccount` fehlt marco.bianchi im Filterergebnis (3 Treffer), nach `Enable-ADAccount` ist er wieder dabei (4 Treffer).*
 
 Test 2, neue verschachtelte Gruppe: Eine Testgruppe `Externe Berater` wurde erstellt und selbst als Mitglied zu `Extern` hinzugefügt, ein Testbenutzer `test.berater` wurde in `Externe Berater` aufgenommen:
 
@@ -133,7 +165,7 @@ New-ADUser -Name "Test Berater" -SamAccountName "test.berater" -UserPrincipalNam
 Add-ADGroupMember -Identity "Externe Berater" -Members "test.berater"
 ```
 
-Ohne jede Filteränderung zeigte der 3.3-Filter danach 4 Treffer, test.berater erschien korrekt trotz zweier Verschachtelungsebenen (test.berater → Externe Berater → Extern). Testgruppe und Testbenutzer bleiben bewusst als Nachweis-Setup bestehen.
+Ohne jede Filteränderung zeigte der 3.3-Filter danach 4 Treffer (siehe Screenshot oben zu 3.2/3.3), test.berater erschien korrekt trotz zweier Verschachtelungsebenen (test.berater → Externe Berater → Extern). Testgruppe und Testbenutzer bleiben bewusst als Nachweis-Setup bestehen.
 
 **Warum der Filter auf "Extern" zielt statt direkt auf "Promoter"**: Die Firewall-Regel soll für alle extern arbeitenden Personen gelten, nicht nur für Promoter. Da die drei externen Abteilungsgruppen (Promoter, Aussendienst, Partner) bereits alle in der übergeordneten Gruppe "Extern" verschachtelt sind, deckt ein einziger Filter auf "Extern" automatisch alle aktuellen und zukünftigen externen Abteilungen ab, ohne dass die Firewall-Regel bei einer neuen externen Abteilung angepasst werden müsste.
 
@@ -201,6 +233,14 @@ Siehe auch [entscheidungsprotokoll.md](./entscheidungsprotokoll.md) für die vol
 
 | Screenshot | Beschreibung |
 |---|---|
+| [02-teil1-ldp-bind-marco.png](./00-screenshots/02-teil1-ldp-bind-marco.png) | ldp.exe nach erfolgreichem Bind, Marco Bianchi im Baum mit vollständigem DN |
+| [03-teil21-getaduser-marco.png](./00-screenshots/03-teil21-getaduser-marco.png) | PowerShell `Get-ADUser` für marco.bianchi, gleicher Treffer wie ldp.exe |
+| [04-teil22-onelevel-vs-subtree.png](./00-screenshots/04-teil22-onelevel-vs-subtree.png) | OneLevel vs. Subtree, alle drei Suchen im Terminalverlauf |
+| [05-teil23-alle-gruppen-extern.png](./00-screenshots/05-teil23-alle-gruppen-extern.png) | Alle Domänengruppen, "Extern" mit DN markiert |
+| [06-teil31-promoter-direkt.png](./00-screenshots/06-teil31-promoter-direkt.png) | Direkte Mitglieder von "Promoter", 1 Treffer |
+| [07-teil32-extern-transitiv.png](./00-screenshots/07-teil32-extern-transitiv.png) | Transitive Mitglieder von "Extern", 4 Treffer inkl. test.berater |
+| [08-teil33-nur-aktive.png](./00-screenshots/08-teil33-nur-aktive.png) | Kombinierter Filter, nur aktive Konten, 4 Treffer |
+| [09-validierung-disable-enable-marco.png](./00-screenshots/09-validierung-disable-enable-marco.png) | Validierungstest 1: Disable/Enable marco.bianchi mit Filterergebnis |
 | [01-teil4-gpresult-vpn-marco.png](./00-screenshots/01-teil4-gpresult-vpn-marco.png) | gpresult: VPN-Verknuepfung korrekt bei marco.bianchi angewendet |
 
 </details>
@@ -214,7 +254,7 @@ Siehe auch [entscheidungsprotokoll.md](./entscheidungsprotokoll.md) für die vol
 - [x] Teil 3: Filter für die Firewall, inklusive Validierungstests
 - [x] Teil 4: Filter über GPO (Item-Level-Targeting, LDAP Query) aktiviert
 - [x] Teil 5: Firewall-Konfigurationsblatt ausgefüllt
-- [x] Screenshots/Nachweise abgelegt
+- [x] Screenshots/Nachweise abgelegt (Teil 1 bis 4)
 - [x] `ki-log.md` ausgefüllt
 - [x] `entscheidungsprotokoll.md` ausgefüllt (Dienstkonto für Applikationsanbindung)
 
