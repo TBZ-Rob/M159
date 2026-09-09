@@ -154,13 +154,18 @@ $shortcut.Save()
 
 Eine weitere wichtige Erkenntnis während der Fehlersuche: `gpupdate /force`, selbst mit `/boot`, aktualisiert eine bereits offene Sitzung nicht zuverlässig, weder für Logon-Scripts noch für Preferences. Erst ein vollständiges Ab- und wieder Anmelden hat die GPO-Anwendung zuverlässig ausgelöst.
 
-<img src="./00-screenshots/03-crm-link-anna-intern.png" width="450" alt="Desktop von anna.muster mit sichtbarer CRM-Verknuepfung">
-
-*anna.muster (Sekretariat, intern) hat die CRM-Verknüpfung auf dem Desktop.*
-
-<img src="./00-screenshots/04-crm-link-marco-extern.png" width="450" alt="Desktop von marco.bianchi ohne CRM-Verknuepfung">
-
-*marco.bianchi (Promoter, extern) hat keine CRM-Verknüpfung.*
+<table border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse; border:none;">
+<tr>
+<td align="center" style="border:none; padding-right:12px;">
+<img src="./00-screenshots/03-crm-link-anna-intern.png" width="350" alt="Desktop von anna.muster mit sichtbarer CRM-Verknuepfung"><br>
+<em>anna.muster (Sekretariat, intern) hat die CRM-Verknüpfung auf dem Desktop.</em>
+</td>
+<td align="center" style="border:none; padding-left:12px;">
+<img src="./00-screenshots/04-crm-link-marco-extern.png" width="350" alt="Desktop von marco.bianchi ohne CRM-Verknuepfung"><br>
+<em>marco.bianchi (Promoter, extern) hat keine CRM-Verknüpfung.</em>
+</td>
+</tr>
+</table>
 
 </details>
 
