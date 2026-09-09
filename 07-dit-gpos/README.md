@@ -233,7 +233,7 @@ Verifiziert mit dem Testbenutzer anna.muster: Beide Netzwerkdrucker erscheinen n
 
 Video-Nachweis: beide Drucker wurden vor der Aufnahme entfernt, danach im Video `gpupdate /force` ausgeführt und mit `Get-Printer` gezeigt, dass beide Drucker durch die GPO neu verteilt wurden.
 
-<video src="./00-screenshots/07-druckerverteilung-nachweis.mp4" controls width="700"></video>
+<video src="./00-screenshots/07-druckerverteilung-nachweis-v2.mp4" controls width="700"></video>
 
 *Video-Nachweis: `Get-Printer` vorher (leer), `gpupdate /force`, `Get-Printer` nachher (beide Laserdrucker wieder vorhanden).*
 
@@ -302,7 +302,7 @@ Product: 7-Zip 24.08 (x64 edition) -- Installation completed successfully.
 | [04-crm-link-marco-extern.png](./00-screenshots/04-crm-link-marco-extern.png) | CRM-Verknüpfung bei marco.bianchi (extern) nicht vorhanden |
 | [05-wmi-filter-denied-gpo.png](./00-screenshots/05-wmi-filter-denied-gpo.png) | gpresult: GPO korrekt durch WMI-Filter verweigert auf Server 2022 |
 | [06-7zip-eventlog.png](./00-screenshots/06-7zip-eventlog.png) | Ereignisprotokoll bestätigt erfolgreiche 7-Zip-Installation |
-| [07-druckerverteilung-nachweis.mp4](./00-screenshots/07-druckerverteilung-nachweis.mp4) | Video: Drucker entfernt, `gpupdate /force`, Drucker wieder vorhanden |
+| [07-druckerverteilung-nachweis-v2.mp4](./00-screenshots/07-druckerverteilung-nachweis-v2.mp4) | Video: Drucker entfernt, `gpupdate /force`, Drucker wieder vorhanden |
 
 </details>
 
