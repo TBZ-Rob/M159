@@ -9,7 +9,7 @@
 <div align="center">
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-54%25-d29922?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-62%25-d29922?style=flat)
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-lightgrey?style=flat)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-d29922?style=flat)
 [![Badges-Legende](https://img.shields.io/badge/Badges--Legende-Hier%20klicken-8c959f?style=flat&labelColor=57606a)](#badges-legende)
@@ -51,8 +51,8 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 <td valign="top" width="45%" align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%287%29%22%2C%22Offen%20%286%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B7%2C6%5D%2C%22backgroundColor%22%3A%5B%22%231b7f79%22%2C%22%236e7681%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%C3%A4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=380&height=220&backgroundColor=transparent&format=png&version=4">
-  <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%287%29%22%2C%22Offen%20%286%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B7%2C6%5D%2C%22backgroundColor%22%3A%5B%22%231b7f79%22%2C%22%236e7681%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%C3%A4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=380&height=220&backgroundColor=transparent&format=png&version=4" alt="Aufträge-Status: 7 von 13 erledigt" width="380">
+  <source media="(prefers-color-scheme: dark)" srcset="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%288%29%22%2C%22Offen%20%285%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B8%2C5%5D%2C%22backgroundColor%22%3A%5B%22%231b7f79%22%2C%22%236e7681%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%C3%A4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=380&height=220&backgroundColor=transparent&format=png&version=4">
+  <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%288%29%22%2C%22Offen%20%285%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B8%2C5%5D%2C%22backgroundColor%22%3A%5B%22%231b7f79%22%2C%22%236e7681%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%C3%A4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=380&height=220&backgroundColor=transparent&format=png&version=4" alt="Aufträge-Status: 8 von 13 erledigt" width="380">
 </picture>
 
 </td>
@@ -65,7 +65,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./00-files/assets/zeitplan-dark.png">
-  <img src="./00-files/assets/zeitplan-light.png" alt="M159 Zeitplan: Block 1 erledigt, Block 2 offen, 05/06 kurz vor Abgabe" width="800">
+  <img src="./00-files/assets/zeitplan-light.png" alt="M159 Zeitplan: Block 1 erledigt, 07/08/09/11 erledigt, 10/12/13 offen, 05/06 kurz vor Abgabe" width="800">
 </picture>
 
 <details>
@@ -82,8 +82,10 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 | n/a | n/a | **Checkpoint: Zeitstand prüfen** | n/a |
 | 5 | Di, 15.09.2026 | [07: DIT & GPOs](./07-dit-gpos/README.md) | ✅ erledigt |
 | 6 | Di, 22.09.2026 | [08: Suche im Directory](./08-suche-im-directory/README.md) | ✅ erledigt |
-| 7 | Di, 29.09.2026 | [09: PowerShell-Debugging](./09-identity-mgmt-powershell/README.md) (✅ erledigt) + [10: Entra Connect (Start)](./10-entra-connect/README.md) | ⬜ offen |
-| 8 | Di, 20.10.2026 | 10 fertig + [11](./11-benutzerprofil/README.md)/[12](./12-netzlaufwerk-azure/README.md)/[13](./13-sso-python-app/README.md) (Rest ggf. Selbstarbeit) | ⬜ offen |
+| 7 | Di, 29.09.2026 | [09: PowerShell-Debugging](./09-identity-mgmt-powershell/README.md) | ✅ erledigt |
+| 7 | Di, 29.09.2026 | [10: Entra Connect](./10-entra-connect/README.md) (blockiert: eigener Azure-Tenant) | ⬜ offen |
+| 8 | Di, 20.10.2026 | [11: Benutzerprofil (FSLogix)](./11-benutzerprofil/README.md) | ✅ erledigt |
+| 8 | Di, 20.10.2026 | [12: Netzlaufwerk](./12-netzlaufwerk-azure/README.md)/[13: SSO App](./13-sso-python-app/README.md) (Rest ggf. Selbstarbeit) | ⬜ offen |
 | n/a | kurz vor Schlussbesprechung | [05: Authentik (Variante B)](./05-aws-managed-ad/README.md) + [06: RSAT & Admin Center](./06-rsat-admin-center/README.md), kompakt an 1 bis 2 Tagen | ⬜ offen |
 
 </details>
@@ -110,8 +112,8 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 | # | Auftrag | Status | Dem Lehrer gezeigt | Modul-Auftrag |
 |---|---|---|---|---|
-| [10](./10-entra-connect/README.md) | MS Entra ID & MS Entra Connect | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-ms-entra-id-ms-entra-connect/) |
-| [11](./11-benutzerprofil/README.md) | Servergespeicherte Benutzerprofile | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/11-servergespeicherte-benutzerprofile/) |
+| [10](./10-entra-connect/README.md) | MS Entra ID & MS Entra Connect | ⬜ blockiert (eigener Azure-Tenant) | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-ms-entra-id-ms-entra-connect/) |
+| [11](./11-benutzerprofil/README.md) | Servergespeicherte Benutzerprofile | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/11-servergespeicherte-benutzerprofile/) |
 | [12](./12-netzlaufwerk-azure/README.md) | Netzlaufwerk to Azure Migration | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/12-netzlaufwerk-to-azure-migration/) |
 | [13](./13-sso-python-app/README.md) | SSO Python App | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/13-sso-python-app/) |
 
