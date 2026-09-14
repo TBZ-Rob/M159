@@ -13,7 +13,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-85%25-d29922?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-95%25-d29922?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-lightgrey?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8250df?style=flat)
 ![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-B%2C%20C%2C%20G-58a6ff?style=flat)
@@ -57,12 +57,14 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 - AD-Sicherheitsgruppe `SSO-WAC-Users` erstellt, aktuell einziges Mitglied `anna.muster`, bewusst nicht `peter.keller` (vorgesehen für einen späteren Negativtest).
 - AD-Gruppen-Sync repariert und verifiziert: Ursache war ein zweites, unauffälliges Fehlkonfigurations-Problem (das Active-Directory-Mapping `sAMAccountName`, das das reine User-Feld `username` setzt, war zusätzlich zu den bereits behobenen Mappings in der Gruppen-Mapping-Liste hinterlegt). Nach Entfernen dieses Mappings aus den Gruppen-Property-Mappings synchronisieren jetzt alle 71 AD-Gruppen korrekt, inklusive `SSO-WAC-Users`.
 - `SSO-WAC-Users` per Policy/Group-Bindung an die Application "Windows Admin Center" gebunden.
-- Zugriffssteuerung verifiziert: Authentiks Policy-Engine (dieselbe Klasse, die auch der Proxy-Outpost fuer echte Zugriffsentscheidungen nutzt) wertet den Zugriff fuer `anna.muster` als erlaubt und fuer `peter.keller` als verweigert.
+- Zugriffssteuerung zunächst über Authentiks Policy-Engine direkt verifiziert (`anna.muster` erlaubt, `peter.keller` verweigert), danach echten Bug gefunden: die WAC-Proxy-Application war keinem Outpost zugewiesen (`authentik Embedded Outpost` hatte eine leere Provider-Liste), wodurch nie tatsächlich zu WAC durchgeleitet wurde und jeder gültige AD-Benutzer nur bei Authentik selbst landete, ohne dass die Gruppenprüfung überhaupt griff. Nach Zuweisung des Providers zum Embedded Outpost greift die Prüfung jetzt tatsächlich am Proxy.
+- Zwei zusätzliche Netzwerk-Fixes für den funktionierenden Proxy-Pfad: Security Group `Authentik-SG` um eine Inbound-Regel für Port 9443 (HTTPS, Quelle `10.0.0.0/16`) ergänzt; Security Group von AdminCenter01 um eine Inbound-Regel für Port 443 (Quelle Authentik01-Subnetz `10.0.128.0/20`) ergänzt, da der Proxy sonst den WAC-Backend-Host nicht erreichen konnte.
+- DNS-Auflösung von Authentik01 zu `admincenter01.ad.contoso.com` gefixt (gleiches Muster wie beim DC01-Fix): der AWS-VPC-Resolver beantwortete Anfragen für `contoso.com` autoritativ mit NXDOMAIN, weil dies zufällig eine echte, öffentliche Domain ist (Azure DNS), noch bevor DC01 gefragt wurde. Ein Versuch, dies sauber über eine systemd-resolved Routing-Domain zu lösen, wurde verworfen (hätte die generelle Internet-DNS-Auflösung auf dem Server riskiert), stattdessen analog zu DC01 ein statischer `/etc/hosts`-Eintrag gesetzt.
+- **End-to-End-Test im Browser erfolgreich:** `anna.muster` gelangt über `https://10.0.140.253:9443` bis zur WAC-Oberfläche, `peter.keller` wird von Authentik mit "Permission denied" abgewiesen, bevor WAC überhaupt sichtbar wird.
 
 **Noch offen:**
 
-- Interaktiver Browser-Login-Test (statt der bereits erfolgten Verifikation über die Policy-Engine direkt): Login als `anna.muster` (soll funktionieren) und als `peter.keller` (soll verweigert werden, Negativtest für die Gruppensteuerung), inklusive Screenshots.
-- Screenshots/Nachweise ablegen.
+- Screenshots des End-to-End-Tests (erfolgreicher Login `anna.muster`, verweigerter Zugriff `peter.keller`) ablegen.
 
 <br>
 
@@ -74,8 +76,8 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 - [x] Login mit AD-Konto nachgewiesen (Prüfung gegen den DC)
 - [x] LDAPS mit Zertifikat eingerichtet, Notwendigkeit dokumentiert
 - [x] Least-privilege Bind-Konto verwendet und begründet
-- [x] Anwendung per SSO angebunden, Zugriff über AD-Gruppe gesteuert (Gruppen-Bindung erstellt, Zugriffsentscheidung per Policy-Engine verifiziert)
-- [ ] Umsetzung abgeschlossen (interaktiver Browser-Login-Test inkl. Screenshots steht noch aus)
+- [x] Anwendung per SSO angebunden, Zugriff über AD-Gruppe gesteuert (Gruppen-Bindung erstellt, End-to-End-Test im Browser erfolgreich)
+- [x] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
 - [x] `ki-log.md` ausgefüllt
 - [x] `entscheidungsprotokoll.md` ausgefüllt (Variante A vs. B)
