@@ -9,7 +9,7 @@
 <div align="center">
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-62%25-d29922?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-69%25-d29922?style=flat)
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-lightgrey?style=flat)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-d29922?style=flat)
 [![Badges-Legende](https://img.shields.io/badge/Badges--Legende-Hier%20klicken-8c959f?style=flat&labelColor=57606a)](#badges-legende)
@@ -86,7 +86,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 | 7 | Di, 29.09.2026 | [10: Entra Connect](./10-entra-connect/README.md) (blockiert: eigener Azure-Tenant) | ⬜ offen |
 | 8 | Di, 20.10.2026 | [11: Benutzerprofil (FSLogix)](./11-benutzerprofil/README.md) | ✅ erledigt |
 | 8 | Di, 20.10.2026 | [12: Netzlaufwerk](./12-netzlaufwerk-azure/README.md)/[13: SSO App](./13-sso-python-app/README.md) (Rest ggf. Selbstarbeit) | ⬜ offen |
-| n/a | kurz vor Schlussbesprechung | [05: Authentik (Variante B)](./05-aws-managed-ad/README.md) + [06: RSAT & Admin Center](./06-rsat-admin-center/README.md) | 🟨 05 in Arbeit, 06 offen |
+| n/a | kurz vor Schlussbesprechung | [05: Authentik (Variante B)](./05-aws-managed-ad/README.md) + [06: RSAT & Admin Center](./06-rsat-admin-center/README.md) | 🟨 05 erledigt, 06 offen |
 
 </details>
 
@@ -102,7 +102,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 | [02](./02-initial-setup/README.md) | Initial Setup | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/02-initial-setup/) |
 | [03](./03-gesamtstruktur-dc-client/README.md) | Gesamtstruktur (1. DC) & Client | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/03-neue-gesamtstruktur-und-client/) |
 | [04](./04-freigaben-berechtigungen/README.md) | Freigaben, Laufwerke, Berechtigungen | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/04-freigaben-laufwerke-berechtigungen/) |
-| [05](./05-aws-managed-ad/README.md) | AWS Managed Microsoft AD (Variante B: Authentik) | 🟨 in Arbeit | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/) |
+| [05](./05-aws-managed-ad/README.md) | AWS Managed Microsoft AD (Variante B: Authentik) | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/) |
 | [06](./06-rsat-admin-center/README.md) | RSAT & Admin Center V2 | ⬜ ans Ende verschoben (Kosten) | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/06-rsat-admin-center-v2/) |
 | [07](./07-dit-gpos/README.md) | DIT & GPOs | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/07-dit-gpos/) |
 | [08](./08-suche-im-directory/README.md) | Suche im Directory (LDAP) | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/08-suche-im-directory/) |

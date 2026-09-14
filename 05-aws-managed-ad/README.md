@@ -12,8 +12,8 @@
 Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal) · Kompetenzfelder=58a6ff (blau, neutral)
 -->
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-95%25-d29922?style=flat)
+![Phase](https://img.shields.io/badge/Phase-Fertig-1b7f79?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-100%25-1b7f79?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-lightgrey?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8250df?style=flat)
 ![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-B%2C%20C%2C%20G-58a6ff?style=flat)
@@ -43,7 +43,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 
 <h2 id="stand-der-umsetzung"><font color="#8250df">Stand der Umsetzung</font></h2>
 
-> Auftrag ist in Arbeit, noch nicht abgeschlossen. Dieser Abschnitt wird laufend nachgezogen, sobald weitere Schritte verifiziert sind.
+> Auftrag ist abgeschlossen.
 
 **Bereits umgesetzt:**
 
@@ -62,9 +62,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 - DNS-Auflösung von Authentik01 zu `admincenter01.ad.contoso.com` gefixt (gleiches Muster wie beim DC01-Fix): der AWS-VPC-Resolver beantwortete Anfragen für `contoso.com` autoritativ mit NXDOMAIN, weil dies zufällig eine echte, öffentliche Domain ist (Azure DNS), noch bevor DC01 gefragt wurde. Ein Versuch, dies sauber über eine systemd-resolved Routing-Domain zu lösen, wurde verworfen (hätte die generelle Internet-DNS-Auflösung auf dem Server riskiert), stattdessen analog zu DC01 ein statischer `/etc/hosts`-Eintrag gesetzt.
 - **End-to-End-Test im Browser erfolgreich:** `anna.muster` gelangt über `https://10.0.140.253:9443` bis zur WAC-Oberfläche, `peter.keller` wird von Authentik mit "Permission denied" abgewiesen, bevor WAC überhaupt sichtbar wird.
 
-**Noch offen:**
+<img src="./00-screenshots/01-login-anna-muster-wac.png" width="700" alt="Login anna.muster gelangt zu WAC">
 
-- Screenshots des End-to-End-Tests (erfolgreicher Login `anna.muster`, verweigerter Zugriff `peter.keller`) ablegen.
+*`anna.muster` ist Mitglied von `SSO-WAC-Users`, Authentik leitet nach dem Login zur Sign-in-Seite von Windows Admin Center weiter.*
+
+<img src="./00-screenshots/02-login-peter-keller-verweigert.png" width="700" alt="Login peter.keller verweigert">
+
+*`peter.keller` ist nicht Mitglied von `SSO-WAC-Users`, Authentik zeigt "Permission denied" und lässt ihn nicht bis WAC durch.*
 
 <br>
 
@@ -78,7 +82,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 - [x] Least-privilege Bind-Konto verwendet und begründet
 - [x] Anwendung per SSO angebunden, Zugriff über AD-Gruppe gesteuert (Gruppen-Bindung erstellt, End-to-End-Test im Browser erfolgreich)
 - [x] Umsetzung abgeschlossen
-- [ ] Screenshots/Nachweise abgelegt
+- [x] Screenshots/Nachweise abgelegt
 - [x] `ki-log.md` ausgefüllt
 - [x] `entscheidungsprotokoll.md` ausgefüllt (Variante A vs. B)
 

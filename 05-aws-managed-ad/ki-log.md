@@ -2,7 +2,7 @@
 
 # Auftrag 05: KI-Einsatz
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
+![Phase](https://img.shields.io/badge/Phase-Fertig-1b7f79?style=flat)
 ![Einträge](https://img.shields.io/badge/Eintr%C3%A4ge-9-8250df?style=flat)
 
 </div>
