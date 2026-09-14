@@ -12,10 +12,10 @@
 Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal) · Kompetenzfelder=58a6ff (blau, neutral)
 -->
 
-![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-0%25-lightgrey?style=flat)
+![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-60%25-d29922?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-lightgrey?style=flat)
-![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Offen-lightgrey?style=flat)
+![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8250df?style=flat)
 ![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-B%2C%20C%2C%20G-58a6ff?style=flat)
 
 </div>
@@ -41,19 +41,43 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 
 <br>
 
+<h2 id="stand-der-umsetzung"><font color="#8250df">Stand der Umsetzung</font></h2>
+
+> Auftrag ist in Arbeit, noch nicht abgeschlossen. Dieser Abschnitt wird laufend nachgezogen, sobald weitere Schritte verifiziert sind.
+
+**Bereits umgesetzt:**
+
+- Neue EC2-Instanz `Authentik01` (Ubuntu, gleiches privates Subnetz wie DC01) erstellt, Authentik läuft per Docker Compose (`ghcr.io/goauthentik/server:2026.8.2`) mit den Containern `authentik-server-1`, `authentik-worker-1`, `authentik-postgresql-1`.
+- DNS-Auflösung von Authentik01 zu DC01 über einen zusätzlichen Nameserver-Eintrag in Netplan sichergestellt.
+- LDAP Source in Authentik eingerichtet, verbunden über `ldaps://dc01.ad.contoso.com:636` statt Klartext-LDAP. Erster Sync erfolgreich, Benutzerobjekte kommen an.
+- Dediziertes Least-privilege-Bind-Konto für die LDAP-Anbindung in AD angelegt (kein Domain Admin), hinterlegt in Authentik als Bind-Passwort der LDAP Source.
+- LDAPS mit selbstsigniertem Zertifikat auf DC01 eingerichtet: AD DS bringt standardmässig kein LDAPS-Zertifikat mit, das Zertifikat musste manuell erstellt und zusätzlich in den lokalen Trusted-Root-Store importiert werden, damit AD DS es akzeptiert. Notwendigkeit: LDAP-Signing ist ab Windows Server 2025 verbindlich, ausserdem verhindert LDAPS, dass die Bind-Credentials im Klartext über das Netzwerk übertragen werden.
+- Login-Test mit echtem AD-Konto (`anna.muster`) erfolgreich, Passwortprüfung erfolgt live gegen den DC.
+- Proxy Provider und Application ("Windows Admin Center") in Authentik eingerichtet, um WAC per SSO vorzuschalten.
+- AD-Sicherheitsgruppe `SSO-WAC-Users` erstellt, aktuell einziges Mitglied `anna.muster`, bewusst nicht `peter.keller` (vorgesehen für einen späteren Negativtest).
+
+**Noch offen:**
+
+- Verifizieren, dass AD-Gruppen (nicht nur Benutzer) korrekt synchronisiert werden. Ein anfänglicher Konfigurationsfehler (User-Property-Mappings fälschlich in der Gruppen-Mapping-Liste zugeordnet) verursachte einen `TypeError` beim Sync, wurde identifiziert und behoben; die erneute Verifikation steht noch aus.
+- `SSO-WAC-Users` an die Policy/Group-Bindung der Application "Windows Admin Center" binden.
+- End-to-End-Test: Login als `anna.muster` (soll funktionieren) und als `peter.keller` (soll verweigert werden, Negativtest für die Gruppensteuerung).
+- Screenshots/Nachweise ablegen.
+
+<br>
+
 <h2 id="checkliste"><font color="#8250df">Checkliste</font></h2>
 
-- [ ] Auftrag gestartet
-- [ ] EC2-Instanz für Authentik erstellt und läuft
-- [ ] LDAP Source eingerichtet, AD-Benutzer und -Gruppen synchronisiert
-- [ ] Login mit AD-Konto nachgewiesen (Prüfung gegen den DC)
-- [ ] LDAPS mit Zertifikat eingerichtet, Notwendigkeit dokumentiert
-- [ ] Least-privilege Bind-Konto verwendet und begründet
-- [ ] Anwendung per SSO angebunden, Zugriff über AD-Gruppe gesteuert
+- [x] Auftrag gestartet
+- [x] EC2-Instanz für Authentik erstellt und läuft
+- [ ] LDAP Source eingerichtet, AD-Benutzer und -Gruppen synchronisiert (Benutzer: ja, Gruppen: Fix eingespielt, Verifikation ausstehend)
+- [x] Login mit AD-Konto nachgewiesen (Prüfung gegen den DC)
+- [x] LDAPS mit Zertifikat eingerichtet, Notwendigkeit dokumentiert
+- [x] Least-privilege Bind-Konto verwendet und begründet
+- [ ] Anwendung per SSO angebunden, Zugriff über AD-Gruppe gesteuert (Provider/Application stehen, Gruppen-Bindung ausstehend)
 - [ ] Umsetzung abgeschlossen
 - [ ] Screenshots/Nachweise abgelegt
-- [ ] `ki-log.md` ausgefüllt
-- [ ] `entscheidungsprotokoll.md` ausgefüllt (Variante A vs. B)
+- [x] `ki-log.md` ausgefüllt
+- [x] `entscheidungsprotokoll.md` ausgefüllt (Variante A vs. B)
 
 <br>
 

@@ -2,7 +2,7 @@
 
 # Entscheidungsprotokoll: Auftrag 05
 
-![Phase](https://img.shields.io/badge/Phase-Offen-lightgrey?style=flat)
+![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
 
 </div>
 
