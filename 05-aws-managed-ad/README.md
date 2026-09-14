@@ -13,7 +13,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 -->
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-60%25-d29922?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-85%25-d29922?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-lightgrey?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8250df?style=flat)
 ![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-B%2C%20C%2C%20G-58a6ff?style=flat)
@@ -55,12 +55,13 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 - Login-Test mit echtem AD-Konto (`anna.muster`) erfolgreich, Passwortprüfung erfolgt live gegen den DC.
 - Proxy Provider und Application ("Windows Admin Center") in Authentik eingerichtet, um WAC per SSO vorzuschalten.
 - AD-Sicherheitsgruppe `SSO-WAC-Users` erstellt, aktuell einziges Mitglied `anna.muster`, bewusst nicht `peter.keller` (vorgesehen für einen späteren Negativtest).
+- AD-Gruppen-Sync repariert und verifiziert: Ursache war ein zweites, unauffälliges Fehlkonfigurations-Problem (das Active-Directory-Mapping `sAMAccountName`, das das reine User-Feld `username` setzt, war zusätzlich zu den bereits behobenen Mappings in der Gruppen-Mapping-Liste hinterlegt). Nach Entfernen dieses Mappings aus den Gruppen-Property-Mappings synchronisieren jetzt alle 71 AD-Gruppen korrekt, inklusive `SSO-WAC-Users`.
+- `SSO-WAC-Users` per Policy/Group-Bindung an die Application "Windows Admin Center" gebunden.
+- Zugriffssteuerung verifiziert: Authentiks Policy-Engine (dieselbe Klasse, die auch der Proxy-Outpost fuer echte Zugriffsentscheidungen nutzt) wertet den Zugriff fuer `anna.muster` als erlaubt und fuer `peter.keller` als verweigert.
 
 **Noch offen:**
 
-- Verifizieren, dass AD-Gruppen (nicht nur Benutzer) korrekt synchronisiert werden. Ein anfänglicher Konfigurationsfehler (User-Property-Mappings fälschlich in der Gruppen-Mapping-Liste zugeordnet) verursachte einen `TypeError` beim Sync, wurde identifiziert und behoben; die erneute Verifikation steht noch aus.
-- `SSO-WAC-Users` an die Policy/Group-Bindung der Application "Windows Admin Center" binden.
-- End-to-End-Test: Login als `anna.muster` (soll funktionieren) und als `peter.keller` (soll verweigert werden, Negativtest für die Gruppensteuerung).
+- Interaktiver Browser-Login-Test (statt der bereits erfolgten Verifikation über die Policy-Engine direkt): Login als `anna.muster` (soll funktionieren) und als `peter.keller` (soll verweigert werden, Negativtest für die Gruppensteuerung), inklusive Screenshots.
 - Screenshots/Nachweise ablegen.
 
 <br>
@@ -69,12 +70,12 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 
 - [x] Auftrag gestartet
 - [x] EC2-Instanz für Authentik erstellt und läuft
-- [ ] LDAP Source eingerichtet, AD-Benutzer und -Gruppen synchronisiert (Benutzer: ja, Gruppen: Fix eingespielt, Verifikation ausstehend)
+- [x] LDAP Source eingerichtet, AD-Benutzer und -Gruppen synchronisiert (71 Gruppen, 22 Benutzer, verifiziert direkt in der Datenbank)
 - [x] Login mit AD-Konto nachgewiesen (Prüfung gegen den DC)
 - [x] LDAPS mit Zertifikat eingerichtet, Notwendigkeit dokumentiert
 - [x] Least-privilege Bind-Konto verwendet und begründet
-- [ ] Anwendung per SSO angebunden, Zugriff über AD-Gruppe gesteuert (Provider/Application stehen, Gruppen-Bindung ausstehend)
-- [ ] Umsetzung abgeschlossen
+- [x] Anwendung per SSO angebunden, Zugriff über AD-Gruppe gesteuert (Gruppen-Bindung erstellt, Zugriffsentscheidung per Policy-Engine verifiziert)
+- [ ] Umsetzung abgeschlossen (interaktiver Browser-Login-Test inkl. Screenshots steht noch aus)
 - [ ] Screenshots/Nachweise abgelegt
 - [x] `ki-log.md` ausgefüllt
 - [x] `entscheidungsprotokoll.md` ausgefüllt (Variante A vs. B)
