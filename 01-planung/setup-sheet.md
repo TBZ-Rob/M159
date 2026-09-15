@@ -100,10 +100,10 @@
 
 | Feld | Wert |
 |---|---|
-| Entra ID Domain | _{{ENTRA_DOMAIN}}_ |
-| Azure Global Administrator | _{{ENTRA_ADMIN}}_ |
+| Entra ID Domain | `robinnydeggertbzoutlook.onmicrosoft.com` |
+| Azure Global Administrator | `robin.nydegger.tbz@outlook.com` |
 | Kennwort Azure Administrator | _siehe Passwort-Manager_ |
-| Entra Connect Server | _{{ENTRA_CONNECT_SERVER}}_ |
+| Entra Connect Server | _{{ENTRA_CONNECT_SERVER}}_ (noch offen, wird bei Entra-Connect-Installation festgelegt) |
 
 ### AWS Managed AD
 
