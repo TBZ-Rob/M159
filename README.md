@@ -83,7 +83,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 | 5 | Di, 15.09.2026 | [07: DIT & GPOs](./07-dit-gpos/README.md) | ✅ erledigt |
 | 6 | Di, 22.09.2026 | [08: Suche im Directory](./08-suche-im-directory/README.md) | ✅ erledigt |
 | 7 | Di, 29.09.2026 | [09: PowerShell-Debugging](./09-identity-mgmt-powershell/README.md) | ✅ erledigt |
-| 7 | Di, 29.09.2026 | [10: Entra Connect](./10-entra-connect/README.md) (eigener Azure-Tenant steht, Umsetzung offen) | 🟨 in Arbeit |
+| 7 | Di, 29.09.2026 | [10: Entra Connect](./10-entra-connect/README.md) (Sync laeuft, UPN-Domain/Hybrid Join offen) | 🟨 in Arbeit |
 | 8 | Di, 20.10.2026 | [11: Benutzerprofil (FSLogix)](./11-benutzerprofil/README.md) | ✅ erledigt |
 | 8 | Di, 20.10.2026 | [12: Netzlaufwerk](./12-netzlaufwerk-azure/README.md)/[13: SSO App](./13-sso-python-app/README.md) (Rest ggf. Selbstarbeit) | ⬜ offen |
 | n/a | kurz vor Schlussbesprechung | [05: Authentik (Variante B)](./05-aws-managed-ad/README.md) + [06: RSAT & Admin Center](./06-rsat-admin-center/README.md) | 🟨 05 erledigt, 06 offen |
@@ -112,7 +112,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 | # | Auftrag | Status | Dem Lehrer gezeigt | Modul-Auftrag |
 |---|---|---|---|---|
-| [10](./10-entra-connect/README.md) | MS Entra ID & MS Entra Connect | 🟨 in Arbeit (Tenant steht) | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-ms-entra-id-ms-entra-connect/) |
+| [10](./10-entra-connect/README.md) | MS Entra ID & MS Entra Connect | 🟨 in Arbeit (Sync laeuft) | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-ms-entra-id-ms-entra-connect/) |
 | [11](./11-benutzerprofil/README.md) | Servergespeicherte Benutzerprofile | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/11-servergespeicherte-benutzerprofile/) |
 | [12](./12-netzlaufwerk-azure/README.md) | Netzlaufwerk to Azure Migration | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/12-netzlaufwerk-to-azure-migration/) |
 | [13](./13-sso-python-app/README.md) | SSO Python App | ⬜ offen | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/13-sso-python-app/) |
