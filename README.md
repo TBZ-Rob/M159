@@ -9,7 +9,7 @@
 <div align="center">
 
 ![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-69%25-d29922?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-77%25-d29922?style=flat)
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-lightgrey?style=flat)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS%20%2B%20Azure-d29922?style=flat)
 [![Badges-Legende](https://img.shields.io/badge/Badges--Legende-Hier%20klicken-8c959f?style=flat&labelColor=57606a)](#badges-legende)
@@ -51,8 +51,8 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 <td valign="top" width="45%" align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%288%29%22%2C%22In%20Arbeit%20%281%29%22%2C%22Offen%20%284%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B8%2C1%2C4%5D%2C%22backgroundColor%22%3A%5B%22%231b7f79%22%2C%22%23d29922%22%2C%22%236e7681%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%C3%A4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=380&height=220&backgroundColor=transparent&format=png&version=4">
-  <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%288%29%22%2C%22In%20Arbeit%20%281%29%22%2C%22Offen%20%284%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B8%2C1%2C4%5D%2C%22backgroundColor%22%3A%5B%22%231b7f79%22%2C%22%23d29922%22%2C%22%236e7681%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%C3%A4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=380&height=220&backgroundColor=transparent&format=png&version=4" alt="Aufträge-Status: 8 von 13 erledigt, 1 in Arbeit, 4 offen" width="380">
+  <source media="(prefers-color-scheme: dark)" srcset="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%2810%29%22%2C%22Offen%20%283%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B10%2C3%5D%2C%22backgroundColor%22%3A%5B%22%231b7f79%22%2C%22%236e7681%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%5Cu00e4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%23c9d1d9%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=380&height=220&backgroundColor=transparent&format=png&version=4">
+  <img src="https://quickchart.io/chart?c=%7B%22type%22%3A%22pie%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Erledigt%20%2810%29%22%2C%22Offen%20%283%29%22%5D%2C%22datasets%22%3A%5B%7B%22data%22%3A%5B10%2C3%5D%2C%22backgroundColor%22%3A%5B%22%231b7f79%22%2C%22%236e7681%22%5D%7D%5D%7D%2C%22options%22%3A%7B%22plugins%22%3A%7B%22title%22%3A%7B%22display%22%3Atrue%2C%22text%22%3A%22Auftr%5Cu00e4ge-Status%20%2813%20total%29%22%2C%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A18%7D%7D%2C%22legend%22%3A%7B%22display%22%3Atrue%2C%22position%22%3A%22right%22%2C%22labels%22%3A%7B%22color%22%3A%22%231f2328%22%2C%22font%22%3A%7B%22size%22%3A14%7D%7D%7D%7D%7D%7D&width=380&height=220&backgroundColor=transparent&format=png&version=4" alt="Aufträge-Status: 10 von 13 erledigt, 3 offen" width="380">
 </picture>
 
 </td>
@@ -65,7 +65,7 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./00-files/assets/zeitplan-dark.png">
-  <img src="./00-files/assets/zeitplan-light.png" alt="M159 Zeitplan: Block 1 erledigt, 07/08/09/11 erledigt, 10/12/13 offen, 05/06 kurz vor Abgabe" width="800">
+  <img src="./00-files/assets/zeitplan-light.png" alt="M159 Zeitplan: Block 1 erledigt, 07/08/09/10/11 erledigt, 12/13 offen, 05 erledigt/06 offen kurz vor Abgabe" width="800">
 </picture>
 
 <details>
