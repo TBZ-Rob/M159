@@ -12,8 +12,8 @@
 Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal) · Kompetenzfelder=58a6ff (blau, neutral)
 -->
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
-![Fortschritt](https://img.shields.io/badge/Fortschritt-60%25-d29922?style=flat)
+![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
+![Fortschritt](https://img.shields.io/badge/Fortschritt-100%25-1b7f79?style=flat)
 ![Block](https://img.shields.io/badge/Block-2%20Cloud%20Integration-lightgrey?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8250df?style=flat)
 ![Kompetenzfelder](https://img.shields.io/badge/Kompetenzfelder-G%2C%20B-58a6ff?style=flat)
@@ -66,7 +66,16 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 
 **Ergebnis:** Initialer Sync erfolgreich, 17 Benutzer aus dem lokalen AD in Microsoft Entra ID sichtbar (Spalte "On-premises sync" = Yes), `Get-ADSyncScheduler` zeigt aktiven Zeitplan (`SyncCycleEnabled: True`, Delta-Sync alle 30 Minuten). Siehe [Nachweise](#nachweise), Screenshots 05 und 06.
 
-**Noch offen:** eigene, tatsaechlich verifizierbare UPN-Domain (nicht `ad.contoso.com`/`contoso.com`, das ist eine echte fremde oeffentliche Domain), danach Hybrid Join fuer Client01 (`dsregcmd /status`).
+**Entscheid eigene UPN-Domain:** bewusst keine eigene, oeffentliche Domain gekauft/verifiziert (Robin besitzt keine). `ad.contoso.com` scheidet aus, da echte, fremde oeffentliche Domain (Azure DNS), nicht verifizierbar. Synchronisierte Benutzer bleiben deshalb unter der Standard-Domain `robinnydeggertbzoutlook.onmicrosoft.com`, funktional identisch (Sign-in, Password Hash Sync funktionieren unabhaengig vom UPN-Domain-Namen), nur kosmetisch anders als ein Produktivsetup mit eigener Domain. Fuer den muendlichen Nachweis als bewusste, kostenbedingte Design-Entscheidung zu begruenden.
+
+**Hybrid Join (Client01):** Ueber "Additional tasks" -> "Configure device options" -> "Configure Hybrid Azure AD join" konfiguriert (Forest `ad.contoso.com`, SCP automatisch erstellt, Windows 10+ domain-joined devices aktiviert). Erster Registrierungsversuch auf Client01 (`schtasks /Run /TN "\Microsoft\Windows\Workplace Join\Automatic-Device-Join"`) schlug fehl: `Server error: The device object by the given id (...) is not found` (Event-ID 304, `registrationType: sync`). Ursache: das Konfigurieren von Hybrid Join fuegt eine neue Sync-Regel hinzu, die per Delta-Sync nicht rueckwirkend auf bestehende Objekte angewendet wird, dafuer ist ein **Initial-Sync** noetig (`Start-ADSyncSyncCycle -PolicyType Initial`). Nach Initial-Sync und erneutem Task-Lauf erfolgreich:
+
+```
+dsregcmd /status
+             AzureAdJoined : YES
+              DomainJoined : YES
+                  DeviceId : b4cbb0ef-dcc0-465a-a129-7d236d23a8a7
+```
 
 <br>
 
@@ -98,9 +107,9 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 - [x] Eigener Azure-Tenant mit Admin-Rechten steht
 - [x] MS Entra Connect installiert
 - [x] Password Hash Synchronization aktiv, initialer Sync erfolgreich (17 Benutzer)
-- [ ] Eigene UPN-Domain verifiziert und zugewiesen
-- [ ] Hybrid Join (Client01) getestet
-- [ ] Umsetzung abgeschlossen
+- [x] Eigene UPN-Domain geprueft, bewusst nicht umgesetzt (keine eigene Domain vorhanden, begruendet)
+- [x] Hybrid Join (Client01) getestet, `AzureAdJoined: YES`
+- [x] Umsetzung abgeschlossen
 - [x] Screenshots/Nachweise abgelegt
 - [x] `ki-log.md` ausgefüllt
 
