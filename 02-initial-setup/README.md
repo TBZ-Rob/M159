@@ -129,6 +129,8 @@ Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem 
 
 *RDP-Verbindung zu Client01 mit gesetztem Hostnamen, ipconfig und Ping-Test.*
 
+> ⚠️ **Nachweis fehlt:** die offizielle Aufgabenstellung verlangt zusätzlich einzeln belegte Desktop-/Tastatureinstellungen (CH-Tastaturlayout, Dateityp-Erweiterungen anzeigen, geschützte Systemdateien sichtbar, CMD-/PowerShell-Verknüpfungen auf Desktop, Desktopsymbole Dieser PC/Systemsteuerung/Netzwerk aktiviert). Oben nur pauschal als "angepasste Ordneroptionen" erwähnt, kein Screenshot. AWS-Guthaben am 22.09.2026 aufgebraucht (50.9/50 Dollar), Client01/AdminCenter01 nicht mehr erreichbar, um das nachzuholen und zu belegen.
+
 <br>
 
 <h2 id="nachweise"><font color="#8250df">Nachweise</font></h2>
@@ -163,6 +165,7 @@ Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem 
 - [x] Client erstellt (Desktop, öffentliches Subnetz)
 - [x] Admin Center erstellt (Desktop, öffentliches Subnetz)
 - [x] Windows-Grundkonfiguration auf allen drei Instanzen
+- [ ] Desktop-/Tastatureinstellungen einzeln nachgewiesen (CH-Layout, Dateityp-Erweiterungen, Desktopsymbole, CMD/PowerShell-Verknüpfungen) — offen, AWS-Guthaben aufgebraucht (siehe Hinweis oben)
 - [x] Screenshots/Nachweise abgelegt
 - [x] `ki-log.md` ausgefüllt
 - [x] Setup-Sheet mit effektiven VPC-ID/Elastic IPs nachgeführt

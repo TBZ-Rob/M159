@@ -91,6 +91,8 @@ az role assignment create --assignee <ObjectId Buchhaltung> --role "Storage File
 - `anna.muster` (Sekretariat, Reader): kann Inhalt sehen, Schreibversuch (Datei umbenennen) ergibt **"File Access Denied"**, korrekt.
 - `peter.keller` (Buchhaltung, Contributor): kann Dateien erstellen/schreiben, kein Fehler, korrekt.
 
+> ⚠️ **Nachweis fehlt:** die offizielle Aufgabenstellung verlangt zusätzlich einen expliziten `dsregcmd /status`-Nachweis (Device State Hybrid/SSO) als Teil dieses Auftrags, bisher nur in [Auftrag 10](../10-entra-connect/README.md) gezeigt. Inhaltlich bereits erfüllt (gleiches Gerät, gleicher Zustand), aber kein eigener Beleg in diesem Ordner. AWS-Guthaben am 22.09.2026 aufgebraucht (50.9/50 Dollar), Client01 nicht mehr erreichbar, um den Screenshot hier separat nachzutragen.
+
 <br>
 
 <h2 id="nachweise"><font color="#8250df">Nachweise</font></h2>
@@ -117,6 +119,7 @@ az role assignment create --assignee <ObjectId Buchhaltung> --role "Storage File
 - [x] Kerberos-Realm-Mapping per GPO gesetzt
 - [x] RBAC-Rollen fuer Sekretariat (Reader) und Buchhaltung (Contributor) zugewiesen
 - [x] Verbindungstest mit beiden Abteilungen erfolgreich verifiziert
+- [ ] `dsregcmd /status`-Nachweis in diesem Auftrag separat belegt — offen, AWS-Guthaben aufgebraucht (siehe Hinweis oben)
 - [x] Umsetzung abgeschlossen
 - [x] Screenshots/Nachweise abgelegt
 - [x] `ki-log.md` ausgefüllt

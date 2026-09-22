@@ -74,9 +74,17 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 
 | Datei | Beschreibung |
 |---|---|
+| [01-app-registration-overview.png](./00-screenshots/01-app-registration-overview.png) | App Registration Overview, `M159-SSO-App` |
+| [02-authentication-callback.png](./00-screenshots/02-authentication-callback.png) | Authentication-Blade, konfigurierte Redirect URI (Callback) |
+| [03-client-secret-erstellt.png](./00-screenshots/03-client-secret-erstellt.png) | Client Secret erstellt (Wert geschwärzt) |
+| [04-env-datei.png](./00-screenshots/04-env-datei.png) | `.env`-Datei mit `CLIENT_ID`/`CLIENT_SECRET`/`TENANT_ID` (Werte geschwärzt) |
+| [05-test1-start.png](./00-screenshots/05-test1-start.png) | Test 1: App-Startseite vor Login |
+| [06-test1-eingeloggt.png](./00-screenshots/06-test1-eingeloggt.png) | Test 1: erfolgreich eingeloggter Zustand |
 | [03-edge-kerberos-wia-sso.mp4](./00-screenshots/03-edge-kerberos-wia-sso.mp4) | Bildschirmaufnahme Test 3: Login in Edge auf Client01 (hybrid Azure AD joined), zeigt Klick auf "Login mit Microsoft" bis zur eingeloggten Seite, ohne jeden Passwort- oder Consent-Prompt dazwischen |
 
 </details>
+
+> ⚠️ **Nachweise fehlen:** die offizielle Aufgabenstellung verlangt zusätzlich Screenshots für Test 2 (Chrome token-basiertes SSO: bestehende M365-Session + erfolgreicher Login) und für Test 3 (Edge Kerberos/WIA: kein Passwort-Prompt + erfolgreicher Login, zusätzlich zum bereits vorhandenen Video). AWS-Guthaben am 22.09.2026 aufgebraucht (50.9/50 Dollar), Client01 nicht mehr erreichbar, um diese vier Screenshots nachzutragen.
 
 <br>
 
@@ -91,7 +99,7 @@ Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 
 - [x] Test 3 (Edge, Kerberos/WIA) durchgefuehrt und per Video belegt
 - [x] Umsetzung abgeschlossen
 - [x] Video als Nachweis abgelegt
-- [ ] `ki-log.md` ausgefüllt
+- [x] `ki-log.md` ausgefüllt
 
 <br>
 

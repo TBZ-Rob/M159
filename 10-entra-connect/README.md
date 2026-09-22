@@ -112,6 +112,7 @@ dsregcmd /status
 - [x] Umsetzung abgeschlossen
 - [x] Screenshots/Nachweise abgelegt
 - [x] `ki-log.md` ausgefüllt
+- [x] `entscheidungsprotokoll.md` ausgefüllt (eigene UPN-Domain vs. Standard-Tenant-Domain)
 
 <br>
 
