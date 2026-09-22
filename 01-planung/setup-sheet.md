@@ -2,7 +2,7 @@
 
 # M159: Projekt-Setup-Sheet
 
-![Phase](https://img.shields.io/badge/Phase-In%20Arbeit-d29922?style=flat)
+![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
 ![Domain](https://img.shields.io/badge/Domain-contoso.com-lightgrey?style=flat)
 
 </div>
