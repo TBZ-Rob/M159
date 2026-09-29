@@ -117,6 +117,17 @@ Test von Client01 aus (eigene Elastic IP, echter Zugriff von aussen, nicht inner
 
 </details>
 
+<details open>
+<summary><strong>6. AWS-Guthaben nach Abschluss</strong></summary>
+
+Direkt nach Abschluss dieses Auftrags (letzter offener Auftrag, siehe oben) war das AWS-Guthaben des Academy-Learner-Labs vollständig aufgebraucht: 51.96 von 50 Dollar verbraucht, das Lab liess sich nicht mehr starten. Bestätigt die Kostenkontrolle-Begründung für die Verschiebung von Auftrag 05/06 ans Ende (siehe oben und [entscheidungsprotokoll.md](./entscheidungsprotokoll.md)).
+
+<img src="./00-screenshots/09-aws-guthaben-aufgebraucht.png" width="700" alt="AWS Academy Learner Lab Meldung: Guthaben von 51.96 Dollar hat das Budget von 50 Dollar ueberschritten">
+
+*AWS Academy Learner Lab: "Your total lab spend of $51.964348 has exceeded the total budget of $50.00".*
+
+</details>
+
 <br>
 
 <h2 id="nachweise"><font color="#8250df">Nachweise</font></h2>
@@ -136,6 +147,7 @@ Test von Client01 aus (eigene Elastic IP, echter Zugriff von aussen, nicht inner
 | [06-sso-anna-zugriff-erlaubt.png](./00-screenshots/06-sso-anna-zugriff-erlaubt.png) | anna.muster sieht WAC-Kachel in Authentik |
 | [07-sso-peter-zugriff-verweigert.png](./00-screenshots/07-sso-peter-zugriff-verweigert.png) | peter.keller ohne verfügbare Anwendungen |
 | [08-wac-proxy-login-extern.png](./00-screenshots/08-wac-proxy-login-extern.png) | WAC-Login-Seite über Authentik-Proxy, von Client01 aus |
+| [09-aws-guthaben-aufgebraucht.png](./00-screenshots/09-aws-guthaben-aufgebraucht.png) | AWS Academy Learner Lab: Guthaben aufgebraucht (51.96 von 50 Dollar verbraucht), Nachweis für den Grund der konsequenten Kostenkontrolle in diesem und dem vorangehenden Auftrag |
 
 </details>
 

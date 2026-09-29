@@ -167,6 +167,14 @@ Der KI-Einsatz in diesem Projekt folgt dem verbindlichen Rahmen aus [`ki-nutzung
 
 <br>
 
+<h2 id="aws-guthaben"><font color="#8250df">AWS-Guthaben</font></h2>
+
+Direkt nach Abschluss aller 13 Aufträge war das AWS-Guthaben des Academy-Learner-Labs vollständig aufgebraucht (51.96 von 50 Dollar verbraucht). Grund für die bewusste Verschiebung von Auftrag 05/06 ans Ende und die konsequente Kostenkontrolle im gesamten Projekt, siehe [Auftrag 06](./06-rsat-admin-center/README.md#aws-guthaben-nach-abschluss).
+
+<img src="./06-rsat-admin-center/00-screenshots/09-aws-guthaben-aufgebraucht.png" width="600" alt="AWS Academy Learner Lab Meldung: Guthaben von 51.96 Dollar hat das Budget von 50 Dollar ueberschritten">
+
+<br>
+
 <div align="center">
 
 ⬆️ [Nach oben](#-m159-directoryservices--projekt-contoso) · ➡️ [Weiter zu Auftrag 01](./01-planung/README.md)
