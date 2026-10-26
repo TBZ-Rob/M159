@@ -119,7 +119,7 @@ az role assignment create --assignee <ObjectId Buchhaltung> --role "Storage File
 - [x] Kerberos-Realm-Mapping per GPO gesetzt
 - [x] RBAC-Rollen fuer Sekretariat (Reader) und Buchhaltung (Contributor) zugewiesen
 - [x] Verbindungstest mit beiden Abteilungen erfolgreich verifiziert
-- [ ] `dsregcmd /status`-Nachweis in diesem Auftrag separat belegt — offen, AWS-Guthaben aufgebraucht (siehe Hinweis oben)
+- [ ] `dsregcmd /status`-Nachweis in diesem Auftrag separat belegt: bewusst offen, AWS-Guthaben endgültig aufgebraucht, nicht mehr nachholbar (siehe Hinweis oben)
 - [x] Umsetzung abgeschlossen
 - [x] Screenshots/Nachweise abgelegt
 - [x] `ki-log.md` ausgefüllt

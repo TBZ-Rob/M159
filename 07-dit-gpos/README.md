@@ -335,6 +335,6 @@ Product: 7-Zip 24.08 (x64 edition) -- Installation completed successfully.
 
 <div align="center">
 
-⬅️ [Auftrag 06: RSAT & Admin Center V2](../06-rsat-admin-center/README.md) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 08: Suche im Directory (LDAP)](../08-suche-im-directory/README.md)
+⬅️ [Auftrag 04: Freigaben, Laufwerke, Berechtigungen](../04-freigaben-berechtigungen/README.md) · 🏠 [Übersicht](../README.md) · ➡️ [Auftrag 08: Suche im Directory (LDAP)](../08-suche-im-directory/README.md)
 
 </div>

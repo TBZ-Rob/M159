@@ -104,18 +104,18 @@ Aufbau einer Active-Directory-Umgebung (Contoso) auf AWS EC2, Integration mit AW
 | [04](./04-freigaben-berechtigungen/README.md) | Freigaben, Laufwerke, Berechtigungen | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/04-freigaben-laufwerke-berechtigungen/) |
 | [05](./05-aws-managed-ad/README.md) | AWS Managed Microsoft AD (Variante B: Authentik) | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/05-aws-managed-microsoft-ad/) |
 | [06](./06-rsat-admin-center/README.md) | RSAT & Admin Center V2 | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/06-rsat-admin-center-v2/) |
-| [07](./07-dit-gpos/README.md) | DIT & GPOs | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/07-dit-gpos/) |
-| [08](./08-suche-im-directory/README.md) | Suche im Directory (LDAP) | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/08-suche-im-directory/) |
-| [09](./09-identity-mgmt-powershell/README.md) | Identity Management & PowerShell Debugging | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/09-automation-und-debugging/) |
+| [07](./07-dit-gpos/README.md) | DIT & GPOs | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/07-dit-gpos/) |
+| [08](./08-suche-im-directory/README.md) | Suche im Directory (LDAP) | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/08-suche-im-directory/) |
+| [09](./09-identity-mgmt-powershell/README.md) | Identity Management & PowerShell Debugging | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/09-automation-und-debugging/) |
 
 ### Block 2: Cloud-Integration
 
 | # | Auftrag | Status | Dem Lehrer gezeigt | Modul-Auftrag |
 |---|---|---|---|---|
-| [10](./10-entra-connect/README.md) | MS Entra ID & MS Entra Connect | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-ms-entra-id-ms-entra-connect/) |
-| [11](./11-benutzerprofil/README.md) | Servergespeicherte Benutzerprofile | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/11-servergespeicherte-benutzerprofile/) |
-| [12](./12-netzlaufwerk-azure/README.md) | Netzlaufwerk to Azure Migration | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/12-netzlaufwerk-to-azure-migration/) |
-| [13](./13-sso-python-app/README.md) | SSO Python App | ✅ erledigt | ⬜ noch nicht | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/13-sso-python-app/) |
+| [10](./10-entra-connect/README.md) | MS Entra ID & MS Entra Connect | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/10-ms-entra-id-ms-entra-connect/) |
+| [11](./11-benutzerprofil/README.md) | Servergespeicherte Benutzerprofile | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/11-servergespeicherte-benutzerprofile/) |
+| [12](./12-netzlaufwerk-azure/README.md) | Netzlaufwerk to Azure Migration | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/12-netzlaufwerk-to-azure-migration/) |
+| [13](./13-sso-python-app/README.md) | SSO Python App | ✅ erledigt | ✅ gezeigt | [↗](https://ch-tbz-it.gitlab.io/Stud/m159/03-auftraege/13-sso-python-app/) |
 
 <br>
 

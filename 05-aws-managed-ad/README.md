@@ -12,7 +12,7 @@
 Farblogik (Phase): offen=lightgrey · in-arbeit=d29922 (amber) · fertig=1b7f79 (teal) · Kompetenzfelder=58a6ff (blau, neutral)
 -->
 
-![Phase](https://img.shields.io/badge/Phase-Fertig-1b7f79?style=flat)
+![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
 ![Fortschritt](https://img.shields.io/badge/Fortschritt-100%25-1b7f79?style=flat)
 ![Block](https://img.shields.io/badge/Block-1%20Lokale%20Umgebung-lightgrey?style=flat)
 ![KI--Anteil](https://img.shields.io/badge/KI--Anteil-Ja-8250df?style=flat)

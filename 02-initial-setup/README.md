@@ -165,7 +165,7 @@ Drei EC2-Instanzen erstellt und mit Hostname, Ping-Firewallregel, deaktiviertem 
 - [x] Client erstellt (Desktop, öffentliches Subnetz)
 - [x] Admin Center erstellt (Desktop, öffentliches Subnetz)
 - [x] Windows-Grundkonfiguration auf allen drei Instanzen
-- [ ] Desktop-/Tastatureinstellungen einzeln nachgewiesen (CH-Layout, Dateityp-Erweiterungen, Desktopsymbole, CMD/PowerShell-Verknüpfungen) — offen, AWS-Guthaben aufgebraucht (siehe Hinweis oben)
+- [ ] Desktop-/Tastatureinstellungen einzeln nachgewiesen (CH-Layout, Dateityp-Erweiterungen, Desktopsymbole, CMD/PowerShell-Verknüpfungen): bewusst offen, AWS-Guthaben endgültig aufgebraucht, nicht mehr nachholbar (siehe Hinweis oben)
 - [x] Screenshots/Nachweise abgelegt
 - [x] `ki-log.md` ausgefüllt
 - [x] Setup-Sheet mit effektiven VPC-ID/Elastic IPs nachgeführt

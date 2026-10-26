@@ -3,7 +3,7 @@
 # Auftrag 11: KI-Einsatz
 
 ![Phase](https://img.shields.io/badge/Phase-Erledigt-1b7f79?style=flat)
-![Einträge](https://img.shields.io/badge/Eintr%C3%A4ge-2-1b7f79?style=flat)
+![Einträge](https://img.shields.io/badge/Eintr%C3%A4ge-2-8250df?style=flat)
 
 </div>
 
